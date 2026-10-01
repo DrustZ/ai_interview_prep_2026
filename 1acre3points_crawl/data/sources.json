@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-07-10",
+  "companies": [
+    {
+      "company": "openai",
+      "displayName": "OpenAI",
+      "questionBankUrl": "https://www.1point3acres.com/interview/problems/company/openai",
+      "reportedQuestionCount": 184,
+      "curatedCount": 45,
+      "referenceOjCount": 139
+    },
+    {
+      "company": "anthropic",
+      "displayName": "Anthropic",
+      "questionBankUrl": "https://www.1point3acres.com/interview/problems/company/anthropic",
+      "reportedQuestionCount": 99,
+      "curatedCount": 35,
+      "referenceOjCount": 64
+    }
+  ],
+  "termsUrl": "https://www.1point3acres.com/terms_of_service.html",
+  "note": "This project stores user-owned research notes and source links. It does not crawl or republish members-only content."
+}

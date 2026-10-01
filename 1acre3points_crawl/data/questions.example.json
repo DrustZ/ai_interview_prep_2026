@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "id": "my-openai-example",
+      "company": "openai",
+      "title": "示例题目",
+      "category": "coding",
+      "roles": ["swe"],
+      "tags": ["graph", "bfs"],
+      "access": "link-only",
+      "frequency": "unknown",
+      "summary": "写下你自己的摘要或备考笔记。",
+      "content": "可选：粘贴你有权保存的题目内容。",
+      "sourceUrl": "https://www.1point3acres.com/interview/problems/company/openai"
+    }
+  ]
+}

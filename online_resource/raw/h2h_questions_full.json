@@ -1,0 +1,1233 @@
+{
+ "692f5158cd79766b0b310122_692f515ecd79766b0b310123": {
+  "qid": "692f515ecd79766b0b310123",
+  "postId": "692f5158cd79766b0b310122",
+  "type": "RAW_CODE",
+  "description": "*(This question is a variation of the LeetCode question [1242. Web Crawler Multithreaded](https://leetcode.com/problems/web-crawler-multithreaded/description/). If you haven't completed that question yet, it is recommended to solve it first.)*\n\nGiven a URL `startUrl` and an interface `htmlParser`, implement a concurrent web crawler to discover and return all **unique** URLs that have the **exact same hostname** as `startUrl`.\n\nThe crawler must follow the rules below:\n\n* **Starting Point:** Begin crawling from `startUrl`.\n* **Same Hostname:** Only record and further crawl URLs whose hostname is **exactly identical** to the hostname of `startUrl`.\n<!-- ###PREMIUM_CONTENT_DELIMITER### -->\n<img src=\"https://res.cloudinary.com/algro/image/upload/v1765305551/production/post/692f5158cd79766b0b310122/tpnnebg42m0vxlwemsx3.png\" alt=\"\" height=\"200\" width=\"1000\" />\n\n  All URLs use the `http` protocol without a port number.\n  The hostname is defined as the substring between `\"://\"` and the next `'/'` (or the end of the string if no further `'/'` exists).\n* **URL Uniqueness:** Before checking uniqueness, **remove the fragment part** (everything after and including `'#'`). Two URLs are considered the same if they match after this sanitization step.\n  * For example: `\"http://example.com/page#section1\"` and `\"http://example.com/page\"` should both be treated as `\"http://example.com/page\"` for uniqueness checking and for subsequent crawling.\n* **No Duplicate Visits:** A sanitized URL must **not** be crawled or added more than once.\n* **Fragment Sanitization Order:** Fragment removal occurs **before** hostname comparison and before deduplication.\n* **Graph Characteristics:** The hyperlink graph may contain cycles, and pages may reference previously visited pages.\n\nYou are provided with the implementation of `HtmlParser`:\n\n```java\n/*\n * Provided Html Parser implementation. You should NOT modify it.\n */\nclass HtmlParser {\n\n  // Returns all raw URLs from the webpage of the given URL.\n  List<String> getUrls(String url){...} \n}\n```\n\nEach call to `getUrls` is subject to a certain latency to simulate the real-world network conditions, so your solution must use **concurrency** to fetch multiple pages in parallel.\n\nFor testing purposes, you will be given three variables `urls`, `edges` and `startUrl` to describe the underlying hyperlink graph. Only `startUrl` is accessible in your code; `urls` and `edges` are **not** directly available.\n\nReturn all discovered URLs (after sanitization) in any order.\n\n\n\n\n**Constraints:**\n\n* All URLs use the `http` protocol and do not contain a port number.\n* 1 \u00e2\u0089\u00a4`urls.length`\u00e2\u0089\u00a4 1000, \n* 1 \u00e2\u0089\u00a4 `edges.length` \u00e2\u0089\u00a4 1000\n* Each `getUrls` call will return in \u00e2\u0089\u00a4 15 ms.\n\n\n**Example 1:**\n\n<img src=\"https://res.cloudinary.com/algro/image/upload/v1764714794/production/post/692f5158cd79766b0b310122/l0vqimxxtu4xbwzknsla.png\" alt=\"\" height=\"400\" width=\"500\" />\n\n> **Input:**\n> urls = [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3#sectionA\", \"http://example.net/page4#\"],\n> edges = [[0, 1], [0, 2], [1, 3], [2, 0]],\n> startUrl = \"http://example.com/page1\"\n>\n> **Output:**\n> [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3\"]\n>\n> **Explanation:**\n> * All three reachable pages share the hostname \"example.com\".\n> * The URL \"http://example.com/page3#sectionA\" is sanitized to \"http://example.com/page3\".\n> * The page \"http://example.net/page4#\" is ignored due to a different hostname.\n\n**Example 2:**\n\n> **Input:**\n> urls = [\"http://news.yahoo.com/home\", \"http://news.google.com/top\", \"http://news.yahoo.com/news\"],\n> edges = [[1, 0], [0, 2]],\n> startUrl = \"http://news.google.com/top\"\n>\n> **Output:**\n> [\"http://news.google.com/top\"]\n\n**Example 3:**\n> **Input:**\n> urls = [\"http://site.com/a\", \"http://site.com/b#frag1\", \"http://site.com/b#frag2\", \"http://site.com/c\", \"http://other.com/x\", \"http://site.com/d\", \"http://site.com/e#\", \"http://site.com/f\"],\n> edges = [[0, 1], [0, 2], [1, 3], [2, 3], [3, 4], [3, 5], [5, 0], [5, 6], [6, 7], [7, 0]],\n> startUrl = \"http://site.com/a\"\n>\n> **Output:**\n> [\"http://site.com/a\", \"http://site.com/b\", \"http://site.com/c\", \"http://site.com/d\", \"http://site.com/e\", \"http://site.com/f\"]\n\n\n",
+  "explanation": "This problem requires a **concurrent breadth-first search (BFS)** to crawl a set of web pages, but with two key restrictions: URLs must match the hostname of `startUrl`, and all URLs are **sanitized** (removing any fragment after `'#'`) before being used for deduplication.\n\n**Key Steps:**\n\n1. **Hostname Matching**\n   For each discovered URL, extract the hostname (the string after `\"http://\"` and before the next `'/'`, or the end of the string). Only URLs with a hostname exactly matching `startUrl` are further explored.\n\n2. **Sanitization**\n   Before adding a URL to the visited set, strip off any fragment (`'#'` and everything after). This ensures that, for example, `\"http://site.com/page#foo\"` and `\"http://site.com/page#bar\"` are considered the same and only crawled once.\n\n3. **Concurrency**\n   Use a thread pool or asynchronous workers to issue multiple `getUrls` requests in parallel. This hides network or I/O latency and ensures high throughput. All crawl tasks use a **thread-safe set** to track which URLs have been scheduled or visited, guaranteeing each (sanitized) URL is processed only once.\n\n4. **Synchronization**\n   To ensure the main process waits for all crawl tasks to finish, use a synchronization mechanism such as a phaser, a counter, or a barrier that dynamically tracks outstanding work. The crawler returns results only after all scheduled crawl tasks are complete.\n\n5. **Result Collection**\n   Gather all unique, sanitized URLs discovered by the crawler and return them in any order.\n\n\n### Complexity Analysis\n\n* **Time Complexity:**\n  *O(N + E)*, where *N* is the number of unique URLs visited (after sanitization) and *E* is the total number of links examined. \n\n* **Space Complexity:**\n  *O(N)*.  At peak, may have up to *O(N)* pending crawl tasks. Any additional memory for worker threads or async tasks is also at most *O(N)*.\n",
+  "definition": {
+   "className": "Solution"
+  },
+  "testCases": [],
+  "insights": {
+   "quickSummary": [
+    "Implement a multithreaded crawler that explores pages starting from a given URL.",
+    "Filter discovered links to only include those sharing the exact same hostname as the start page.",
+    "Sanitize all URLs by removing fragment identifiers before deduplication and hostname comparison."
+   ],
+   "commonPatterns": [
+    "Graph Traversal",
+    "DFS/BFS",
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you implement crawl delay or rate limiting to avoid overwhelming target servers?",
+    "What modifications would be needed to support breadth-first vs depth-first priority in a concurrent setting?",
+    "How would you architect this solution to run across multiple worker nodes rather than a single process?"
+   ],
+   "whatThisTests": [
+    "Thread-safe shared state management and race condition prevention",
+    "Parallel graph traversal with dynamic work distribution",
+    "String manipulation and URL parsing logic",
+    "Synchronization primitives for coordinating async tasks"
+   ],
+   "hints": [
+    "Consider how multiple threads will safely read and update the set of visited URLs without creating duplicates or deadlocks.",
+    "Use an ExecutorService to dispatch tasks asynchronously, pair it with a thread-safe Set for tracking, and employ a Phaser or atomic counter to signal when all scheduled crawls are finished."
+   ]
+  },
+  "solutions": {
+   "java": "import java.util.*;\r\nimport java.util.concurrent.*;\r\nimport java.math.*;\r\n\r\n/*\r\n * Provided Html Parser implementation. You should NOT modify it.\r\n */\r\nclass HtmlParser {\r\n    private final Map<String, List<String>> graph;\r\n\r\n    HtmlParser(String[] urls, int[][] edges) {\r\n        graph = new ConcurrentHashMap<>();\r\n        for (String u : urls) {\r\n            graph.put(u, new ArrayList<>());\r\n        }\r\n        for (int[] edge : edges) {\r\n            int from = edge[0];\r\n            int to = edge[1];\r\n            graph.get(urls[from]).add(urls[to]);\r\n        }\r\n    }\r\n\r\n    public List<String> getUrls(String url) {\r\n        try {\r\n            Thread.sleep(10); // Simulate network latency\r\n        } catch (InterruptedException e) {\r\n            Thread.currentThread().interrupt();\r\n        }\r\n        List<String> links = graph.get(url);\r\n        if (links == null) {\r\n            return Collections.emptyList();\r\n        }\r\n        return links;\r\n    }\r\n}\r\n\r\npublic class Solution {\r\n    public List<String> crawl(String startUrl, HtmlParser htmlParser) {\r\n        String startHost = getHost(startUrl);\r\n        Set<String> visited = ConcurrentHashMap.newKeySet();\r\n        ExecutorService pool = Executors.newFixedThreadPool(Math.max(4, Runtime.getRuntime().availableProcessors()));\r\n        Phaser phaser = new Phaser(1); // main thread registered\r\n\r\n        String sanitizedStart = sanitize(startUrl);\r\n        visited.add(sanitizedStart);\r\n        submitTask(startUrl, htmlParser, startHost, visited, pool, phaser);\r\n\r\n        // Wait for all crawl tasks to complete\r\n        phaser.arriveAndAwaitAdvance();\r\n        pool.shutdown();\r\n\r\n        List<String> result = new ArrayList<>(visited);\r\n        return result;\r\n    }\r\n\r\n    private void submitTask(String url, HtmlParser parser, String host, Set<String> visited, ExecutorService pool,\r\n            Phaser phaser) {\r\n        phaser.register();\r\n        pool.submit(() -> {\r\n            try {\r\n                List<String> urls = parser.getUrls(url);\r\n                for (String next : urls) {\r\n                    String sanitized = sanitize(next);\r\n                    String nextHost = getHost(sanitized);\r\n                    if (!nextHost.equals(host)) {\r\n                        continue;\r\n                    }\r\n                    // only schedule if not already visited\r\n                    if (visited.add(sanitized)) {\r\n                        submitTask(next, parser, host, visited, pool, phaser);\r\n                    }\r\n                }\r\n            } finally {\r\n                phaser.arriveAndDeregister();\r\n            }\r\n        });\r\n    }\r\n\r\n    private String getHost(String url) {\r\n        // Remove scheme (http:// or https://)\r\n        int start = url.indexOf(\"://\");\r\n        if (start == -1) {\r\n            start = 0;\r\n        } else {\r\n            start = start + 3;\r\n        }\r\n\r\n        int end = url.indexOf('/', start);\r\n        if (end == -1) {\r\n            end = url.length();\r\n        }\r\n\r\n        return url.substring(start, end);\r\n    }\r\n\r\n    private String sanitize(String url) {\r\n        int idx = url.indexOf('#');\r\n        if (idx == -1) {\r\n            return url;\r\n        }\r\n\r\n        return url.substring(0, idx);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        test1();\r\n        test2();\r\n        test3();\r\n    }\r\n\r\n    private static void test1() {\r\n        System.out.println(\"===== Test 1 =====\");\r\n\r\n        String[] urls = {\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3#sectionA\",\r\n                \"http://example.net/page4#\"};\r\n        int[][] edges = {{0, 1}, {0, 2}, {1, 3}, {2, 0}};\r\n        String startUrl = \"http://example.com/page1\";\r\n\r\n        HtmlParser parser = new HtmlParser(urls, edges);\r\n        Solution solution = new Solution();\r\n        List<String> result = solution.crawl(startUrl, parser);\r\n        System.out.println(result);\r\n        // Expected: [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3\"]\r\n    }\r\n\r\n    private static void test2() {\r\n        System.out.println(\"===== Test 2 =====\");\r\n\r\n        String[] urls = {\"http://news.yahoo.com/home\", \"http://news.google.com/top\", \"http://news.yahoo.com/news\"};\r\n        int[][] edges = {{1, 0},{0, 2}};\r\n        String startUrl = \"http://news.google.com/top\";\r\n\r\n        HtmlParser parser = new HtmlParser(urls, edges);\r\n        Solution solution = new Solution();\r\n        List<String> result = solution.crawl(startUrl, parser);\r\n        System.out.println(result);\r\n        // Expected: [\"http://news.google.com/top\"]\r\n    }\r\n\r\n    private static void test3() {\r\n        System.out.println(\"===== Test 3 =====\");\r\n\r\n        String[] urls = {\"http://site.com/a\", \"http://site.com/b#frag1\", \"http://site.com/b#frag2\", \r\n        \"http://site.com/c\", \"http://other.com/x\", \"http://site.com/d\", \"http://site.com/e#\", \r\n        \"http://site.com/f\"};\r\n        int[][] edges = {{0, 1}, {0, 2}, {1, 3}, {2, 3}, {3, 4}, {3, 5}, {5, 0}, {5, 6}, {6, 7}, {7, 0}};\r\n        String startUrl = \"http://site.com/a\";\r\n\r\n        HtmlParser parser = new HtmlParser(urls, edges);\r\n        Solution solution = new Solution();\r\n        List<String> result = solution.crawl(startUrl, parser);\r\n        System.out.println(result);\r\n        // Expected: [\"http://site.com/a\", \"http://site.com/b\", \"http://site.com/c\",\r\n        // \"http://site.com/d\", \"http://site.com/e\", \"http://site.com/f\"]\r\n    }\r\n}\r\n",
+   "typescript": "/*\r\n * Provided Html Parser implementation. You should NOT modify it.\r\n */\r\nclass HtmlParser {\r\n    private readonly graph: Map<string, string[]>;\r\n\r\n    constructor(urls: string[], edges: number[][]) {\r\n        this.graph = new Map<string, string[]>();\r\n        for (const u of urls) {\r\n            this.graph.set(u, []);\r\n        }\r\n        for (const edge of edges) {\r\n            const from = edge[0];\r\n            const to = edge[1];\r\n            this.graph.get(urls[from])!.push(urls[to]);\r\n        }\r\n    }\r\n\r\n    public async getUrls(url: string): Promise<string[]> {\r\n        await new Promise(resolve => setTimeout(resolve, 10)); // Simulate network latency\r\n        const links = this.graph.get(url);\r\n        if (links == null) {\r\n            return [];\r\n        }\r\n        return links;\r\n    }\r\n}\r\n\r\nclass Solution {\r\n    public async crawl(startUrl: string, htmlParser: HtmlParser): Promise<string[]> {\r\n        const startHost = this.getHost(startUrl);\r\n        const visited = new Set<string>();\r\n        let activeTasks = 0;\r\n        const taskPromises: Promise<void>[] = [];\r\n\r\n        const sanitizedStart = this.sanitize(startUrl);\r\n        visited.add(sanitizedStart);\r\n        \r\n        const submitTask = async (url: string): Promise<void> => {\r\n            activeTasks++;\r\n            try {\r\n                const urls = await htmlParser.getUrls(url);\r\n                const newTasks: Promise<void>[] = [];\r\n                \r\n                for (const next of urls) {\r\n                    const sanitized = this.sanitize(next);\r\n                    const nextHost = this.getHost(sanitized);\r\n                    if (nextHost !== startHost) {\r\n                        continue;\r\n                    }\r\n                    // only schedule if not already visited\r\n                    if (!visited.has(sanitized)) {\r\n                        visited.add(sanitized);\r\n                        newTasks.push(submitTask(next));\r\n                    }\r\n                }\r\n                \r\n                await Promise.all(newTasks);\r\n            } finally {\r\n                activeTasks--;\r\n            }\r\n        };\r\n\r\n        await submitTask(startUrl);\r\n\r\n        const result = Array.from(visited);\r\n        return result;\r\n    }\r\n\r\n    private getHost(url: string): string {\r\n        // Remove scheme (http:// or https://)\r\n        let start = url.indexOf(\"://\");\r\n        if (start === -1) {\r\n            start = 0;\r\n        } else {\r\n            start = start + 3;\r\n        }\r\n\r\n        let end = url.indexOf('/', start);\r\n        if (end === -1) {\r\n            end = url.length;\r\n        }\r\n\r\n        return url.substring(start, end);\r\n    }\r\n\r\n    private sanitize(url: string): string {\r\n        const idx = url.indexOf('#');\r\n        if (idx === -1) {\r\n            return url;\r\n        }\r\n\r\n        return url.substring(0, idx);\r\n    }\r\n\r\n    public static async main(): Promise<void> {\r\n        await Solution.test1();\r\n        await Solution.test2();\r\n        await Solution.test3();\r\n    }\r\n\r\n    private static async test1(): Promise<void> {\r\n        console.log(\"===== Test 1 =====\");\r\n\r\n        const urls = [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3#sectionA\",\r\n                \"http://example.net/page4#\"];\r\n        const edges = [[0, 1], [0, 2], [1, 3], [2, 0]];\r\n        const startUrl = \"http://example.com/page1\";\r\n\r\n        const parser = new HtmlParser(urls, edges);\r\n        const solution = new Solution();\r\n        const result = await solution.crawl(startUrl, parser);\r\n        console.log(result);\r\n        // Expected: [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3\"]\r\n    }\r\n\r\n    private static async test2(): Promise<void> {\r\n        console.log(\"===== Test 2 =====\");\r\n\r\n        const urls = [\"http://news.yahoo.com/home\", \"http://news.google.com/top\", \"http://news.yahoo.com/news\"];\r\n        const edges = [[1, 0],[0, 2]];\r\n        const startUrl = \"http://news.google.com/top\";\r\n\r\n        const parser = new HtmlParser(urls, edges);\r\n        const solution = new Solution();\r\n        const result = await solution.crawl(startUrl, parser);\r\n        console.log(result);\r\n        // Expected: [\"http://news.google.com/top\"]\r\n    }\r\n\r\n    private static async test3(): Promise<void> {\r\n        console.log(\"===== Test 3 =====\");\r\n\r\n        const urls = [\"http://site.com/a\", \"http://site.com/b#frag1\", \"http://site.com/b#frag2\", \r\n        \"http://site.com/c\", \"http://other.com/x\", \"http://site.com/d\", \"http://site.com/e#\", \r\n        \"http://site.com/f\"];\r\n        const edges = [[0, 1], [0, 2], [1, 3], [2, 3], [3, 4], [3, 5], [5, 0], [5, 6], [6, 7], [7, 0]];\r\n        const startUrl = \"http://site.com/a\";\r\n\r\n        const parser = new HtmlParser(urls, edges);\r\n        const solution = new Solution();\r\n        const result = await solution.crawl(startUrl, parser);\r\n        console.log(result);\r\n        // Expected: [\"http://site.com/a\", \"http://site.com/b\", \"http://site.com/c\",\r\n        // \"http://site.com/d\", \"http://site.com/e\", \"http://site.com/f\"]\r\n    }\r\n}\r\nSolution.main();",
+   "python": "import time\nimport threading\nfrom concurrent.futures import ThreadPoolExecutor\nimport os\nfrom collections import defaultdict\n\n\"\"\"\nProvided Html Parser implementation. You should NOT modify it.\n\"\"\"\nclass HtmlParser:\n    def __init__(self, urls, edges):\n        self.graph = {}\n        for u in urls:\n            self.graph[u] = []\n        \n        for edge in edges:\n            from_idx = edge[0]\n            to_idx = edge[1]\n            self.graph[urls[from_idx]].append(urls[to_idx])\n\n    def getUrls(self, url):\n        try:\n            time.sleep(0.01)  # Simulate network latency\n        except:\n            pass\n        \n        links = self.graph.get(url)\n        if links is None:\n            return []\n        return links\n\nclass Solution:\n    def crawl(self, startUrl, htmlParser):\n        startHost = self.getHost(startUrl)\n        visited = set()\n        visited_lock = threading.Lock()\n        pool = ThreadPoolExecutor(max_workers=max(4, os.cpu_count()))\n        \n        # Use threading primitives to track completion\n        pending_tasks = threading.Semaphore(0)\n        active_tasks = threading.Event()\n        task_count = [0]  # Use list to make it mutable in nested functions\n        task_count_lock = threading.Lock()\n\n        sanitizedStart = self.sanitize(startUrl)\n        visited.add(sanitizedStart)\n        self.submitTask(startUrl, htmlParser, startHost, visited, visited_lock, pool, \n                       pending_tasks, active_tasks, task_count, task_count_lock)\n\n        # Wait for all crawl tasks to complete\n        while True:\n            with task_count_lock:\n                if task_count[0] == 0:\n                    break\n            time.sleep(0.001)  # Small sleep to prevent busy waiting\n        \n        pool.shutdown()\n\n        result = list(visited)\n        return result\n\n    def submitTask(self, url, parser, host, visited, visited_lock, pool, \n                   pending_tasks, active_tasks, task_count, task_count_lock):\n        with task_count_lock:\n            task_count[0] += 1\n        \n        def task():\n            try:\n                urls = parser.getUrls(url)\n                for next_url in urls:\n                    sanitized = self.sanitize(next_url)\n                    nextHost = self.getHost(sanitized)\n                    if nextHost != host:\n                        continue\n                    # only schedule if not already visited\n                    with visited_lock:\n                        if sanitized not in visited:\n                            visited.add(sanitized)\n                            should_submit = True\n                        else:\n                            should_submit = False\n                    \n                    if should_submit:\n                        self.submitTask(next_url, parser, host, visited, visited_lock, pool,\n                                      pending_tasks, active_tasks, task_count, task_count_lock)\n            finally:\n                with task_count_lock:\n                    task_count[0] -= 1\n        \n        pool.submit(task)\n\n    def getHost(self, url):\n        # Remove scheme (http:// or https://)\n        start = url.find(\"://\")\n        if start == -1:\n            start = 0\n        else:\n            start = start + 3\n\n        end = url.find('/', start)\n        if end == -1:\n            end = len(url)\n\n        return url[start:end]\n\n    def sanitize(self, url):\n        idx = url.find('#')\n        if idx == -1:\n            return url\n\n        return url[:idx]\n\ndef main():\n    test1()\n    test2()\n    test3()\n\ndef test1():\n    print(\"===== Test 1 =====\")\n\n    urls = [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3#sectionA\",\n            \"http://example.net/page4#\"]\n    edges = [[0, 1], [0, 2], [1, 3], [2, 0]]\n    startUrl = \"http://example.com/page1\"\n\n    parser = HtmlParser(urls, edges)\n    solution = Solution()\n    result = solution.crawl(startUrl, parser)\n    print(result)\n    # Expected: [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3\"]\n\ndef test2():\n    print(\"===== Test 2 =====\")\n\n    urls = [\"http://news.yahoo.com/home\", \"http://news.google.com/top\", \"http://news.yahoo.com/news\"]\n    edges = [[1, 0], [0, 2]]\n    startUrl = \"http://news.google.com/top\"\n\n    parser = HtmlParser(urls, edges)\n    solution = Solution()\n    result = solution.crawl(startUrl, parser)\n    print(result)\n    # Expected: [\"http://news.google.com/top\"]\n\ndef test3():\n    print(\"===== Test 3 =====\")\n\n    urls = [\"http://site.com/a\", \"http://site.com/b#frag1\", \"http://site.com/b#frag2\", \n    \"http://site.com/c\", \"http://other.com/x\", \"http://site.com/d\", \"http://site.com/e#\", \n    \"http://site.com/f\"]\n    edges = [[0, 1], [0, 2], [1, 3], [2, 3], [3, 4], [3, 5], [5, 0], [5, 6], [6, 7], [7, 0]]\n    startUrl = \"http://site.com/a\"\n\n    parser = HtmlParser(urls, edges)\n    solution = Solution()\n    result = solution.crawl(startUrl, parser)\n    print(result)\n    # Expected: [\"http://site.com/a\", \"http://site.com/b\", \"http://site.com/c\",\n    # \"http://site.com/d\", \"http://site.com/e\", \"http://site.com/f\"]\n\nif __name__ == \"__main__\":\n    main()",
+   "cpp": "#include <iostream>\r\n#include <vector>\r\n#include <string>\r\n#include <unordered_map>\r\n#include <unordered_set>\r\n#include <thread>\r\n#include <mutex>\r\n#include <condition_variable>\r\n#include <atomic>\r\n#include <chrono>\r\n#include <functional>\r\n\r\nusing namespace std;\r\n\r\n/*\r\n * Provided HtmlParser implementation. You should NOT modify it.\r\n */\r\nclass HtmlParser {\r\nprivate:\r\n    unordered_map<string, vector<string>> graph;\r\n\r\npublic:\r\n    HtmlParser(const vector<string>& urls, const vector<vector<int>>& edges) {\r\n        for (const string& u : urls) {\r\n            graph[u] = vector<string>();\r\n        }\r\n        for (const auto& edge : edges) {\r\n            int from = edge[0];\r\n            int to = edge[1];\r\n            auto itFrom = graph.find(urls[from]);\r\n            if (itFrom != graph.end()) {\r\n                itFrom->second.push_back(urls[to]);\r\n            }\r\n        }\r\n    }\r\n\r\n    vector<string> getUrls(const string& url) {\r\n        // Simulate network latency\r\n        this_thread::sleep_for(chrono::milliseconds(10));\r\n\r\n        auto it = graph.find(url);\r\n        if (it == graph.end()) {\r\n            return {};\r\n        }\r\n        return it->second;\r\n    }\r\n};\r\n\r\nclass Solution {\r\npublic:\r\n    vector<string> crawl(const string& startUrl, HtmlParser& htmlParser) {\r\n        string startHost = getHost(startUrl);\r\n        string sanitizedStart = sanitize(startUrl);\r\n\r\n        unordered_set<string> visited;\r\n        mutex visitedMutex;\r\n\r\n        atomic<int> activeTasks(0);\r\n        mutex cvMutex;\r\n        condition_variable cv;\r\n\r\n        // Recursive task submission using lambda capture\r\n        function<void(const string&)> submitTask = [&](const string& url) {\r\n            activeTasks.fetch_add(1, memory_order_relaxed);\r\n            thread([&, url]() {\r\n                try {\r\n                    vector<string> urls = htmlParser.getUrls(url);\r\n                    for (const string& next : urls) {\r\n                        string sanitized = sanitize(next);\r\n                        string nextHost = getHost(sanitized);\r\n\r\n                        if (nextHost != startHost) {\r\n                            continue;\r\n                        }\r\n\r\n                        bool shouldSchedule = false;\r\n                        {\r\n                            lock_guard<mutex> lock(visitedMutex);\r\n                            auto res = visited.insert(sanitized);\r\n                            if (res.second) { // newly inserted\r\n                                shouldSchedule = true;\r\n                            }\r\n                        }\r\n\r\n                        if (shouldSchedule) {\r\n                            submitTask(next);\r\n                        }\r\n                    }\r\n                } catch (...) {\r\n                    // Ignore any exceptions in worker threads\r\n                }\r\n\r\n                int remaining = activeTasks.fetch_sub(1, memory_order_acq_rel) - 1;\r\n                if (remaining == 0) {\r\n                    unique_lock<mutex> lock(cvMutex);\r\n                    cv.notify_one();\r\n                }\r\n            }).detach();\r\n        };\r\n\r\n        {\r\n            lock_guard<mutex> lock(visitedMutex);\r\n            visited.insert(sanitizedStart);\r\n        }\r\n\r\n        // Start the first task\r\n        submitTask(startUrl);\r\n\r\n        // Wait until all tasks are finished\r\n        {\r\n            unique_lock<mutex> lock(cvMutex);\r\n            cv.wait(lock, [&]() { return activeTasks.load(memory_order_acquire) == 0; });\r\n        }\r\n\r\n        vector<string> result;\r\n        {\r\n            lock_guard<mutex> lock(visitedMutex);\r\n            result.assign(visited.begin(), visited.end());\r\n        }\r\n        return result;\r\n    }\r\n\r\nprivate:\r\n    string getHost(const string& url) {\r\n        // Remove scheme (http:// or https://)\r\n        size_t start = url.find(\"://\");\r\n        if (start == string::npos) {\r\n            start = 0;\r\n        } else {\r\n            start = start + 3;\r\n        }\r\n\r\n        size_t end = url.find('/', start);\r\n        if (end == string::npos) {\r\n            end = url.size();\r\n        }\r\n\r\n        return url.substr(start, end - start);\r\n    }\r\n\r\n    string sanitize(const string& url) {\r\n        size_t idx = url.find('#');\r\n        if (idx == string::npos) {\r\n            return url;\r\n        }\r\n        return url.substr(0, idx);\r\n    }\r\n};\r\n\r\n// Helper to print vector<string>\r\nvoid printVector(const vector<string>& v) {\r\n    cout << \"[\";\r\n    for (size_t i = 0; i < v.size(); ++i) {\r\n        cout << v[i];\r\n        if (i + 1 < v.size()) cout << \", \";\r\n    }\r\n    cout << \"]\\n\";\r\n}\r\n\r\nvoid test1() {\r\n    cout << \"===== Test 1 =====\\n\";\r\n\r\n    vector<string> urls = {\r\n        \"http://example.com/page1\",\r\n        \"http://example.com/page2\",\r\n        \"http://example.com/page3#sectionA\",\r\n        \"http://example.net/page4#\"\r\n    };\r\n\r\n    vector<vector<int>> edges = {\r\n        {0, 1}, {0, 2}, {1, 3}, {2, 0}\r\n    };\r\n\r\n    string startUrl = \"http://example.com/page1\";\r\n\r\n    HtmlParser parser(urls, edges);\r\n    Solution solution;\r\n    vector<string> result = solution.crawl(startUrl, parser);\r\n    printVector(result);\r\n    // Expected: [\"http://example.com/page1\", \"http://example.com/page2\", \"http://example.com/page3\"]\r\n}\r\n\r\nvoid test2() {\r\n    cout << \"===== Test 2 =====\\n\";\r\n\r\n    vector<string> urls = {\r\n        \"http://news.yahoo.com/home\",\r\n        \"http://news.google.com/top\",\r\n        \"http://news.yahoo.com/news\"\r\n    };\r\n\r\n    vector<vector<int>> edges = {\r\n        {1, 0}, {0, 2}\r\n    };\r\n\r\n    string startUrl = \"http://news.google.com/top\";\r\n\r\n    HtmlParser parser(urls, edges);\r\n    Solution solution;\r\n    vector<string> result = solution.crawl(startUrl, parser);\r\n    printVector(result);\r\n    // Expected: [\"http://news.google.com/top\"]\r\n}\r\n\r\nvoid test3() {\r\n    cout << \"===== Test 3 =====\\n\";\r\n\r\n    vector<string> urls = {\r\n        \"http://site.com/a\",\r\n        \"http://site.com/b#frag1\",\r\n        \"http://site.com/b#frag2\",\r\n        \"http://site.com/c\",\r\n        \"http://other.com/x\",\r\n        \"http://site.com/d\",\r\n        \"http://site.com/e#\",\r\n        \"http://site.com/f\"\r\n    };\r\n\r\n    vector<vector<int>> edges = {\r\n        {0, 1}, {0, 2}, {1, 3}, {2, 3},\r\n        {3, 4}, {3, 5}, {5, 0}, {5, 6},\r\n        {6, 7}, {7, 0}\r\n    };\r\n\r\n    string startUrl = \"http://site.com/a\";\r\n\r\n    HtmlParser parser(urls, edges);\r\n    Solution solution;\r\n    vector<string> result = solution.crawl(startUrl, parser);\r\n    printVector(result);\r\n    // Expected: [\"http://site.com/a\", \"http://site.com/b\", \"http://site.com/c\",\r\n    //  \"http://site.com/d\", \"http://site.com/e\", \"http://site.com/f\"]\r\n}\r\n\r\nint main() {\r\n    test1();\r\n    test2();\r\n    test3();\r\n    return 0;\r\n}\r\n"
+  },
+  "stats": {
+   "totalExecutions": 10821,
+   "acceptedExecutions": 6106,
+   "acceptRate": 0.5642731725348858
+  },
+  "postTitle": "Concurrent Web Crawler ",
+  "locked": false
+ },
+ "69308191cd79766b0b310224_69308197cd79766b0b310225": {
+  "qid": "69308197cd79766b0b310225",
+  "postId": "69308191cd79766b0b310224",
+  "type": "SINGLE_STEP",
+  "description": "*(This question is a variation of the LeetCode question [636. Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/description/). If you haven't completed that question yet, it is recommended to solve it first.)*\n\nA sampling profiler periodically records the execution state of a single thread.\nEach recorded entry in `samples` is a string formatted as `\"<time>:<stackTrace>\"`, where:\n\n* `time` is a strictly increasing timestamp represented as an integer.\n* `stackTrace` is a list of function names separated by `\"->\"`, ordered from the **outermost** function to the **innermost** currently executing function.\n  For example, `\"main->worker->parse\"` represents `main` calling `worker`, which then calls `parse`.\n\nA stack may be empty (e.g., `\"42:\"`), meaning no functions are active at that moment.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Convert periodic stack snapshots into chronological start/end events",
+    "Infer function transitions by comparing consecutive traces",
+    "Handle recursive frames and empty stacks correctly"
+   ],
+   "commonPatterns": [
+    "Two Pointers",
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this approach to track multiple concurrent threads?",
+    "What modifications are needed to calculate exclusive versus inclusive execution time per function?",
+    "How could you optimize memory usage if the sample history grows indefinitely?"
+   ],
+   "whatThisTests": [
+    "String parsing and manipulation",
+    "State tracking and simulation",
+    "Prefix comparison and diff detection",
+    "Event sequencing"
+   ],
+   "hints": [
+    "Compare the current and previous stack traces from the outermost level inward to find the first mismatch.",
+    "Frames that disappear after the mismatch point have ended, while newly added frames indicate recent starts.",
+    "Treat each stack position as an independent call frame, ignoring duplicate names across different depths."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Generate Function Profiling Events",
+  "locked": true
+ },
+ "69308191cd79766b0b310224_69308714cd79766b0b310228": {
+  "qid": "69308714cd79766b0b310228",
+  "postId": "69308191cd79766b0b310224",
+  "type": "SINGLE_STEP",
+  "description": "*(This question is a variation of the LeetCode question [636. Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/description/). If you haven't completed that question yet, it is recommended to solve it first.)*\n\nA sampling profiler periodically records the execution state of a single thread.\nEach recorded entry in `samples` is a string formatted as `\"<time>:<stackTrace>\"`, where:\n\n* `time` is a strictly increasing timestamp represented as an integer.\n* `stackTrace` is a list of function names separated by `\"->\"`, ordered from the **outermost** function to the **innermost** currently executing function.\n  For example, `\"main->worker->parse\"` represents `main` calling `worker`, which then calls `parse`.\n\nA stack may be empty (e.g., `\"42:\"`), meaning no functions are active at that moment.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Track consecutive appearances of function call paths across sequential stack traces.",
+    "Emit start and end events only for paths that persist for at least n continuous samples.",
+    "Ignore transient calls and manage event ordering based on stack depth and timestamps."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sliding Window",
+    "Sorting"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this approach for real-time streaming data with unbounded memory?",
+    "What structural changes are needed if multiple different debounce thresholds apply to different call depths?",
+    "Can you eliminate the per-sample sorting step to achieve strictly linear time complexity relative to input size?"
+   ],
+   "whatThisTests": [
+    "Stateful sequence processing and streak tracking",
+    "String parsing and prefix extraction",
+    "Event simulation and deterministic ordering",
+    "Hash map state management"
+   ],
+   "hints": [
+    "Maintain a hash map to track the current consecutive count and active status for every unique call path.",
+    "Reset a path's counter immediately when it vanishes from a sample, and defer triggering a start event until the counter reaches n.",
+    "Batch collect events per timestamp, then sort them by call depth so outer functions start before inner ones and inner functions end before outer ones."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Generate Function Profiling Events",
+  "locked": true
+ },
+ "69308191cd79766b0b310224_69308716cd79766b0b310229": {
+  "qid": "69308716cd79766b0b310229",
+  "postId": "69308191cd79766b0b310224",
+  "type": "SINGLE_STEP",
+  "description": "*(This question is a variation of the LeetCode question [636. Exclusive Time of Functions](https://leetcode.com/problems/exclusive-time-of-functions/description/). If you haven't completed that question yet, it is recommended to solve it first.)*\n\nA sampling profiler periodically records the execution state of a single thread.\nEach recorded entry in `samples` is a string formatted as `\"<time>:<stackTrace>\"`, where:\n\n* `time` is a strictly increasing timestamp represented as an integer.\n* `stackTrace` is a list of function names separated by `\"->\"`, ordered from the **outermost** function to the **innermost** currently executing function.\n  For example, `\"main->worker->parse\"` represents `main` calling `worker`, which then calls `parse`.\n\nA stack may be empty (e.g., `\"42:\"`), meaning no functions are active at that moment.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Track execution context stability by analyzing call stack suffixes across timestamped samples.",
+    "Maintain consecutive occurrence streaks for each suffix and filter those meeting an N-consecutive threshold.",
+    "Emit structured start and end events based on how valid suffix stacks evolve over time."
+   ],
+   "commonPatterns": [
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this approach if memory limits required processing samples in a single pass with bounded history?",
+    "What structural changes would be needed to switch from suffix-based to prefix-based profiling?",
+    "Could a Trie improve suffix matching performance, and what trade-offs would it introduce?",
+    "How would you handle concurrent profiler streams or out-of-order sample arrivals?"
+   ],
+   "whatThisTests": [
+    "Hash map state tracking and streak management",
+    "Suffix extraction and string parsing",
+    "Timeline event generation and alignment",
+    "Longest common suffix identification",
+    "Efficient state transition logic"
+   ],
+   "hints": [
+    "Begin by parsing each sample into individual frames and generating every possible suffix combination before applying any filtering.",
+    "Use a hash map to independently track the current streak length and the original timestamp where each suffix began appearing.",
+    "When transitioning between samples, locate the longest matching suffix chain first to cleanly separate newly valid paths from expired ones."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Generate Function Profiling Events",
+  "locked": true
+ },
+ "6934db5e5f306485cc5f08b9_6934db665f306485cc5f08ba": {
+  "qid": "6934db665f306485cc5f08ba",
+  "postId": "6934db5e5f306485cc5f08b9",
+  "type": "RAW_CODE",
+  "description": "*(This question is a variation of the LeetCode question [609. Find Duplicate File in System](https://leetcode.com/problems/find-duplicate-file-in-system/description/). If you haven't completed that question yet, it is recommended to solve it first.)*\n\n\nYou need to find groups of duplicate files with **identical binary content** in a simulated file system. The system is rooted at the directory `\"/\"`. \n\nTwo files are considered duplicates if and only if their complete binary contents are **exactly the same**, file names and paths do **not** matter.\nFile content may be large and is accessible only as a binary stream, and you do **not** have direct string content access. You are asked to design an **efficient** approach that can find duplicate files within a large number of files and directories.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Traverse a simulated file system to collect all file paths recursively.",
+    "Filter candidates efficiently using metadata like file size to avoid unnecessary reads.",
+    "Group files with identical binary content using cryptographic hashing."
+   ],
+   "commonPatterns": [
+    "DFS/BFS",
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you scale this solution for a distributed file system?",
+    "What steps would you take to minimize false positives from hash collisions?",
+    "How could you reduce memory overhead when dealing with millions of files?",
+    "Could you adapt this approach to detect partially similar or modified files?"
+   ],
+   "whatThisTests": [
+    "Recursive directory traversal",
+    "Hash-based data comparison",
+    "I/O optimization strategies",
+    "Memory-efficient grouping"
+   ],
+   "hints": [
+    "Begin by mapping out the entire directory structure to gather all candidate file paths.",
+    "Leverage fast metadata lookups like file size to quickly discard files that cannot possibly be duplicates.",
+    "For files that pass the size filter, read their binary streams once and compute a stable hash to group truly identical content."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Find Duplicate Files",
+  "locked": true
+ },
+ "6934db5e5f306485cc5f08b9_6934e59f5f306485cc5f08be": {
+  "qid": "6934e59f5f306485cc5f08be",
+  "postId": "6934db5e5f306485cc5f08b9",
+  "type": "RAW_CODE",
+  "description": "*(This question is a variation of the LeetCode question [609. Find Duplicate File in System](https://leetcode.com/problems/find-duplicate-file-in-system/description/). If you haven't completed that question yet, it is recommended to solve it first.)*\n\n\nYou need to find groups of duplicate files with **identical binary content** in a simulated file system. The system is rooted at the directory `\"/\"`. \n\nTwo files are considered duplicates if and only if their complete binary contents are **exactly the same**, file names and paths do **not** matter.\nFile content may be large and is accessible only as a binary stream, and you do **not** have direct string content access. You are asked to design an **efficient** approach that can find duplicate files within a large number of files and directories.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Identify groups of files with identical binary content across a simulated directory tree.",
+    "Process extremely large files by reading them in constrained chunks without loading entire contents into memory.",
+    "Efficiently group and compare file streams while adhering to strict I/O and memory limits."
+   ],
+   "commonPatterns": [
+    "DFS/BFS",
+    "Hashing",
+    "Recursion"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you detect and resolve hash collisions if the collision-free assumption is removed?",
+    "Could this solution be parallelized across multiple threads or processes? What synchronization challenges would arise?",
+    "How would you adapt this approach if the file system were distributed across multiple networked servers?",
+    "What is the time and space complexity impact if the chunk limit is set to an extremely small value?"
+   ],
+   "whatThisTests": [
+    "Recursive file system traversal",
+    "Streaming data processing and chunked I/O",
+    "Incremental hashing and equality comparison",
+    "Search space optimization via metadata filtering",
+    "Mapping and grouping data structures"
+   ],
+   "hints": [
+    "Consider fetching lightweight metadata first to drastically reduce the number of files you need to stream.",
+    "Instead of buffering data, update a running hash value sequentially as each chunk arrives from the stream.",
+    "Store intermediate results in a hash map keyed by size, deferring full content reads until a bucket contains multiple candidates."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Find Duplicate Files",
+  "locked": true
+ },
+ "6935ba711553144e303f6769_6935ba921553144e303f676a": {
+  "qid": "6935ba921553144e303f676a",
+  "postId": "6935ba711553144e303f6769",
+  "type": "RAW_CODE",
+  "description": "A large analytics company distributes a massive integer dataset across `k` workers (indexed from `0` to `k - 1`), where each worker can only access its own unsorted and evenly partitioned slice of the data.\n\nYour task is to design a distributed algorithm to compute the ***mode* (most frequently occurring integer)** for the entire dataset, while ensuring that no worker ever receives all raw data and that network usage is minimized. In the event of a tie (multiple integers share the highest frequency), return the **smallest** such integer.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Design a distributed algorithm to compute the global mode across k independent workers.",
+    "Minimize network bandwidth by aggregating local frequencies before any communication occurs.",
+    "Route data deterministically to prevent bottlenecks while correctly handling tie-breaking rules."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Divide and Conquer"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this design to handle worker crashes or network timeouts gracefully?",
+    "What strategies can mitigate hash skew if certain numbers appear vastly more often than others?",
+    "Can this pipeline be extended to efficiently find the top K frequent elements instead of just the mode?",
+    "How does the latency of asynchronous messaging impact your synchronization and termination logic?"
+   ],
+   "whatThisTests": [
+    "Distributed Systems Architecture",
+    "Hashing & Data Partitioning",
+    "Message Passing & Synchronization",
+    "Network-I/O Optimization",
+    "Frequency Analysis"
+   ],
+   "hints": [
+    "Compress your local slice by counting frequencies first; transmitting compact (value, count) tuples drastically reduces payload size compared to raw data.",
+    "Avoid a central collector by assigning each unique value to exactly one worker using a deterministic formula that depends solely on the value itself.",
+    "After routing, each worker aggregates its assigned counts, identifies its own local leader, and then participates in a final reduction phase to determine the global winner."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Find Cluster Mode and Median",
+  "locked": true
+ },
+ "6935ba711553144e303f6769_69361ab01553144e303f6805": {
+  "qid": "69361ab01553144e303f6805",
+  "postId": "6935ba711553144e303f6769",
+  "type": "RAW_CODE",
+  "description": "A large analytics company distributes a massive integer dataset across `k` workers (indexed from `0` to `k - 1`), where each worker can only access its own unsorted and evenly partitioned slice of the data.\n\nYour task is to design a distributed algorithm to compute the ***mode* (most frequently occurring integer)** for the entire dataset, while ensuring that no worker ever receives all raw data and that network usage is minimized. In the event of a tie (multiple integers share the highest frequency), return the **smallest** such integer.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Design a distributed algorithm to compute the global median across multiple worker nodes.",
+    "Coordinate communication between workers without transferring the entire dataset.",
+    "Handle both odd and even dataset sizes correctly under strict constraints."
+   ],
+   "commonPatterns": [
+    "Binary Search on Answer",
+    "Divide and Conquer"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this approach if the network was unreliable or messages could be lost?",
+    "What is the time and space complexity of your distributed algorithm compared to sorting locally then merging?",
+    "How would you modify the solution to find the k-th smallest element instead of the median?",
+    "Can you optimize the communication overhead if the data distribution is highly skewed across workers?"
+   ],
+   "whatThisTests": [
+    "Distributed system design and inter-worker communication",
+    "Binary search on answer/value range",
+    "Rank-based selection without full sorting",
+    "Handling edge cases in distributed aggregation"
+   ],
+   "hints": [
+    "Instead of moving data between workers, consider what local statistic each worker can compute that helps narrow down the global answer.",
+    "You can perform a binary search over the possible value range rather than the array indices; ask each worker how many elements fall below your candidate value.",
+    "Combine the local counts of elements less than and equal to your candidate to determine whether to search higher or lower, and remember to handle the even-length case by averaging two adjacent ranks."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Find Cluster Mode and Median",
+  "locked": true
+ },
+ "6941b6aeb9d646bec48c68b7_6941b7e8b9d646bec48c68bc": {
+  "qid": "6941b7e8b9d646bec48c68bc",
+  "postId": "6941b6aeb9d646bec48c68b7",
+  "type": "SINGLE_STEP",
+  "description": "You are given a text string `text` and an array `dictionary`, where each element in `dictionary` is a string in the format `\"<key>:<id>\"`. Here, `key` represents a token string and `id` represents its corresponding identifier.\n\nYour task is to implement a function that segments `text` into a sequence of tokens according to the rules below and returns a list of strings.\n\nThe tokenization process must follow these rules:\n\n- **Longest Match Priority**: At each position in `text`, consider all dictionary keys that start at the current index and select the **longest** possible matching key. If multiple keys match, the **longest** one must be chosen.\n<!-- ###PREMIUM_CONTENT_DELIMITER### -->\n- **Greedy Consumption**: Once a token is selected, consume all characters of that token and continue processing from the next unconsumed position in `text`.\n\n- **Literal Preservation**: If no dictionary key matches starting at the current position, the single character at that position must be emitted as a literal token.\n\n- **Output Format**: If a segment matches a dictionary key, output its corresponding `id`. If a segment does not match any dictionary key, output the character itself as a string.\n\n\nYour implementation should correctly handle all such cases and produce a deterministic token sequence based on the rules above.\n\n\n\n**Constraints:**\n\n* `$$1$$` \u00e2\u0089\u00a4 `text.length` \u00e2\u0089\u00a4 `$$10^9$$`\n* `$$0$$` \u00e2\u0089\u00a4 `dictionary.length` \u00e2\u0089\u00a4 `$$10^9$$`\n* All tokens in `dictionary` are unique.\n\n\n**Example 1:**\n\n> **Input:** text = \"applepiepear\", dictionary = [\"app:10\", \"apple:20\", \"pie:30\"]\n> **Output:** [\"20\", \"30\", \"p\", \"e\", \"a\", \"r\"]\n> **Explanation:** At the start, \"apple\" is matched instead of the shorter \"app\". Then \"pie\" is matched. The remaining characters do not match any token and are kept as literals.\n\n**Example 2:**\n\n> **Input:** text = \"acdebe\", dictionary = [\"a:1\", \"b:2\", \"cd:3\"]\n> **Output:** [\"1\", \"3\", \"e\", \"2\", \"e\"]\n\n**Example 3:**\n\n> **Input:** text = \"programmingprogrampropro\", dictionary = [\"pro:1\", \"program:2\", \"programming:3\", \"gram:4\", \"ming:5\", \"pr:6\", \"og:7\"]\n> **Output:** [\"3\", \"2\", \"1\", \"1\"]\n\n\n",
+  "explanation": "This solution uses a **prefix tree (trie)** to efficiently perform tokenization with longest match priority and greedy consumption.\n\n**1. Trie Construction**\n\n* All tokens from the dictionary are inserted into a trie.\n* Each node represents a character.\n* When a node marks the end of a valid token, it stores the corresponding ID.\n\n**2. Tokenization Process**\n\n* Iterate through the input text from left to right using an index pointer.\n* At each position:\n\n  * Traverse the trie as far as possible, matching characters in the text to trie nodes.\n  * While traversing, record the last position where a complete token ends (if found).\n* If a valid token is found, output its id and move the pointer ahead by the token's length.\n* If no token is matched, output the single character as a literal and move forward by one.\n\n**3. Handling Overlaps and Unknowns**\n\n* By always taking the longest valid token at every step, the approach naturally prioritizes longer matches over shorter ones.\n* Any substring of the text that does not match a token is preserved as a literal character, ensuring the process is lossless.\n\n\n### Complexity Analysis\n\n* **Time Complexity:**\n  *O(N \u00c3\u0097 L)*, where *N* is the length of the input text and *L* is the maximum length of any token in the dictionary. Each character position in the text requires at most *L* steps to determine the longest matching token.\n\n* **Space Complexity:**\n  *O(S + N)*, where *S* is the total number of characters in all dictionary tokens (for trie storage).\n\n",
+  "definition": {
+   "className": "Solution",
+   "methods": [
+    {
+     "name": "tokenize",
+     "returnType": "List<String>",
+     "validationType": "EXACT_MATCH",
+     "params": [
+      {
+       "name": "text",
+       "type": "String"
+      },
+      {
+       "name": "dictionary",
+       "type": "List<String>"
+      }
+     ]
+    }
+   ]
+  },
+  "testCases": [
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "applepiepear",
+       [
+        "app:10",
+        "apple:20",
+        "pie:30"
+       ]
+      ],
+      "expected": [
+       "20",
+       "30",
+       "p",
+       "e",
+       "a",
+       "r"
+      ]
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "acdebe",
+       [
+        "a:1",
+        "b:2",
+        "cd:3"
+       ]
+      ],
+      "expected": [
+       "1",
+       "3",
+       "e",
+       "2",
+       "e"
+      ]
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "programmingprogrampropro",
+       [
+        "pro:1",
+        "program:2",
+        "programming:3",
+        "gram:4",
+        "ming:5",
+        "pr:6",
+        "og:7"
+       ]
+      ],
+      "expected": [
+       "3",
+       "2",
+       "1",
+       "1"
+      ]
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "helloworldhelloxyzworld",
+       [
+        "hello:100",
+        "world:200",
+        "hel:50",
+        "lo:51",
+        "wor:52",
+        "ld:53"
+       ]
+      ],
+      "expected": [
+       "100",
+       "200",
+       "100",
+       "x",
+       "y",
+       "z",
+       "200"
+      ]
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "abcabcdabcdeabcdef",
+       [
+        "a:1",
+        "ab:2",
+        "abc:3",
+        "abcd:4",
+        "abcde:5",
+        "abcdef:6",
+        "bc:7",
+        "cd:8",
+        "de:9",
+        "ef:10"
+       ]
+      ],
+      "expected": [
+       "3",
+       "4",
+       "5",
+       "6"
+      ]
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "",
+       [
+        "a:1",
+        "b:2"
+       ]
+      ],
+      "expected": []
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "abc",
+       []
+      ],
+      "expected": [
+       "a",
+       "b",
+       "c"
+      ]
+     }
+    ]
+   },
+   {
+    "steps": [
+     {
+      "methodName": "tokenize",
+      "input": [
+       "thetheatertheme",
+       [
+        "the:1",
+        "theater:2",
+        "theme:3",
+        "heat:4",
+        "at:5",
+        "er:6",
+        "he:7"
+       ]
+      ],
+      "expected": [
+       "1",
+       "2",
+       "3"
+      ]
+     }
+    ]
+   }
+  ],
+  "insights": {
+   "quickSummary": [
+    "Segment an input string into tokens using a provided dictionary of key-value pairs.",
+    "Apply a greedy strategy that always selects the longest matching prefix at each step.",
+    "Unmatched characters are preserved and emitted as individual literal tokens."
+   ],
+   "commonPatterns": [
+    "Trie",
+    "Greedy"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this solution if the dictionary was extremely large and stored externally?",
+    "What modifications are needed to support fuzzy matching or partial word matches?",
+    "Could you optimize the space complexity if many dictionary keys share common prefixes?"
+   ],
+   "whatThisTests": [
+    "Trie construction and efficient prefix matching",
+    "Greedy algorithm design and state management",
+    "Linear pass string segmentation",
+    "Handling overlapping or nested dictionary keys"
+   ],
+   "hints": [
+    "Consider using a tree-like structure to group dictionary keys by their starting characters, allowing you to explore multiple potential matches simultaneously as you scan the text.",
+    "While advancing through the text character by character within this structure, maintain a reference to the most recent node that signifies a complete dictionary entry to ensure you capture the longest"
+   ]
+  },
+  "solutions": {
+   "java": "import java.util.*;\r\nimport java.math.*;\r\n\r\nclass Trie {\r\n    Map<Character, Trie> children;\r\n    String id;\r\n\r\n    Trie() {\r\n        children = new HashMap<>();\r\n        id = null;\r\n    }\r\n}\r\n\r\nclass Solution {\r\n    public List<String> tokenize(String text, List<String> dictionary) {\r\n        Trie root = buildTrie(dictionary);\r\n        List<String> result = new ArrayList<>();\r\n\r\n        int i = 0;\r\n        while (i < text.length()) {\r\n            // Try to find longest match starting at position i\r\n            Trie node = root;\r\n            String bestId = null;\r\n            int bestEnd = i;\r\n\r\n            int j = i;\r\n            while (j < text.length()) {\r\n                char c = text.charAt(j);\r\n                if (!node.children.containsKey(c)) {\r\n                    break;\r\n                }\r\n                node = node.children.get(c);\r\n                j = j + 1;\r\n\r\n                // Track the last terminal node we've seen\r\n                if (node.id != null) {\r\n                    bestId = node.id;\r\n                    bestEnd = j;\r\n                }\r\n            }\r\n\r\n            if (bestId != null) {\r\n                result.add(bestId);\r\n                i = bestEnd;\r\n            } else {\r\n                // No match found, emit literal character\r\n                result.add(String.valueOf(text.charAt(i)));\r\n                i = i + 1;\r\n            }\r\n        }\r\n\r\n        return result;\r\n    }\r\n\r\n    private Trie buildTrie(List<String> dictionary) {\r\n        Trie root = new Trie();\r\n\r\n        for (String entry : dictionary) {\r\n            int colonIndex = entry.indexOf(':');\r\n            if (colonIndex == -1) {\r\n                continue;\r\n            }\r\n\r\n            String key = entry.substring(0, colonIndex);\r\n            String val = entry.substring(colonIndex + 1);\r\n\r\n            Trie node = root;\r\n            for (int i = 0; i < key.length(); i++) {\r\n                char c = key.charAt(i);\r\n                if (!node.children.containsKey(c)) {\r\n                    node.children.put(c, new Trie());\r\n                }\r\n                node = node.children.get(c);\r\n            }\r\n            // Last wins if duplicate keys\r\n            node.id = val;\r\n        }\r\n\r\n        return root;\r\n    }\r\n}\r\n",
+   "typescript": "class Trie {\n    children: Map<string, Trie>;\n    id: string | null;\n\n    constructor() {\n        this.children = new Map<string, Trie>();\n        this.id = null;\n    }\n}\n\nclass Solution {\n    public tokenize(text: string, dictionary: string[]): string[] {\n        const root = this.buildTrie(dictionary);\n        const result: string[] = [];\n\n        let i = 0;\n        while (i < text.length) {\n            // Try to find longest match starting at position i\n            let node = root;\n            let bestId: string | null = null;\n            let bestEnd = i;\n\n            let j = i;\n            while (j < text.length) {\n                const c = text.charAt(j);\n                if (!node.children.has(c)) {\n                    break;\n                }\n                node = node.children.get(c)!;\n                j = j + 1;\n\n                // Track the last terminal node we've seen\n                if (node.id !== null) {\n                    bestId = node.id;\n                    bestEnd = j;\n                }\n            }\n\n            if (bestId !== null) {\n                result.push(bestId);\n                i = bestEnd;\n            } else {\n                // No match found, emit literal character\n                result.push(text.charAt(i));\n                i = i + 1;\n            }\n        }\n\n        return result;\n    }\n\n    private buildTrie(dictionary: string[]): Trie {\n        const root = new Trie();\n\n        for (const entry of dictionary) {\n            const colonIndex = entry.indexOf(':');\n            if (colonIndex === -1) {\n                continue;\n            }\n\n            const key = entry.substring(0, colonIndex);\n            const val = entry.substring(colonIndex + 1);\n\n            let node = root;\n            for (let i = 0; i < key.length; i++) {\n                const c = key.charAt(i);\n                if (!node.children.has(c)) {\n                    node.children.set(c, new Trie());\n                }\n                node = node.children.get(c)!;\n            }\n            // Last wins if duplicate keys\n            node.id = val;\n        }\n\n        return root;\n    }\n}",
+   "python": "from typing import List, Optional\n\nclass Trie:\n    def __init__(self):\n        self.children = {}\n        self.id = None\n\nclass Solution:\n    def tokenize(self, text: str, dictionary: List[str]) -> List[str]:\n        root = self.buildTrie(dictionary)\n        result = []\n\n        i = 0\n        while i < len(text):\n            # Try to find longest match starting at position i\n            node = root\n            bestId = None\n            bestEnd = i\n\n            j = i\n            while j < len(text):\n                c = text[j]\n                if c not in node.children:\n                    break\n                node = node.children[c]\n                j = j + 1\n\n                # Track the last terminal node we've seen\n                if node.id is not None:\n                    bestId = node.id\n                    bestEnd = j\n\n            if bestId is not None:\n                result.append(bestId)\n                i = bestEnd\n            else:\n                # No match found, emit literal character\n                result.append(str(text[i]))\n                i = i + 1\n\n        return result\n\n    def buildTrie(self, dictionary: List[str]) -> Trie:\n        root = Trie()\n\n        for entry in dictionary:\n            colonIndex = entry.find(':')\n            if colonIndex == -1:\n                continue\n\n            key = entry[:colonIndex]\n            val = entry[colonIndex + 1:]\n\n            node = root\n            for i in range(len(key)):\n                c = key[i]\n                if c not in node.children:\n                    node.children[c] = Trie()\n                node = node.children[c]\n            # Last wins if duplicate keys\n            node.id = val\n\n        return root",
+   "cpp": "#include <vector>\n#include <string>\n#include <iostream>\n#include <unordered_map>\nusing namespace std;\n\nclass Trie {\npublic:\n    unordered_map<char, Trie*> children;\n    string id;\n\n    Trie() {\n        id = \"\";\n    }\n};\n\nclass Solution {\npublic:\n    vector<string> tokenize(string text, vector<string> dictionary) {\n        Trie* root = buildTrie(dictionary);\n        vector<string> result;\n\n        int i = 0;\n        while (i < text.length()) {\n            // Try to find longest match starting at position i\n            Trie* node = root;\n            string bestId = \"\";\n            int bestEnd = i;\n\n            int j = i;\n            while (j < text.length()) {\n                char c = text[j];\n                if (node->children.find(c) == node->children.end()) {\n                    break;\n                }\n                node = node->children[c];\n                j = j + 1;\n\n                // Track the last terminal node we've seen\n                if (!node->id.empty()) {\n                    bestId = node->id;\n                    bestEnd = j;\n                }\n            }\n\n            if (!bestId.empty()) {\n                result.push_back(bestId);\n                i = bestEnd;\n            } else {\n                // No match found, emit literal character\n                result.push_back(string(1, text[i]));\n                i = i + 1;\n            }\n        }\n\n        return result;\n    }\n\nprivate:\n    Trie* buildTrie(vector<string> dictionary) {\n        Trie* root = new Trie();\n\n        for (string entry : dictionary) {\n            int colonIndex = entry.find(':');\n            if (colonIndex == string::npos) {\n                continue;\n            }\n\n            string key = entry.substr(0, colonIndex);\n            string val = entry.substr(colonIndex + 1);\n\n            Trie* node = root;\n            for (int i = 0; i < key.length(); i++) {\n                char c = key[i];\n                if (node->children.find(c) == node->children.end()) {\n                    node->children[c] = new Trie();\n                }\n                node = node->children[c];\n            }\n            // Last wins if duplicate keys\n            node->id = val;\n        }\n\n        return root;\n    }\n};"
+  },
+  "stats": {
+   "totalExecutions": 8520,
+   "acceptedExecutions": 3120,
+   "acceptRate": 0.36619718309859156
+  },
+  "postTitle": "String Tokenization",
+  "locked": false
+ },
+ "69b351ffa4e93c007df404fd_69b35205a4e93c007df404fe": {
+  "qid": "69b35205a4e93c007df404fe",
+  "postId": "69b351ffa4e93c007df404fd",
+  "type": "MULTI_STEP",
+  "description": "Design and implement a note-taking system called `SecondBrainSystem` that manages personal notes with CRUD operations. The system operates entirely in memory and assigns each note a **unique** identifier. Notes are searchable by their identifiers and include metadata that tracks their creation and modification times.\n\nImplement the `SecondBrainSystem` class:\n\n- `SecondBrainSystem()` Initializes an empty note-taking system.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Design an in-memory note-taking system supporting CRUD operations.",
+    "Enforce unique sequential identifiers and case-insensitive title constraints.",
+    "Track metadata timestamps and format note retrieval as pipe-delimited strings."
+   ],
+   "commonPatterns": [
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you modify this architecture to persist data across application restarts?",
+    "What structural changes would be required to support multiple workspaces or hierarchical folders?",
+    "How would you ensure thread-safety and consistent state in a concurrent, multi-user environment?"
+   ],
+   "whatThisTests": [
+    "Hash-based data structures for O(1) lookups and conflict detection",
+    "Object-oriented design and state management",
+    "String manipulation and precise output formatting",
+    "Robust input validation and edge case handling"
+   ],
+   "hints": [
+    "Consider maintaining two separate hash maps: one for direct ID access and another for tracking normalized titles to efficiently enforce uniqueness.",
+    "Normalize all titles to lowercase before storing them in the uniqueness map, and ensure your sequential ID counter never decrements even if notes are deleted."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Note-Taking System",
+  "locked": true
+ },
+ "69b351ffa4e93c007df404fd_69b38216a4e93c007df405de": {
+  "qid": "69b38216a4e93c007df405de",
+  "postId": "69b351ffa4e93c007df404fd",
+  "type": "MULTI_STEP",
+  "description": "Design and implement a note-taking system called `SecondBrainSystem` that manages personal notes with CRUD operations. The system operates entirely in memory and assigns each note a **unique** identifier. Notes are searchable by their identifiers and include metadata that tracks their creation and modification times.\n\nImplement the `SecondBrainSystem` class:\n\n- `SecondBrainSystem()` Initializes an empty note-taking system.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Extend a note-taking system to dynamically resolve bidirectional references formatted as \"[[title]]\".",
+    "Parse note content line-by-line to identify valid links that stand alone on their own line.",
+    "Resolve links case-insensitively against current titles, exclude self-references, and return sorted results."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you optimize incoming link queries if the system scales to millions of notes?",
+    "What structural changes would be needed if inline links (not just whole-line) were supported?",
+    "How could you implement caching or incremental updates to avoid rescanning all notes on every query?"
+   ],
+   "whatThisTests": [
+    "Dynamic graph resolution versus static edge maintenance",
+    "Efficient string parsing and pattern matching",
+    "Hash-based indexing for fast lookups",
+    "Data state management across updates and deletions"
+   ],
+   "hints": [
+    "Maintain a reverse lookup structure that maps lowercase titles directly to their corresponding note IDs for O(1) resolution.",
+    "Split each note's content by newline characters and verify that lines containing \"[[\" and \"]]\" contain nothing else before querying your title index."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Note-Taking System",
+  "locked": true
+ },
+ "69b351ffa4e93c007df404fd_69b38409a4e93c007df405e6": {
+  "qid": "69b38409a4e93c007df405e6",
+  "postId": "69b351ffa4e93c007df404fd",
+  "type": "MULTI_STEP",
+  "description": "Design and implement a note-taking system called `SecondBrainSystem` that manages personal notes with CRUD operations. The system operates entirely in memory and assigns each note a **unique** identifier. Notes are searchable by their identifiers and include metadata that tracks their creation and modification times.\n\nImplement the `SecondBrainSystem` class:\n\n- `SecondBrainSystem()` Initializes an empty note-taking system.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Extend a note-taking system with workspaces that enforce maximum capacity limits.",
+    "Track note assignments across workspaces and a default unassigned state efficiently.",
+    "Retrieve workspace contents sorted by creation timestamp and note ID."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you redesign this to support notes belonging to multiple workspaces concurrently?",
+    "What strategies would you use to efficiently query notes across many workspaces without iterating through all of them?",
+    "How would you handle concurrent access or real-time capacity alerts in a production environment?"
+   ],
+   "whatThisTests": [
+    "Hash map and set usage for O(1) lookups and membership tracking",
+    "State management and constraint validation",
+    "Multi-key sorting and query optimization",
+    "Object-oriented class extension"
+   ],
+   "hints": [
+    "Identify the minimal set of data structures needed to track each note's current workspace and enable fast capacity checks.",
+    "Treat the 'default' state as a special routing case rather than a physical container to simplify capacity and move logic."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Note-Taking System",
+  "locked": true
+ },
+ "69b351ffa4e93c007df404fd_69b385d3a4e93c007df405f1": {
+  "qid": "69b385d3a4e93c007df405f1",
+  "postId": "69b351ffa4e93c007df404fd",
+  "type": "MULTI_STEP",
+  "description": "Design and implement a note-taking system called `SecondBrainSystem` that manages personal notes with CRUD operations. The system operates entirely in memory and assigns each note a **unique** identifier. Notes are searchable by their identifiers and include metadata that tracks their creation and modification times.\n\nImplement the `SecondBrainSystem` class:\n\n- `SecondBrainSystem()` Initializes an empty note-taking system.\n\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Implement historical state retrieval to query a note's exact content and metadata at any past timestamp.",
+    "Design a merge operation that appends source content to a target, redirects title-based links, and safely removes the source.",
+    "Maintain versioned snapshots and dynamic cross-reference mappings within an object-oriented framework."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting",
+    "Graph Traversal"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you optimize `getNoteAt` if a single note accumulated thousands of updates over its lifetime?",
+    "What edge cases should your `mergeNotes` implementation guard against regarding workspace capacity and concurrent modifications?",
+    "How could you extend this architecture to support non-destructive branching or revert operations?"
+   ],
+   "whatThisTests": [
+    "Object-Oriented Design and State Management",
+    "Versioning and Snapshot History Tracking",
+    "Dynamic Index Maintenance and Link Resolution",
+    "Time-Based Query Processing"
+   ],
+   "hints": [
+    "Think about storing immutable snapshots of each note's state alongside their creation/update timestamps to enable efficient point-in-time queries.",
+    "For link redirection during a merge, avoid rewriting every note's content; instead, dynamically remap the source's lowercase title to the target's ID in a central index."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Note-Taking System",
+  "locked": true
+ },
+ "69efc8e696981f58ae1f6d73_69efc8ea96981f58ae1f6d74": {
+  "qid": "69efc8ea96981f58ae1f6d74",
+  "postId": "69efc8e696981f58ae1f6d73",
+  "type": "MULTI_STEP",
+  "description": "Design a task tracking system that stores tasks by unique IDs, supports updating task metadata, and retrieves task details on demand.\n\nImplement the `TaskManager` class:\n- `TaskManager()` Initializes the task manager with an empty task store.\n\n- `String addTask(int timestamp, String name, int priority)` Adds a new task with the given `name` and `priority`. Returns the unique ID assigned to this task in the format `\"taskId<n>\"`, where `n` is a sequential counter starting from `1`. Tasks with **identical** names and priorities are allowed; each receives its own unique ID.\n\n- `boolean updateTask(int timestamp, String taskId, String name, int priority)` Updates the `name` and `priority` of the task identified by `taskId`. Returns `true` if the task exists and was updated, or `false` if `taskId` is not found.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Design a class to manage tasks with sequential unique IDs.",
+    "Implement methods to add, update, and retrieve task details.",
+    "Use a hash map for efficient storage and lookup by ID."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Design"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you modify the system to support searching tasks by name or priority efficiently?",
+    "If the number of tasks grows to millions, how would you optimize memory usage or persistence?",
+    "How would you ensure thread-safety if multiple threads call these methods simultaneously?",
+    "What changes would be needed to delete tasks or implement soft deletes?"
+   ],
+   "whatThisTests": [
+    "Hash map implementation for key-value storage.",
+    "Class state management and instance variables.",
+    "Sequential identifier generation.",
+    "Handling missing keys and edge cases."
+   ],
+   "hints": [
+    "Consider which data structure allows for fast retrieval when you only know the unique task ID.",
+    "You'll need a separate integer variable to track the next ID number to assign.",
+    "Store the task details (name, priority) in a simple object or tuple mapped to the ID string within your collection."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design a Task Assignment System",
+  "locked": true
+ },
+ "69efc8e696981f58ae1f6d73_69efc92d96981f58ae1f6d75": {
+  "qid": "69efc92d96981f58ae1f6d75",
+  "postId": "69efc8e696981f58ae1f6d73",
+  "type": "MULTI_STEP",
+  "description": "Design a task tracking system that stores tasks by unique IDs, supports updating task metadata, and retrieves task details on demand.\n\nImplement the `TaskManager` class:\n- `TaskManager()` Initializes the task manager with an empty task store.\n\n- `String addTask(int timestamp, String name, int priority)` Adds a new task with the given `name` and `priority`. Returns the unique ID assigned to this task in the format `\"taskId<n>\"`, where `n` is a sequential counter starting from `1`. Tasks with **identical** names and priorities are allowed; each receives its own unique ID.\n\n- `boolean updateTask(int timestamp, String taskId, String name, int priority)` Updates the `name` and `priority` of the task identified by `taskId`. Returns `true` if the task exists and was updated, or `false` if `taskId` is not found.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Design a TaskManager class supporting add, update, search, and sorted listing of tasks.",
+    "Tasks must be sorted by priority descending and creation order ascending, with creation order resolved via numeric ID comparison.",
+    "Search functionality requires case-sensitive substring matching and result limiting."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting",
+    "Design"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you optimize `searchTasks` performance if the dataset grows to millions of tasks?",
+    "Can you maintain the tasks in a pre-sorted structure to accelerate `listTasksSorted` without re-sorting?",
+    "How would you extend this design to support concurrent modifications safely?"
+   ],
+   "whatThisTests": [
+    "Hash Map usage for efficient task storage and O(1) lookups.",
+    "Custom comparator implementation for multi-criteria sorting.",
+    "String substring search and filtering logic.",
+    "Distinction between numeric ordering and lexicographic string ordering."
+   ],
+   "hints": [
+    "Ensure the sort comparator treats the task ID's creation order as a numeric value to correctly order 'taskId1' before 'taskId10'.",
+    "Use a hash map for direct task access, but recognize that `searchTasks` and `listTasksSorted` will likely require iterating through all entries.",
+    "Handle edge cases explicitly: return empty lists for non-positive limits and treat an empty `nameFilter` as a wildcard matching all tasks."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design a Task Assignment System",
+  "locked": true
+ },
+ "69efc8e696981f58ae1f6d73_69efc94196981f58ae1f6d76": {
+  "qid": "69efc94196981f58ae1f6d76",
+  "postId": "69efc8e696981f58ae1f6d73",
+  "type": "MULTI_STEP",
+  "description": "Design a task tracking system that stores tasks by unique IDs, supports updating task metadata, and retrieves task details on demand.\n\nImplement the `TaskManager` class:\n- `TaskManager()` Initializes the task manager with an empty task store.\n\n- `String addTask(int timestamp, String name, int priority)` Adds a new task with the given `name` and `priority`. Returns the unique ID assigned to this task in the format `\"taskId<n>\"`, where `n` is a sequential counter starting from `1`. Tasks with **identical** names and priorities are allowed; each receives its own unique ID.\n\n- `boolean updateTask(int timestamp, String taskId, String name, int priority)` Updates the `name` and `priority` of the task identified by `taskId`. Returns `true` if the task exists and was updated, or `false` if `taskId` is not found.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Implement user management with constraints on simultaneous active tasks.",
+    "Validate task assignments by detecting interval overlaps and verifying dynamic quota limits.",
+    "Query active tasks for a user within specific time windows."
+   ],
+   "commonPatterns": [
+    "Sweep-line",
+    "Hashing",
+    "Sorting",
+    "Interval Operations"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you optimize `assignTask` if a user maintains thousands of assignments?",
+    "Could you replace the linear scan with an Interval Tree or Segment Tree to speed up conflict detection?",
+    "How would you extend this system to support concurrency and thread-safe updates?",
+    "What changes if the timestamp values are extremely large or sparse?"
+   ],
+   "whatThisTests": [
+    "Sweep-line algorithms for interval analysis and peak load detection.",
+    "Hash table design for O(1) user and task lookups.",
+    "Interval clipping and overlap logic.",
+    "Event sorting and tie-breaking rules for half-open intervals.",
+    "State simulation over time ranges."
+   ],
+   "hints": [
+    "To verify the quota, you only need to check the count of active tasks at critical moments defined by interval boundaries, not every integer time point.",
+    "Clip existing assignments to the new request's window and generate events marking where the load increases or decreases.",
+    "Sort these events by time; ensure you process end-of-interval events before start-of-interval events at the same timestamp to correctly handle half-open boundaries during the sweep."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design a Task Assignment System",
+  "locked": true
+ },
+ "69efc8e696981f58ae1f6d73_69efc96396981f58ae1f6d77": {
+  "qid": "69efc96396981f58ae1f6d77",
+  "postId": "69efc8e696981f58ae1f6d73",
+  "type": "MULTI_STEP",
+  "description": "Design a task tracking system that stores tasks by unique IDs, supports updating task metadata, and retrieves task details on demand.\n\nImplement the `TaskManager` class:\n- `TaskManager()` Initializes the task manager with an empty task store.\n\n- `String addTask(int timestamp, String name, int priority)` Adds a new task with the given `name` and `priority`. Returns the unique ID assigned to this task in the format `\"taskId<n>\"`, where `n` is a sequential counter starting from `1`. Tasks with **identical** names and priorities are allowed; each receives its own unique ID.\n\n- `boolean updateTask(int timestamp, String taskId, String name, int priority)` Updates the `name` and `priority` of the task identified by `taskId`. Returns `true` if the task exists and was updated, or `false` if `taskId` is not found.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Implement task completion logic that frees user quotas upon success.",
+    "Track and retrieve overdue assignments based on expiration and completion status.",
+    "Manage complex state transitions for task instances over time."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting",
+    "Design"
+   ],
+   "likelyInterviewFollowUps": [
+    "How could you optimize the lookup complexity for `completeTask` from O(K) to O(1)?",
+    "How would you ensure thread-safety in a concurrent implementation?",
+    "What database schema changes would support persistence of this state?"
+   ],
+   "whatThisTests": [
+    "State management and entity lifecycle tracking.",
+    "Interval logic and time-based filtering.",
+    "Efficient lookup using hash maps.",
+    "Resource quota management logic."
+   ],
+   "hints": [
+    "Consider storing assignments in a map keyed by task ID within each user's record to enable direct access rather than scanning all assignments.",
+    "Track completion by recording a `completedAt` timestamp on the assignment object, which effectively shortens its active interval without deleting the record.",
+    "When checking for overdue items, verify that the assignment's `finishTime` is less than or equal to the query timestamp while ensuring the `completedAt` field indicates it was never finished."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design a Task Assignment System",
+  "locked": true
+ },
+ "69f2664c42791c82ab992693_69f2665342791c82ab992694": {
+  "qid": "69f2665342791c82ab992694",
+  "postId": "69f2664c42791c82ab992693",
+  "type": "MULTI_STEP",
+  "description": "Design a digital recipe book that supports creating, reading, updating, and deleting recipes. Each recipe has a unique name, an ordered list of ingredients, and an ordered list of preparation steps.\n\nImplement the `RecipeManager` class:\n\n- `RecipeManager()`\n  Initializes an empty recipe store.\n\n- `String addRecipe(String name, List<String> ingredients, List<String> steps)`\n  Adds a new recipe. The `name` must be **unique** across all stored recipes (case-insensitive).\n  - Returns the assigned `recipeId` (formatted as `\"recipe1\"`, `\"recipe2\"`, etc., assigned sequentially starting from `1`). IDs are **never reused** after deletion.\n  - Returns an empty string `\"\"` if a recipe with the same `name` already exists (case-insensitive).\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Implement a RecipeManager class supporting Create, Read, Update, and Delete operations.",
+    "Enforce unique recipe names across all entries using case-insensitive comparison.",
+    "Assign sequential, non-reusable recipe IDs starting from 'recipe1'."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Design"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you extend this system to search for recipes containing a specific ingredient?",
+    "What changes would you make to make this class thread-safe in a multi-threaded environment?",
+    "If you needed to persist this data to a database, how would you model the schema?"
+   ],
+   "whatThisTests": [
+    "Hash Map usage for O(1) lookups by ID and name.",
+    "Handling case-insensitive string logic and normalization.",
+    "Managing internal state, counters, and ID lifecycle.",
+    "Designing robust methods with specific edge-case requirements."
+   ],
+   "hints": [
+    "Consider maintaining two hash maps: one for ID-to-recipe storage and another for lowercased-name-to-ID indexing to efficiently check name uniqueness.",
+    "When implementing `updateRecipe`, ensure that renaming a recipe to its own name (even with different casing) does not trigger a conflict error."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Recipe Management System",
+  "locked": true
+ },
+ "69f2664c42791c82ab992693_69f266df42791c82ab992697": {
+  "qid": "69f266df42791c82ab992697",
+  "postId": "69f2664c42791c82ab992693",
+  "type": "MULTI_STEP",
+  "description": "Design a digital recipe book that supports creating, reading, updating, and deleting recipes. Each recipe has a unique name, an ordered list of ingredients, and an ordered list of preparation steps.\n\nImplement the `RecipeManager` class:\n\n- `RecipeManager()`\n  Initializes an empty recipe store.\n\n- `String addRecipe(String name, List<String> ingredients, List<String> steps)`\n  Adds a new recipe. The `name` must be **unique** across all stored recipes (case-insensitive).\n  - Returns the assigned `recipeId` (formatted as `\"recipe1\"`, `\"recipe2\"`, etc., assigned sequentially starting from `1`). IDs are **never reused** after deletion.\n  - Returns an empty string `\"\"` if a recipe with the same `name` already exists (case-insensitive).\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Implement ingredient search and recipe listing with strict sorting and tie-breaking rules.",
+    "Perform case-insensitive whole-string ingredient matching while excluding deleted recipes.",
+    "Sort results by metric (count/name) with natural numeric ordering for recipe IDs."
+   ],
+   "commonPatterns": [
+    "Sorting",
+    "Hashing",
+    "Filtering"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you optimize `searchRecipesByIngredient` using an inverted index for large datasets?",
+    "What are the trade-offs between removing deleted recipes immediately versus filtering them lazily during queries?",
+    "How would you modify the system to support partial matches or wildcard searches for ingredients?"
+   ],
+   "whatThisTests": [
+    "Custom comparator design for multi-criteria sorting and tie-breaking.",
+    "String manipulation including case normalization and exact substring boundary checks.",
+    "Handling alphanumeric identifiers requiring numeric comparison for correct ordering.",
+    "State management involving filtering out soft-deleted records during queries."
+   ],
+   "hints": [
+    "To achieve natural numeric ordering for IDs like 'recipe2' and 'recipe10', extract and compare the integer suffixes rather than comparing strings lexicographically.",
+    "When writing the sort comparator, clearly separate the logic that selects the primary sort attribute from the logic that handles the ID tie-breaker to ensure correctness."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Recipe Management System",
+  "locked": true
+ },
+ "69f2664c42791c82ab992693_69f2674342791c82ab99269a": {
+  "qid": "69f2674342791c82ab99269a",
+  "postId": "69f2664c42791c82ab992693",
+  "type": "MULTI_STEP",
+  "description": "Design a digital recipe book that supports creating, reading, updating, and deleting recipes. Each recipe has a unique name, an ordered list of ingredients, and an ordered list of preparation steps.\n\nImplement the `RecipeManager` class:\n\n- `RecipeManager()`\n  Initializes an empty recipe store.\n\n- `String addRecipe(String name, List<String> ingredients, List<String> steps)`\n  Adds a new recipe. The `name` must be **unique** across all stored recipes (case-insensitive).\n  - Returns the assigned `recipeId` (formatted as `\"recipe1\"`, `\"recipe2\"`, etc., assigned sequentially starting from `1`). IDs are **never reused** after deletion.\n  - Returns an empty string `\"\"` if a recipe with the same `name` already exists (case-insensitive).\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Extend a recipe management system with user registration and editing capabilities.",
+    "Implement addUser to track unique user IDs and editRecipe to modify recipes safely.",
+    "Enforce case-insensitive name uniqueness across recipes while permitting self-renames."
+   ],
+   "commonPatterns": [
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you handle race conditions if multiple users attempt to edit the same recipe concurrently?",
+    "What architectural changes would be necessary if recipe names had to be strictly case-sensitive?",
+    "How would you optimize storage and retrieval if the system needed to support millions of recipes?"
+   ],
+   "whatThisTests": [
+    "Efficient lookups and duplicate detection using hash collections",
+    "Stateful data structure design and method validation flow",
+    "Case-insensitive string normalization and comparison",
+    "Handling conditional edge cases in API contracts"
+   ],
+   "hints": [
+    "Store registered user IDs in a hash-based set to achieve constant-time membership verification during edits.",
+    "Maintain a separate lowercase mapping for recipe names to quickly detect conflicts, but explicitly allow updates where the normalized new name matches the existing recipe's normalized name."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Recipe Management System",
+  "locked": true
+ },
+ "69f2664c42791c82ab992693_69f2676842791c82ab99269b": {
+  "qid": "69f2676842791c82ab99269b",
+  "postId": "69f2664c42791c82ab992693",
+  "type": "MULTI_STEP",
+  "description": "Design a digital recipe book that supports creating, reading, updating, and deleting recipes. Each recipe has a unique name, an ordered list of ingredients, and an ordered list of preparation steps.\n\nImplement the `RecipeManager` class:\n\n- `RecipeManager()`\n  Initializes an empty recipe store.\n\n- `String addRecipe(String name, List<String> ingredients, List<String> steps)`\n  Adds a new recipe. The `name` must be **unique** across all stored recipes (case-insensitive).\n  - Returns the assigned `recipeId` (formatted as `\"recipe1\"`, `\"recipe2\"`, etc., assigned sequentially starting from `1`). IDs are **never reused** after deletion.\n  - Returns an empty string `\"\"` if a recipe with the same `name` already exists (case-insensitive).\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Track immutable version snapshots for each recipe whenever it is updated or edited.",
+    "Retrieve a formatted history of all versions sorted ascending by version number.",
+    "Restore a past snapshot while validating name collisions against other active recipes."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you reduce memory consumption if a single recipe accumulates tens of thousands of versions?",
+    "Could you replace the sequential list of versions with a tree-based structure to improve random-access performance?",
+    "How would you extend this design to support concurrent edits without requiring locks or causing race conditions?"
+   ],
+   "whatThisTests": [
+    "State management and snapshotting in object-oriented design",
+    "Efficient key-value lookup using hash tables",
+    "Defensive copying to preserve data immutability across versions",
+    "Conflict resolution and boundary condition handling"
+   ],
+   "hints": [
+    "Store each version as an independent, immutable record rather than computing differences between edits.",
+    "Map each recipe ID to a dynamically appended list of version records, and always deep-copy ingredient and step collections when creating a new snapshot to prevent later mutations from corrupting histo"
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Recipe Management System",
+  "locked": true
+ },
+ "6a2db6215117d1b543565e12_6a2db7bc5117d1b543565e24": {
+  "qid": "6a2db7bc5117d1b543565e24",
+  "postId": "6a2db6215117d1b543565e12",
+  "type": "RAW_CODE",
+  "description": "A common optimization technique in data pipelines is **memoization**: wrapping an expensive function so repeated calls with the same inputs can return a cached result instead of recomputing it.\n\nYou are given a partially implemented `FunctionCallCache` class that wraps arbitrary functions and stores their return values in an *LRU (Least Recently Used) cache*. The provided skeleton already handles cache lookup, cache insertion, cache hits, cache misses, and LRU eviction. The only missing piece is `create_cache_key`, which must generate a deterministic, hashable key for each function call. \n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Implement a method to generate deterministic cache keys for function calls.",
+    "Normalize keyword argument order so equivalent calls produce identical keys.",
+    "Serialize structured inputs into a hashable format supporting nested data."
+   ],
+   "commonPatterns": [
+    "Hashing",
+    "Sorting",
+    "Serialization"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you handle arguments that are not JSON-serializable, such as custom class instances?",
+    "Discuss the trade-offs between using a serialized string versus a tuple of values for cache keys.",
+    "How would you extend this design to support caching based on function signatures or source code changes?",
+    "What considerations arise regarding thread safety when accessing the cache?"
+   ],
+   "whatThisTests": [
+    "Canonical data representation and normalization",
+    "Hashable key generation strategies",
+    "Handling unordered data structures",
+    "Serialization of JSON-serializable objects"
+   ],
+   "hints": [
+    "Keyword arguments represent the same data regardless of insertion order; sorting their keys creates a consistent view.",
+    "Apply normalization recursively to nested dictionaries within arguments to ensure deep equality matches.",
+    "Construct the final key by combining the function name, normalized kwargs, and args into an immutable container or string."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Durable Function Call Cache",
+  "locked": true
+ },
+ "6a2db6215117d1b543565e12_6a2db7be5117d1b543565e25": {
+  "qid": "6a2db7be5117d1b543565e25",
+  "postId": "6a2db6215117d1b543565e12",
+  "type": "RAW_CODE",
+  "description": "A common optimization technique in data pipelines is **memoization**: wrapping an expensive function so repeated calls with the same inputs can return a cached result instead of recomputing it.\n\nYou are given a partially implemented `FunctionCallCache` class that wraps arbitrary functions and stores their return values in an *LRU (Least Recently Used) cache*. The provided skeleton already handles cache lookup, cache insertion, cache hits, cache misses, and LRU eviction. The only missing piece is `create_cache_key`, which must generate a deterministic, hashable key for each function call. \n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Maintain an append-only log of cache operations to ensure crash recovery.",
+    "Replay persisted records sequentially to reconstruct both cached values and LRU ordering.",
+    "Gracefully ignore trailing corrupted data without interrupting system startup."
+   ],
+   "commonPatterns": [
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you design this to support concurrent access from multiple processes?",
+    "What modifications would allow batched writes to reduce disk I/O overhead?",
+    "Can you optimize recovery time by maintaining a secondary index or checkpoint file?",
+    "How would you handle very large cache states where the log grows indefinitely?"
+   ],
+   "whatThisTests": [
+    "State persistence and crash recovery",
+    "Efficient I/O and append-only logging",
+    "LRU cache mechanics with dynamic reordering",
+    "Fault-tolerant data deserialization"
+   ],
+   "hints": [
+    "Instead of persisting the entire cache structure, record only individual key-value updates as they occur.",
+    "When replaying history, standard LRU implementations often fail to update positions of existing keys; you may need to explicitly delete and re-insert them to enforce correct recency.",
+    "Wrap your parsing logic in error handling to safely skip malformed or truncated log entries at the end of the file."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Design Durable Function Call Cache",
+  "locked": true
+ },
+ "6a373b2b6849fecc81442861_6a373b356849fecc81442862": {
+  "qid": "6a373b356849fecc81442862",
+  "postId": "6a373b2b6849fecc81442861",
+  "type": "SINGLE_STEP",
+  "description": "A [bootloader](https://en.wikipedia.org/wiki/Bootloader) stores its program as an array of text instructions, and you need to find where the execution first starts repeating.\n\nYou are given `instructions`, where each entry has the form `\"<operation> <value>\"`. The operation is one of `\"plus\"`, `\"next\"`, or `\"jump\"`.\n\n- `\"plus x\"` adds `x` to a global accumulator, then moves to the next instruction.\n- `next x` leaves the accumulator unchanged and moves to the next instruction. The value `x` is preserved in the instruction format but is **ignored** and not used in this question. \n- `\"jump x\"` leaves the accumulator unchanged, then moves to the instruction at the current index plus `x`.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Simulate a simple instruction sequence starting from index zero.",
+    "Track executed instruction indices to identify when execution revisits a previous step.",
+    "Return the index of the first repeated instruction, or -1 if the program terminates normally."
+   ],
+   "commonPatterns": [
+    "Simulation",
+    "Hashing"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this approach if the instruction set included conditional jumps?",
+    "Can you reduce the space complexity while still detecting the cycle efficiently?",
+    "What happens if the jump offset causes the program counter to go out of bounds?",
+    "How does this problem conceptually map to cycle detection in a functional graph?"
+   ],
+   "whatThisTests": [
+    "Program simulation and state management",
+    "Cycle detection in deterministic sequences",
+    "Efficient lookup structures for visited states",
+    "Control flow manipulation via program counter"
+   ],
+   "hints": [
+    "Maintain a record of every instruction index you visit during the simulation.",
+    "Check for repetition immediately before executing the current instruction rather than after.",
+    "Use a boolean array or hash set to achieve O(1) lookups for visited indices, ensuring overall O(N) runtime."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Repair Bootloader Program",
+  "locked": true
+ },
+ "6a373b2b6849fecc81442861_6a373b366849fecc81442863": {
+  "qid": "6a373b366849fecc81442863",
+  "postId": "6a373b2b6849fecc81442861",
+  "type": "SINGLE_STEP",
+  "description": "A [bootloader](https://en.wikipedia.org/wiki/Bootloader) stores its program as an array of text instructions, and you need to find where the execution first starts repeating.\n\nYou are given `instructions`, where each entry has the form `\"<operation> <value>\"`. The operation is one of `\"plus\"`, `\"next\"`, or `\"jump\"`.\n\n- `\"plus x\"` adds `x` to a global accumulator, then moves to the next instruction.\n- `next x` leaves the accumulator unchanged and moves to the next instruction. The value `x` is preserved in the instruction format but is **ignored** and not used in this question. \n- `\"jump x\"` leaves the accumulator unchanged, then moves to the instruction at the current index plus `x`.\n",
+  "explanation": null,
+  "definition": null,
+  "testCases": null,
+  "insights": {
+   "quickSummary": [
+    "Simulate a simple bootloader program that may contain exactly one invalid branch instruction.",
+    "Identify and flip at most one jump or next instruction to guarantee normal termination.",
+    "Return the final accumulator value after applying the minimal necessary correction."
+   ],
+   "commonPatterns": [
+    "Graph Traversal",
+    "DFS/BFS"
+   ],
+   "likelyInterviewFollowUps": [
+    "How would you adapt this approach if multiple instructions could potentially be flipped?",
+    "Can the reverse graph be avoided by using only forward simulation and visited tracking?",
+    "What is the time and space trade-off if we validate each potential flip independently?",
+    "How would you handle cases where the program terminates immediately without any jumps?"
+   ],
+   "whatThisTests": [
+    "Graph reachability and cycle detection in execution traces",
+    "State machine simulation with controlled modifications",
+    "Reverse traversal to precompute termination paths",
+    "Efficient validation of candidate corrections"
+   ],
+   "hints": [
+    "Model each instruction as a node in a directed graph where edges represent control flow; a non-terminating run indicates a cycle.",
+    "Instead of testing every possible flip, simulate the original execution path and focus only on branch instructions encountered during that run.",
+    "Precompute which nodes can reach the terminal state by traversing backward from the end, enabling O(1) validation of whether flipping a specific instruction fixes the loop."
+   ]
+  },
+  "solutions": null,
+  "stats": null,
+  "postTitle": "Repair Bootloader Program",
+  "locked": true
+ }
+}

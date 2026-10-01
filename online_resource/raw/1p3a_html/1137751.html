@@ -1,0 +1,101 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="referrer" content="no-referrer">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Anthropic Research Scientist 电面挂经</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    line-height: 1.8; color: #333; max-width: 900px;
+                    margin: 30px auto; padding: 0 15px; background-color: #f9f9f9;
+                }
+                .thread_subject {
+                    font-size: 1.8em; font-weight: 800; margin-bottom: 25px;
+                    color: #1a1a1a; border-bottom: 3px solid #eee; padding-bottom: 10px; word-wrap: break-word;
+                }
+                .salary_post {
+                    margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px;
+                    border-left: 5px solid #ff9800; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto;
+                }
+                .article_body {
+                    background: #fff; padding: 25px; border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05); word-wrap: break-word;
+                }
+                .article_body img { max-width: 100%; height: auto; border-radius: 4px; margin: 10px 0; display: block; }
+                .attachments { margin-top: 30px; padding: 20px; background: #f1f3f5; border-radius: 8px; }
+                .attachments h3 { margin-top: 0; font-size: 16px; color: #444; }
+                .attachments a {
+                    display: block; word-break: break-all; color: #0066cc;
+                    font-size: 14px; margin-bottom: 10px; text-decoration: none;
+                }
+                .attachments a:hover { text-decoration: underline; }
+                table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                td, th { border: 1px solid #eee; padding: 8px; text-align: left; }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject">Anthropic Research Scientist 电面挂经</div>
+            
+            <div class="article_body">
+<br>
+抱着试试水的心态投了人类学家的Research Scientist。<br>
+本人自知没有phd学位是一大弱势，但是也有ai领域顶会论文15+篇、1000+的citation，所以想试试industry对于我这种背景的态度。<br>
+我的电面内容目前还没在网上看到过，所以发出来，希望后人注意。<br>
+<br>
+<br>
+网上海投之后，hr reached out非常快，基本上第二周就发了oa。<br>
+oa非常简单，就是设计一个in memory的搬king，共4个level，妄上都有这道题的讨论。<br>
+第1个level是设计三个函数：添加账户，pay，还有deposit。逻辑很简单，定义一个dict来记录账户和余额即可。<br>
+第2个level是要开始根据timestap记录用户的活动，并且设计一个top_activity函数，返回k个最高的activiy的用户。要注意activity是金额的绝对值，比如一个人存了200，又取了100，那他账户余额是100，但是在现在的timestamp，他的activity的值却是200+100=300。这个也很简单，加一个新的dict记录一下每个账户的活动就行，top_activity里一个简单的sort。<div id=1p3a-ad-thread-paragraph style=margin-top:20px;margin-bottom:20px></div><br>
+第3个level是要transfer和accept_transfer，这个唯一要注意的点就是开始transfer的时候虽然要扣钱，但是是不算进activity里的，只有别人接受了transfer才开始算进activity。<br>
+第4个level是要merge账户、以及得到余额。这个level的要求讲的很不清楚，我是先写了一个版本，然后根据unit test failure的情况来debug edge case的。印象比较深的是：<br>
+如果账户2已经被merge掉了，那他在merge以前的timestamp的activity依然存在，只是用merge之后的timestamp去query他的activity，就会返回none了。<br>
+账户2被merge掉了之后，就可以用create_account来新加账户2了（merge之前新加的话是会返回none的），如果这种情况发生的话，不会重制他历史的activity，只是从这个新建的timestamp开始，他的余额又归0了，这个要注意。<br>
+总之有很多很多这样的edge case，不过不用担心，unit test里都有，看哪里fail了，自己过一遍那个case，基本上就能发现哪里漏了。<br>
+<br>
+<br>
+接着是电面。<br>
+我看到很多人电面之前，hr都会在邮件里告知topic，比如有的topic是concurrency、电面就考了爬虫，等等。<br>
+我电面的topic是llm，这个关键词从来没有出现在地里过。<br>
+我很慌，但还是硬着头皮按mle的要求准备了，比如手搓mlp、attention之类的，但是turns out完全没用。<br>
+实际考题是给我一个helper function，可以给一个batch of input，返回每个input 的 token的丐绿，然后让我根据这个函数设计一个 拜讷瑞 芬累气。<br>
+题目不难，就是弄一个system prompt，然后根据要芬累的数据来填system prompt，然后query这个helper function两次，看哪次的丐绿大，就把他判断为哪个累。<br>
+中间有一些坑，比如要设计返回一个score，而不是简单的酚类判断，比如helper返回的是log丐绿，要先处理一下。<br>
+follow up也不难，就是怎么提高这个酚类汽的performance。我就答了 改改threshold，做做prompt engineering，然后弄弄repeated sampling之类的。<br>
+<br>
+<br>
+两天之后通知挂了，也不知道是哪里让面试官不满意了，而且他们家不让share 反馈。看之前的帖子也有题全做对结果挂的，总之感觉他们家就是随缘吧。我个人觉得，既然招人少，那就把简历关bar设高一点，或者面试题弄难一点，搞得题做出来了还挂，私以为有一点点浪费感情。<br>
+有关于细节问题的可以在评论问我，或者私信，我可以详细回答。<br>
+求加米看面经，谢谢！！！</table>
+
+ 
+ </div>
+ </div>
+</div>
+</div>
+
+
+</div>
+<div class=flex>
+<div class="w-1/2 min-w-[350px]">
+
+
+</div>
+<div class="w-1/2 mt-6 pl-4"></div>
+</div>
+<br></div>
+</div>
+
+</tr>
+<tr>
+</tr>
+<tr id=_postposition20489957></tr>
+<tr>
+<td class=pls></div>
+            
+        </body>
+        </html>
+        

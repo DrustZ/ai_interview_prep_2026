@@ -1,0 +1,141 @@
+﻿
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Extracted Content</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 20px;
+                }
+                .thread_subject {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                .article_body {
+                    margin-top: 20px;
+                }
+                .attachments {
+                    margin-top: 20px;
+                    background: #f9f9f9;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                }
+                .attachments a {
+                    display: block;
+                    margin: 5px 0;
+                    text-decoration: none;
+                    color: blue;
+                }
+                .date_published {
+                    font-size: 0.9em;
+                    color: gray;
+                    margin-bottom: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject"><span id="thread_subject">Anthropic 电面</span></div>
+            <div class="article_body"><td class="t_f" id="postmessage_19913830" itemprop="articleBody">
+<br>
+import java.io.IOException;<br>
+import java.net.URL;<br>
+import java.util.ArrayList;<br>
+import java.util.*;<br>
+import java.util.Set;<br>
+import java.io.*;<br>
+import java.util.concurrent.*;<br>
+<br>
+<br>
+import org.jsoup.Jsoup;<br>
+import org.jsoup.nodes.Document;<br>
+import org.jsoup.select.Elements;<br>
+<br>
+<br>
+// Implement a crawler that outputs all the unique URLs<br>
+// * (i.e. clickable links) under a root domain.<br>
+class Main {<br>
+&nbsp;&nbsp;private final int POOL_SIZE = 32;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;public List&lt;String&gt; getPageLinks(String url) throws IOException {<br>
+&nbsp; &nbsp; Document doc = Jsoup.connect(url)<br>
+&nbsp; &nbsp;&nbsp; &nbsp;.ignoreContentType(true).ignoreHttpErrors(true).get();<br>
+&nbsp; &nbsp; Elements links = doc.select("a[href]");<br>
+<br>
+<br>
+&nbsp; &nbsp; List&lt;String&gt; pageLinks = new ArrayList&lt;&gt;();<br>
+&nbsp; &nbsp; for (org.jsoup.nodes.Element link : links) {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;URL abs = new URL(new URL(url), link.attr("href"));<br>
+&nbsp; &nbsp;&nbsp; &nbsp;pageLinks.add(abs.toString());<br>
+&nbsp; &nbsp; }<br>
+&nbsp; &nbsp; return pageLinks;<div id="1p3a-ad-thread-paragraph" style="margin-top: 20px; margin-bottom: 20px;"></div><br>
+&nbsp;&nbsp;}<br>
+<br>
+<br>
+&nbsp;&nbsp;public List&lt;String&gt; crawl(String url) throws IOException {<br>
+&nbsp; &nbsp; String hostname = getHostname(url);<br>
+&nbsp; &nbsp; Set&lt;String&gt; results = ConcurrentHashMap.newKeySet();<br>
+&nbsp; &nbsp; ExecutorService executor = Executors.newFixedThreadPool(POOL_SIZE);<br>
+&nbsp; &nbsp; crawl(url, hostname, results, executor);<br>
+&nbsp; &nbsp; executor.shutdown();<br>
+&nbsp; &nbsp; return new ArrayList&lt;&gt;(results);<br>
+&nbsp;&nbsp;}<br>
+<br>
+<br>
+&nbsp;&nbsp;private void crawl(<br>
+&nbsp; &nbsp; String url, <br>
+&nbsp; &nbsp; String hostname, <br>
+&nbsp; &nbsp; Set&lt;String&gt; results,<br>
+&nbsp; &nbsp; ExecutorService executor<br>
+&nbsp;&nbsp;) {<br>
+&nbsp; &nbsp; try {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;url = santinize(url);<br>
+&nbsp; &nbsp;&nbsp; &nbsp;if (results.contains(url) || !hostname.equals(getHostname(url))) return;<br>
+&nbsp; &nbsp;&nbsp; &nbsp;results.add(url);<br>
+<br>
+<br>
+&nbsp; &nbsp;&nbsp; &nbsp;List&lt;String&gt; subUrls = getPageLinks(url);<br>
+&nbsp; &nbsp;&nbsp; &nbsp;List&lt;Future&gt; futures = new ArrayList&lt;&gt;();<br>
+&nbsp; &nbsp;&nbsp; &nbsp;for (String subUrl : subUrls) {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Future f = executor.submit(()-&gt;crawl(subUrl, hostname, results, executor));<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;futures.add(f);<br>
+&nbsp; &nbsp;&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;&nbsp; &nbsp;for (Future f : futures) {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;f.get();<br>
+&nbsp; &nbsp;&nbsp; &nbsp;}<br>
+&nbsp; &nbsp; } catch (Exception e) {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;System.out.println(e.getMessage());<br>
+&nbsp; &nbsp; }<br>
+&nbsp;&nbsp;}<br>
+<br>
+<br>
+&nbsp;&nbsp;private String getHostname(String urlString) throws IOException {<br>
+&nbsp; &nbsp; URL url = new URL(urlString);<br>
+&nbsp; &nbsp; return url.getHost();<br>
+&nbsp;&nbsp;}<br>
+<br>
+<br>
+&nbsp;&nbsp;private String santinize(String url) {<br>
+&nbsp; &nbsp; int idx = url.indexOf("#", 0);<br>
+&nbsp; &nbsp; return (idx &gt; 0) ? url.substring(0, idx) : url;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;public static void main(String[] args) throws IOException {<br>
+&nbsp; &nbsp; String urlToCrawl = "<a href="https://link.1point3acres.com/?url=https%3A%2F%2Fandyljones.com" rel="nofollow noopener" target="_blank">https://andyljones.com</a>";<br>
+<br>
+<br>
+&nbsp; &nbsp; Main solution = new Main();<br>
+&nbsp; &nbsp; List&lt;String&gt; result = solution.crawl(urlToCrawl);<br>
+&nbsp; &nbsp; System.out.println(String.format("total urls: %d", result.size()));<br>
+&nbsp; &nbsp; System.out.println(result);<br>
+&nbsp;&nbsp;}<br>
+}<br>
+<br>
+</td></div>
+            <div class="attachments"></div>
+        </body>
+        </html>
+        

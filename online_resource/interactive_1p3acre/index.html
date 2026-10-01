@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>面试题库 · OpenAI / Anthropic（1p3a 会员版）</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="vendor/hljs-theme.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header>
+    <h1>面试题库</h1>
+    <span class="sub" id="builtinfo"></span>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-c="all">全部</button>
+      <button class="tab" data-c="openai">OpenAI</button>
+      <button class="tab" data-c="anthropic">Anthropic</button>
+    </div>
+  </header>
+  <div class="main">
+    <aside class="sidebar" id="sidebar"></aside>
+    <section class="listcol">
+      <div class="searchbar">
+        <input id="search" placeholder="搜索题目 / 标签…" autocomplete="off">
+        <span class="count" id="count"></span>
+      </div>
+      <div class="activebar" id="activebar" style="display:none"></div>
+      <div class="list" id="list"></div>
+    </section>
+    <section class="detail" id="detail">
+      <div class="empty">← 从左侧选择一道题查看题目、答案、帖子与链接</div>
+    </section>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "gap": 34,
+    "have": 26,
+    "note": "need 34 more 'sort_laundry' demos; prioritize dark lighting in bedroom",
+    "scarcest_lighting": "dark",
+    "scarcest_room": "bedroom",
+    "target": 60,
+    "task": "sort_laundry"
+  },
+  {
+    "gap": 11,
+    "have": 49,
+    "note": "need 11 more 'water_plants' demos; prioritize dark lighting in bedroom",
+    "scarcest_lighting": "dark",
+    "scarcest_room": "bedroom",
+    "target": 60,
+    "task": "water_plants"
+  }
+]

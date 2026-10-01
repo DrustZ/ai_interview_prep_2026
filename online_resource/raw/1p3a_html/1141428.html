@@ -1,0 +1,85 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="referrer" content="no-referrer">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>[面试经验] Phone with Solution</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    line-height: 1.8; color: #333; max-width: 900px;
+                    margin: 30px auto; padding: 0 15px; background-color: #f9f9f9;
+                }
+                .thread_subject {
+                    font-size: 1.8em; font-weight: 800; margin-bottom: 25px;
+                    color: #1a1a1a; border-bottom: 3px solid #eee; padding-bottom: 10px; word-wrap: break-word;
+                }
+                .salary_post {
+                    margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px;
+                    border-left: 5px solid #ff9800; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto;
+                }
+                .article_body {
+                    background: #fff; padding: 25px; border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05); word-wrap: break-word;
+                }
+                .article_body img { max-width: 100%; height: auto; border-radius: 4px; margin: 10px 0; display: block; }
+                .attachments { margin-top: 30px; padding: 20px; background: #f1f3f5; border-radius: 8px; }
+                .attachments h3 { margin-top: 0; font-size: 16px; color: #444; }
+                .attachments a {
+                    display: block; word-break: break-all; color: #0066cc;
+                    font-size: 14px; margin-bottom: 10px; text-decoration: none;
+                }
+                .attachments a:hover { text-decoration: underline; }
+                table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                td, th { border: 1px solid #eee; padding: 8px; text-align: left; }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject">[面试经验] Phone with Solution</div>
+            
+            <div class="article_body">
+<br>
+电面 - file dedup 最后会涉及到dedup在production environment运行的知识<div id=1p3a-ad-thread-paragraph style=margin-top:20px;margin-bottom:20px></div><br>
+求米<br>
+祝大家面试都顺利!!!<br>
+<ignore_js_op>
+<img src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAGYyM2wPFXI5PnQCAnR0dHUbJHU0OHk1OHooL3opMXsnMHt7e39GSIEuMYFAQ4IOE4ODg4cRFog5PItfYo4AAI8WHI8uMY9BRI+Pj5AIDZIAAJMqLZoAAJqamps7PqA9P6IAAaJLTqMBCaMIDKQLE6ampqc3OqioqKwUGq0HDa28urC9u7EQFLJNULMAArNKTrPPzrQqL7U8QLYrMLe3t7jHxrm1tro4Pbq7u70ABr03PMEICsEOEsTEw8Xh4caRlMsaH8u9v8vHyMvKysvb2svk480oLM1wcs3Hx83Qz848QM5tcM+io9BtcNDGx9Hg39IAANIVGtLz8tPT09Pe39Pv7tSEh9Tm5tU9QdV8gNYJDtYWI9gMENj29dpzdtt+gNuChdwyPNzd3d05Ot1RWd1cZd13et9HUN+anOETGeFWX+FbZOGOj+IzN+MfJONfaePX1+Pj4+Tx8OVia+VtduVyeuWZneYrMOaDiud+hOeRlOhWWekYHel9hOmGjOqRleqYnOq2uOq7vuvr6+w6PuxbXuyVmOymqu01Ou3Bwu3Hyu4bIO6dou6tsu7e3+7g4O+ytu/P0O/R0u/f4PCbnfC1ufC4u/GusvHi4/I2O/KnqPKqrPK+wfLDxvLR0/MAAPMcIvQ4PfRARPTFyPTMzvTb3PTf4PT09PUgJvXO0PX+/vd7fvfs7PjU1fjv8fnf4Pni4/nq6/otMfqpqvr09PseI/tCRvtFSPw7Pv39/f8aH/8jJ/8lKv82Ov9KTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAAMAALAAAAAAgACAAAAj+AIEJHEiwoMGDBGudekQJUqY4Qp5ITJJkyJAkRIYQ8ZHjBhFUCPeEEiVKUyI1W6QE0fGiRYoOFTRYkACBgAIWHw+e2XUrl69ZrGgZcnMI0ZEeYdLsCDEiRAUDK5QQIWQQTK9fuHKJqsXJUyxTdz7dacUEB4kSJTYsWCGHkA+qBMHw+tVTlKtNpGIFeqGo1qQrNM6WqKCArS5COQeCsYXrlslYpchUEsQjkyRTSGQIJmxjTFsqVAhqYTxKUyFYfKIAkqWqzZdBIVSkQLshQZEcDApEiIBCl0AnoFKFYtQHz5suUrIsefEiRYgOGzZUICAAChUTHjxkKFBDYJMZMFz+iD8BQsQHDhcwTHDwoAGCAwMCUJAjBzRoHzVArppiZcoULz/EYMSABBoxhRBAVGEFFnMQ4uCDhFAhx0G6yKHLhRheiIglGaLi4YeoeHYQIWOA+OEqiNyByiomfljhhAaR2OKKg5iRCYszvjjiGLq0uEomZZiCY4s6xsijj7qw8UmPOdI3ooVEmsIFIkwS6WSMFmaIYR6A5GGKlhleWRAhWWrZChu6dLIGmBiKSRCZbPrxh4Z1yMKmmwPBqWUsa15Yix1i+HGIJZZE8iWZT4JpRyCyeBKJI6V08gcabOjxxyWHwThmmReSAscrp5xSi5aRerJIpon6KQsdqrCppZ1LiGJ5oSem/NGIq2zGummajmAyJ65g6vqmhYj8EciowGopbJ5ZLplssJoO+yyuywpEIoTYZputiAeNkcO34IYrrrg1UOEbQtPiKlBAADs=" border=0 class=vm alt>
+<span style=white-space:nowrap id=attach_599031>
+<a href="https://www.1point3acres.com/bbs/plugin.php?id=attachcenter:goto&amp;aid=NTk5MDMxfDYzYjkyNGQ2fDE3NTUxODA4MDZ8Mzg2MDk2fDExNDE0Mjg%3D" target=_blank>1.pdf</a>
+<em class=xg1>(42.29 KB, 下载次数: 16)</em>
+</span>
+<div class="tip tip_4" id=attach_599031_menu style=position:absolute;display:none disautofocus=true>
+</div>
+</ignore_js_op>
+</table>
+
+ 
+ </div>
+ </div>
+</div>
+</div>
+
+
+</div>
+<div class=flex>
+<div class="w-1/2 min-w-[350px]">
+
+
+</div>
+<div class="w-1/2 mt-6 pl-4"></div>
+</div>
+<br></div>
+</div>
+
+</tr>
+<tr>
+</tr>
+<tr id=_postposition20535762></tr>
+<tr>
+<td class=pls></div>
+            
+        </body>
+        </html>
+        

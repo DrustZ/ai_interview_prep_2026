@@ -1,0 +1,96 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="referrer" content="no-referrer">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>人类学挂经全套</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    line-height: 1.8; color: #333; max-width: 900px;
+                    margin: 30px auto; padding: 0 15px; background-color: #f9f9f9;
+                }
+                .thread_subject {
+                    font-size: 1.8em; font-weight: 800; margin-bottom: 25px;
+                    color: #1a1a1a; border-bottom: 3px solid #eee; padding-bottom: 10px; word-wrap: break-word;
+                }
+                .salary_post {
+                    margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px;
+                    border-left: 5px solid #ff9800; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto;
+                }
+                .article_body {
+                    background: #fff; padding: 25px; border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05); word-wrap: break-word;
+                }
+                .article_body img { max-width: 100%; height: auto; border-radius: 4px; margin: 10px 0; display: block; }
+                .attachments { margin-top: 30px; padding: 20px; background: #f1f3f5; border-radius: 8px; }
+                .attachments h3 { margin-top: 0; font-size: 16px; color: #444; }
+                .attachments a {
+                    display: block; word-break: break-all; color: #0066cc;
+                    font-size: 14px; margin-bottom: 10px; text-decoration: none;
+                }
+                .attachments a:hover { text-decoration: underline; }
+                table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                td, th { border: 1px solid #eee; padding: 8px; text-align: left; }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject">人类学挂经全套</div>
+            
+            <div class="article_body">
+<i class=pstatus> 本帖最后由 匿名 于 2025-8-26 17:49 编辑 </i><br>
+<br>
+如果大家觉得有帮助可以给我一些大米吗？现在大米太少了看不了帖子。<br>
+<br>
+海投的Infrastructure职位，写了cover letter，让chatgpt根据resume和职位写的。<br>
+<br>
+第一轮 recruiter 面：就是聊聊有这么多AI公司，为什么来人类学。我的回答是人类学有点学术话，我比较喜欢academic flavor.<br>
+<br>
+第二轮电面：面了文件去重那道题。follow up是怎么利用meta data而不是简单的hash content。答案是先根据file size来过第一遍，file size相同再用hash。问了hash collision怎么办，推荐用SHA 256 算法，collision概率会降低。问了distributed system下怎么办，随便回答了一些map reduce， 把文件大小类似的shuffle到一台电脑再根据hash来判断。问了IO bound 还是 CPU bound, 如果用SSD的话IO bound和CPU bound的界限就不那么分明了。面试官很友好，虽然他一边在干活一边在面试，但是还是挺好的。<div id=1p3a-ad-thread-paragraph style=margin-top:20px;margin-bottom:20px></div><br>
+<br>
+店面一轮：问technical project。把project 讲懂，沟通清楚对方不明白的点然后反馈。一般来讲你是good listener都不会有问题。<br>
+<br>
+店面第二轮： <a href="https://link.1point3acres.com/?url=https%3A%2F%2Fbytebytego.com" target=_blank class=relatedlink>system design</a>：你的data center需要从外界下载一个ML model，然后在 data center内部distribute到100个电脑上。data center和外界的带宽是10G/s,内部之间任何一个电脑的上传下载加起来也只能是10G。问你怎么做到最快的把ML model download到一个data center的电脑上，然后distribute到所有其他电脑上。我的解法是把所有电脑串联在一起，然后每一个电脑从上游下载的同时把文件传递给下一个电脑，就像管道输水一样。然后设计下怎么coordinate，假如有一个电脑坏了怎么办之类的general design question。<br>
+<br>
+店面第三轮：cultural 面。就是为什么要加入人类学。你相信AI会颠覆世界吗，如果是的话，security方面你愿不愿意牺牲自己的利益来确保AI不毁灭人类。必须表现出你真的相信AI。要不这轮会挂人的。建议看Lex的采访，看了之后就会有自己的理解。我这次面试人类学，看了这些资料后，真的有点担心我作为traditional SDE 的job security。<br>
+<br>
+店面第四轮：HM面。就是聊各种behavior。没什么特别注意的地方。<br>
+<br>
+店面第五轮：stack那道题。follow up的时间不够了。所以大家一定要练习下follow up。就是给定一个N，所有连续出现的function call在N以下时，不要generate相应的event。我应该是挂在了这道题上。因为我在装第一次看到这道题，去跟面试官沟通题目的意思，举例子说明是不是这样理解的，然后没时间写follow up了。（我觉得不走这些流程太假了，除非日常就用这样的profiler，哪有可能看完文字描述直接写的）。Anyway，大家一定要熟练这个follow up。<br>
+<br>
+<br>
+就是这样，还是花了很多时间准备，最后没过也在意料之中。这次找工作面试最怕遇到华二代，特别是店面第五轮的那位华二代小姐姐，虽然表面上特别热情，但直接把题目扔那里让我自己读，然后不提示例子就让我直接写，我感觉我像个小丑。遇到了这样一个面试官，最后没去成也没有很难过。店面完了过了一周后收到拒信的。<br>
+<br>
+<br>
+祝大家面试顺利！最后最后，求一下大米，谢谢！</table>
+
+ 
+ </div>
+ </div>
+</div>
+</div>
+
+
+</div>
+<div class=flex>
+<div class="w-1/2 min-w-[350px]">
+
+
+</div>
+<div class="w-1/2 mt-6 pl-4"></div>
+</div>
+<br></div>
+</div>
+
+</tr>
+<tr>
+</tr>
+<tr id=_postposition20558203></tr>
+<tr>
+<td class=pls></div>
+            
+        </body>
+        </html>
+        

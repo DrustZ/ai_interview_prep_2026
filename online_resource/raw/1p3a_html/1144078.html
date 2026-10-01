@@ -1,0 +1,76 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="referrer" content="no-referrer">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Anthropic電面</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    line-height: 1.8; color: #333; max-width: 900px;
+                    margin: 30px auto; padding: 0 15px; background-color: #f9f9f9;
+                }
+                .thread_subject {
+                    font-size: 1.8em; font-weight: 800; margin-bottom: 25px;
+                    color: #1a1a1a; border-bottom: 3px solid #eee; padding-bottom: 10px; word-wrap: break-word;
+                }
+                .salary_post {
+                    margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px;
+                    border-left: 5px solid #ff9800; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto;
+                }
+                .article_body {
+                    background: #fff; padding: 25px; border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05); word-wrap: break-word;
+                }
+                .article_body img { max-width: 100%; height: auto; border-radius: 4px; margin: 10px 0; display: block; }
+                .attachments { margin-top: 30px; padding: 20px; background: #f1f3f5; border-radius: 8px; }
+                .attachments h3 { margin-top: 0; font-size: 16px; color: #444; }
+                .attachments a {
+                    display: block; word-break: break-all; color: #0066cc;
+                    font-size: 14px; margin-bottom: 10px; text-decoration: none;
+                }
+                .attachments a:hover { text-decoration: underline; }
+                table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                td, th { border: 1px solid #eee; padding: 8px; text-align: left; }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject">Anthropic電面</div>
+            
+            <div class="article_body">
+<br>
+電面：给定一个文件夹目录，找出其中所有的重复文件。<br>
+<div id=1p3a-ad-thread-paragraph style=margin-top:20px;margin-bottom:20px></div><br>
+整个面试过程都在一个共享的 Google Colab 上进行，我们用平台上的文件来测试代码的正确性。在实现了一个基本的解决方案（即对每个文件的完整内容进行哈希）后，面试官开始了一系列追问。他首先询问我实现的时间复杂度，我解释说这与所有文件大小的总和成正比。<br>
+为了改进效率，我提出了一种多阶段的方法，先使用“廉价”的哈希函数。具体来说，首先从元数据检查文件大小，然后对大小相同的文件哈希其前1024个字节，最后才在万不得已时进行完整的哈希。面试官随后问这种新方法在最坏情况下的时间复杂度，我回答说，如果所有文件的大小和初始内容都完全相同，那么时间复杂度仍然取决于文件的总大小。<br>
+这引出了关于哈希函数的更深层次讨论。我当时苦苦思索，试图找到一个既廉价又哈希碰撞率低的哈希函数。面试后我才意识到，没有哪个哈希函数是完美的，你总能找到反例。接着，话题转向了<a href="https://link.1point3acres.com/?url=https%3A%2F%2Fbytebytego.com" target=_blank class=relatedlink>系统设计</a>，面试官问我如何判断一个程序是CPU密集型还是I/O密集型。我解释说会用性能分析结果来判断：如果CPU大部分时间处于空闲状态，程序就是I/O密集型；如果CPU持续繁忙，则是CPU密集型。<br>
+之后，面试官提出了一个更复杂的挑战：设计一个持续监控重复文件的系统。这个问题有些模糊，所以我先与他确认了需求：系统需要在添加重复文件时通知文件所有者，并且要能处理文件的删除。我概述了一个解决方案，即使用数据库来维护两个映射：一个是从文件哈希到文件的映射（用于重复检测和通知），另一个是从文件到其哈希的映射（用于处理删除）。我还提到了对于海量文件，可以使用类似 MapReduce 的机制来扩展，并解释了 Map 和 Reduce 操作分别会做什么，以高效地处理数据。<br>
+<br>
+如果有人最近要面试 欢迎要面的朋友私信</table>
+
+ 
+ </div>
+ </div>
+</div>
+</div>
+
+
+</div>
+<div class=flex>
+
+</div>
+<br></div>
+</div>
+
+</tr>
+<tr>
+</tr>
+<tr id=_postposition20570419></tr>
+<tr>
+<td class=pls></div>
+            
+        </body>
+        </html>
+        

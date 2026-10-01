@@ -1,0 +1,63 @@
+﻿
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Extracted Content</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 20px;
+                }
+                .thread_subject {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                .article_body {
+                    margin-top: 20px;
+                }
+                .attachments {
+                    margin-top: 20px;
+                    background: #f9f9f9;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                }
+                .attachments a {
+                    display: block;
+                    margin: 5px 0;
+                    text-decoration: none;
+                    color: blue;
+                }
+                .date_published {
+                    font-size: 0.9em;
+                    color: gray;
+                    margin-bottom: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject"><span id="thread_subject">应该是地里第一份Anthropic SDE全套面筋</span></div>
+            <div class="article_body"><td class="t_f" id="postmessage_19529518" itemprop="articleBody">
+海投的product SDE，流程如下：<br/>
+<br/>
+OA: 地里的面经，前3个part满分，最后一个好像是80%的case过了<br/>
+<br/>
+电面：有一个已经写好了的beautiful soup python web crawler function, given url and returns all urls on this url，然后让写一个web crawler，given root domain，抓取这个domain下所有的url，这个部分需要写代码，并且work。基本上就是一个bfs，然后记录已经抓过的url避免重复即可。第二个部分问如果要提升crawler效率怎么做，用的asyncio来实现异步处理，可以提前看一下怎么用。同时会问一些system design的问题，比如如何scale，如果expand到更多root domain<br/>
+<br/>
+昂塞1： coding + system design，假设你有一个uber api，given longitude and latitude, return true iff the coordinate is in surge area。然后让写一个function，given a longitude and latitude, return path or coordinate so that the user can walk to the location outside of the surge area。这轮的代码不用run。这里lz想复杂了，说用bfs，但是实际上只要找上下左右四个方向最近的path就可以。然后接着问了一些system design问题，比如如何scale，如何防止我们的function crash uber api, etc<br/>
+<br/>
+昂塞2： HM BQ，很标准的BQ，没啥好说的<br/>
+<br/>
+昂塞3： culture round，也是一轮BQ，但是会问一些比较灵性的问题比如怎么看待AI的risk，对AI最大的concern是什么。LZ直接看的recruiter发的anthropic官方博客里的文章，里面会提到这些内容<br/>
+<br/>
+昂塞4：system design，题目是让design一个prompt playground，类似于chatgpt playground，让你从product的角度说需要哪些requirement，怎么实现，怎么scale。面试的形式跟其他大厂的system design不太一样，问题很偏product/full-stack，面试官会walk thro&#8205;&#8205;&#8205;&#8204;&#8205;&#8204;&#8204;&#8205;&#8205;&#8205;&#8204;&#8204;&#8205;&#8204;&#8204;&#8204;&#8205;&#8204;&#8205;&#8205;ugh everything with you and take note for you，然后让我只要一直讲下去就行<br/>
+<br/>
+一天后邮件通知not move forward <br/>
+<br/>
+总的来说题目不难，但是确实比较难准备，形式和内容都跟大厂面试很不一样，而且面经也基本上没有，希望这份面筋能帮到大家</td></div>
+            <div class="attachments"></div>
+        </body>
+        </html>
+        

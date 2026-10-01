@@ -1,0 +1,143 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="referrer" content="no-referrer">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>人类学店面新题</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                    line-height: 1.8; color: #333; max-width: 900px;
+                    margin: 30px auto; padding: 0 15px; background-color: #f9f9f9;
+                }
+                .thread_subject {
+                    font-size: 1.8em; font-weight: 800; margin-bottom: 25px;
+                    color: #1a1a1a; border-bottom: 3px solid #eee; padding-bottom: 10px; word-wrap: break-word;
+                }
+                .salary_post {
+                    margin-bottom: 30px; background: #fff; padding: 20px; border-radius: 8px;
+                    border-left: 5px solid #ff9800; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto;
+                }
+                .article_body {
+                    background: #fff; padding: 25px; border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.05); word-wrap: break-word;
+                }
+                .article_body img { max-width: 100%; height: auto; border-radius: 4px; margin: 10px 0; display: block; }
+                .attachments { margin-top: 30px; padding: 20px; background: #f1f3f5; border-radius: 8px; }
+                .attachments h3 { margin-top: 0; font-size: 16px; color: #444; }
+                .attachments a {
+                    display: block; word-break: break-all; color: #0066cc;
+                    font-size: 14px; margin-bottom: 10px; text-decoration: none;
+                }
+                .attachments a:hover { text-decoration: underline; }
+                table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+                td, th { border: 1px solid #eee; padding: 8px; text-align: left; }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject">人类学店面新题</div>
+            
+            <div class="article_body">
+<br>
+用Claude很喜欢于是在网上递了个简历，晚上11点多申请的第二天早上六点收到recruiter邮件说聊聊，这效率😳<br>
+<br>
+<br>
+本来人类学面经就那几个题，准备了几个晚上觉得应该问题不大，然后遇到了没见过的题😔 面我的是两个做internal tool的老哥，分三部分。<br>
+<br>
+<br>
+第一部分读code, 大致就是给了一个tokenize和一个detokenize的method，让我先读一下明白code是在干啥，然后问我这个tokenize的方式有什么问题。代码大致如下。<br>
+<br>
+def tokenize(text: str, vocab: dict):<br>
+&nbsp; &nbsp; tokens = []<br>
+&nbsp; &nbsp; key = ""<br>
+&nbsp; &nbsp; for i in range(len(text)):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;key += text[i]<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;if key in vocab:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;tokens.append(vocab[key])<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;key = ""<br>
+&nbsp; &nbsp; return tokens<br>
+<br>
+def detokenize(tokens, vocab: dict):<br>
+&nbsp; &nbsp; text = ""<br>
+&nbsp; &nbsp; reversed_vocab = {value: key for key, value in vocab.items()}<br>
+&nbsp; &nbsp; for token in tokens:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;text += reversed_vocab[token]<div id=1p3a-ad-thread-paragraph style=margin-top:20px;margin-bottom:20px></div><br>
+<br>
+&nbsp; &nbsp; return text<br>
+<br>
+<br>
+<br>
+vocab = {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"a": 1,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"b": 2,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"cd": 3<br>
+}<br>
+<br>
+token = tokenize("acdebe", vocab)<br>
+detokenize(token, vocab)<br>
+<br>
+<br>
+这个似乎是比较简单的文本与处理，就是把一段text转换成code。我读的时候其实很困惑比如text和vocab都是input那vocab是如何决定的之类的，面试官的意思大致就是they can be anything。 我说代码的问题是如果vocab里面没有能cover given text的character的那这个tokenize不work。然后就move on到下一个环境。<br>
+<br>
+<br>
+第二个环节是code review，又给了一段代码，是在之前版本的基础上加了一点，大致就是在tokenize method的for loop结束之后多了一个if key不在vocab里面，append一个-1在tokens里然后return (something like "&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; tokens.append(vocab.get("UNK", -1))"。然后给的vocab里面多了个UNK：-1vocab = {<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"a": 1,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"b": 2,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"cd": 3,<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;"UNK": -1<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;}<br>
+然后我就更困惑了…… interviewer说你就当是在做code review有啥comment都可以，我就写了写比如<ul><li>UNK是个啥？（我面试之后才反应过来这tm是UNKNOWN的缩写）text里面有UNK咋办？<li>这段改动的goal到底是啥，什么是expected behavior<li>如果这样handle vocab里面没有的character那么比如text是 "xabc"那tokenize不work<li>先match短的token似乎不是很efficient，比如vocab里面如果有text: xxx那直接match到return就ok （面试之后我稍微研究了一下这个应该是不可能的情况，因为tokenize的目的就是把长长的input变得越短越好，如果是当成纯算法题那这样想ok，感觉还是需要一些background knowledge的）</ul><br>
+然后interviewer说ok差不多了我们move on。<br>
+<br>
+<br>
+最后一个环节是让我自己implement tokenize，目的是handle text里面的character没法被vocab里面的key value cover的情况，保证tokenize和detokenize还能work。总之这一轮我的困惑达到顶峰，发挥的非常糟糕（主要没搞明白这个tokenize到底是为了啥以及UNK是啥意思），面完之后research了一下我觉得稍微加一个else 就可以了def tokenize(text: str, vocab: dict):<br>
+&nbsp; &nbsp; tokens = []<br>
+&nbsp; &nbsp; key = ""<br>
+&nbsp; &nbsp; for i in range(len(text)):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;key += text[i]<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;if key in vocab:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;tokens.append(vocab[key])<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;key = ""<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;else:<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if not any(k.startswith(key) for k in vocab.keys()):<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;‍‌‌‌‌‍‍‌‍‍‍‍‍‍‌‍‌‍‌‌‍&nbsp; &nbsp; # if not, treat it as an unknown token<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; tokens.append(vocab.get("UNK", -1))<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; key = ""<br>
+<br>
+&nbsp; &nbsp; print(tokens)<br>
+&nbsp; &nbsp; return tokens<br>
+<br>
+<br>
+诶然后不出意料的就挂了，周五面的周一收到的据信，小悲伤一下。</table>
+
+ </div>
+ 
+ </div>
+ </div>
+</div>
+</div>
+
+
+</div>
+<div class=flex>
+<div class="w-1/2 min-w-[350px]">
+
+
+</div>
+<div class="w-1/2 mt-6 pl-4"></div>
+</div>
+<br></div>
+</div>
+
+</tr>
+<tr>
+</tr>
+<tr id=_postposition20151267></tr>
+<tr>
+<td class=pls></div>
+            
+        </body>
+        </html>
+        

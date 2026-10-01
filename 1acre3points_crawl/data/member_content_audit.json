@@ -1,0 +1,2139 @@
+{
+  "generatedAt": "2026-07-14T01:22:46+00:00",
+  "questionsGeneratedAt": "2026-07-14T01:22:46+00:00",
+  "summary": {
+    "memberRecords": 78,
+    "recordsWithReadableLocalContent": 78,
+    "recordsWithVerifiedCanonicalMemberBody": 0,
+    "recordsWithViewerCompatiblePostUrl": 74,
+    "recordsWithoutViewerCompatiblePostUrl": 4,
+    "byContentKind": {
+      "locally-saved-research-summary": 25,
+      "locally-saved-same-problem-prompt-and-hints": 1,
+      "locally-saved-topic-editorial": 41,
+      "original-structured-preparation-guide": 11
+    }
+  },
+  "thirdPartyTool": {
+    "url": "http://117.72.46.162/?code=AGI30S2Z8GX1Y2J7PMER",
+    "checkedAt": "2026-07-14T01:22:46+00:00",
+    "available": false,
+    "quotaLimit": 250,
+    "quotaUsed": 250,
+    "apiMessage": "访问限制为250次卡,当前已经使用250次",
+    "supportedUrlForms": [
+      "thread-<id>",
+      "/thread/<id>",
+      "/post/<id>",
+      "/pins/<id>",
+      "?tid=<id>"
+    ]
+  },
+  "limitations": [
+    "Readable preparation content is not evidence that a members-only canonical body was recovered.",
+    "The user-provided viewer code is exhausted, so no member body can currently be verified through it.",
+    "Entries without a viewer-compatible post ID retain their official qbank URL instead of using a guessed related post."
+  ],
+  "records": [
+    {
+      "id": "01krfsyy8jmkcy3y88fm1tpdf4",
+      "company": "openai",
+      "slug": "hm-bq-why-openai",
+      "title": "HM BQ Why OpenAI",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/hm-bq-why-openai",
+      "contentAvailable": true,
+      "contentCharacters": 681,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174510-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174510-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/hm-bq-why-openai"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyxhdd789j2d18vfvn1cv",
+      "company": "openai",
+      "slug": "memory-allocator",
+      "title": "Memory Allocator",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/memory-allocator",
+      "contentAvailable": true,
+      "contentCharacters": 12404,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1179374-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100050"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1179374-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100050",
+        "https://www.1point3acres.com/interview/problems/company/openai/memory-allocator"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6h03z6pj775cn28w7mz",
+      "company": "openai",
+      "slug": "modal-lock-fair-modal-lock",
+      "title": "Modal Lock Fair Modal Lock",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/modal-lock-fair-modal-lock",
+      "contentAvailable": true,
+      "contentCharacters": 39068,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100265"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100265",
+        "https://www.1point3acres.com/interview/problems/company/openai/modal-lock-fair-modal-lock"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6t45rzevr0a7t04s2yv",
+      "company": "openai",
+      "slug": "design-ai-chatbot-system",
+      "title": "Design AI Chatbot System",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-ai-chatbot-system",
+      "contentAvailable": true,
+      "contentCharacters": 1150,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-description-paraphrase",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": false,
+      "viewerCompatibleUrls": [],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/openai/design-ai-chatbot-system"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01kstgk6m1f07jcn82d7xvevsq",
+      "company": "openai",
+      "slug": "distributed-cluster-count-topology",
+      "title": "Distributed Cluster Count Topology",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/distributed-cluster-count-topology",
+      "contentAvailable": true,
+      "contentCharacters": 487,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171426-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1180678-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171426-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1180678-1-1.html",
+        "https://www.hack2hire.com/question-bank/companies/openai/coding-questions/6916140a3f8671d8f7a56641/practice",
+        "https://www.1point3acres.com/interview/problems/company/openai/distributed-cluster-count-topology"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyxg5xehrk728jytkxp4s",
+      "company": "openai",
+      "slug": "toy-language-type-inference",
+      "title": "Toy Language Type Inference",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/toy-language-type-inference",
+      "contentAvailable": true,
+      "contentCharacters": 10884,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1172199-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100065"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1172199-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100065",
+        "https://www.1point3acres.com/interview/problems/company/openai/toy-language-type-inference"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6xc9zzrf5aj1kpknhjv",
+      "company": "openai",
+      "slug": "design-url-shortener",
+      "title": "Design Url Shortener",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-url-shortener",
+      "contentAvailable": true,
+      "contentCharacters": 532,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "brief-topic-summary",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100128"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100128",
+        "https://www.1point3acres.com/interview/problems/company/openai/design-url-shortener"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk66h17wh6pce6p50qccd",
+      "company": "openai",
+      "slug": "monster-battle-system",
+      "title": "Monster Battle System",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/monster-battle-system",
+      "contentAvailable": true,
+      "contentCharacters": 16664,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1176587-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1180067-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100073"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1176587-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1180067-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100073",
+        "https://www.1point3acres.com/interview/problems/company/openai/monster-battle-system"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyxvn0kdr5srp098947f4",
+      "company": "openai",
+      "slug": "numpy-1nn-wx-b",
+      "title": "NumPy 1-NN Wx B",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/numpy-1nn-wx-b",
+      "contentAvailable": true,
+      "contentCharacters": 8532,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1177444-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100237"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1177444-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100237",
+        "https://www.1point3acres.com/interview/problems/company/openai/numpy-1nn-wx-b"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyxtbre20aqmezk8nweb5",
+      "company": "openai",
+      "slug": "transformer-bug-hunt",
+      "title": "Transformer Bug Hunt",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/transformer-bug-hunt",
+      "contentAvailable": true,
+      "contentCharacters": 826,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171609-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1179644-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1168926-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171609-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1179644-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1168926-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/transformer-bug-hunt"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01kstgk61yxhb6y3wtpx4z6w35",
+      "company": "openai",
+      "slug": "design-chess-game",
+      "title": "Design Chess Game",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-chess-game",
+      "contentAvailable": true,
+      "contentCharacters": 12459,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1172810-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181839-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100178"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1172810-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181839-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100178",
+        "https://www.1point3acres.com/interview/problems/company/openai/design-chess-game"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyy7928wh9fsj1076rk3w",
+      "company": "openai",
+      "slug": "technical-deep-dive",
+      "title": "Technical Deep Dive",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/technical-deep-dive",
+      "contentAvailable": true,
+      "contentCharacters": 639,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174510-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181194-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1180594-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174510-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181194-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1180594-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/technical-deep-dive"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01kstgk6yt26bkj1fhhzd77xj3",
+      "company": "openai",
+      "slug": "mining-novel-data-unlabeled-corpus",
+      "title": "Mining Novel Data Unlabeled Corpus",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/mining-novel-data-unlabeled-corpus",
+      "contentAvailable": true,
+      "contentCharacters": 487,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "brief-topic-summary",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100044"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100044",
+        "https://www.1point3acres.com/interview/problems/company/openai/mining-novel-data-unlabeled-corpus"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6b7gh11vkakgjw0c91a",
+      "company": "openai",
+      "slug": "multi-tenant-ci-cd-workflow",
+      "title": "Multi Tenant CI CD Workflow",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/multi-tenant-ci-cd-workflow",
+      "contentAvailable": true,
+      "contentCharacters": 8586,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100046"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100046",
+        "https://www.1point3acres.com/interview/problems/company/openai/multi-tenant-ci-cd-workflow"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyxzqmet5xzymjagrfvpb",
+      "company": "openai",
+      "slug": "math-reasoning-stopping-time",
+      "title": "Math Reasoning Stopping Time",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/math-reasoning-stopping-time",
+      "contentAvailable": true,
+      "contentCharacters": 983,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-description-paraphrase",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1173645-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/openai/math-reasoning-stopping-time",
+        "https://www.1point3acres.com/bbs/thread-1173645-1-1.html"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krfsyychcbcemf0mfrh7z67n",
+      "company": "openai",
+      "slug": "recruiter-hr-screen-bq",
+      "title": "Recruiter Hr Screen BQ",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/recruiter-hr-screen-bq",
+      "contentAvailable": true,
+      "contentCharacters": 980,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174510-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/openai",
+        "https://www.1point3acres.com/bbs/thread-1174510-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/recruiter-hr-screen-bq"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyxqtj6f82b8b1n3vcjrf",
+      "company": "openai",
+      "slug": "data-labeling-task-scheduler",
+      "title": "Data Labeling Task Scheduler",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/data-labeling-task-scheduler",
+      "contentAvailable": true,
+      "contentCharacters": 7068,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100239"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100239",
+        "https://www.1point3acres.com/interview/problems/company/openai/data-labeling-task-scheduler"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6vzjn3srmxe66qhys4d",
+      "company": "openai",
+      "slug": "design-google-calendar",
+      "title": "Design Google Calendar",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-google-calendar",
+      "contentAvailable": true,
+      "contentCharacters": 458,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "brief-topic-summary",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100130"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100130",
+        "https://www.1point3acres.com/interview/problems/company/openai/design-google-calendar"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyxs375zkrs18zj5qw0q2",
+      "company": "openai",
+      "slug": "version-dependency",
+      "title": "Version Dependency",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/version-dependency",
+      "contentAvailable": true,
+      "contentCharacters": 1239,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-description-constraints-incomplete",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": false,
+      "viewerCompatibleUrls": [],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/openai/version-dependency"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01kstgk6fnktvm3s3f7fxa9app",
+      "company": "openai",
+      "slug": "in-memory-database-sql",
+      "title": "In Memory Database SQL",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/in-memory-database-sql",
+      "contentAvailable": true,
+      "contentCharacters": 13194,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100052"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100052",
+        "https://www.1point3acres.com/interview/problems/company/openai/in-memory-database-sql"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyy3f9h29f7j7979gfyjt",
+      "company": "openai",
+      "slug": "payment-coffee-shop",
+      "title": "Payment Coffee Shop",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/payment-coffee-shop",
+      "contentAvailable": true,
+      "contentCharacters": 787,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1178674-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181247-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1178674-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181247-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/payment-coffee-shop"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01kstgk6chzgzmd6vtg7q812pp",
+      "company": "openai",
+      "slug": "chat-bot-system-refactoring",
+      "title": "Chat Bot System Refactoring",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/chat-bot-system-refactoring",
+      "contentAvailable": true,
+      "contentCharacters": 24659,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100045"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100045",
+        "https://www.1point3acres.com/interview/problems/company/openai/chat-bot-system-refactoring"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6nmqps57m5dnzrxeg35",
+      "company": "openai",
+      "slug": "webhook-delivery-system",
+      "title": "Webhook Delivery System",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/webhook-delivery-system",
+      "contentAvailable": true,
+      "contentCharacters": 7973,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100056"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100056",
+        "https://www.1point3acres.com/interview/problems/company/openai/webhook-delivery-system"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk682xp1t68wtcwbfkrec",
+      "company": "openai",
+      "slug": "resumable-iterator",
+      "title": "Resumable Iterator",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/resumable-iterator",
+      "contentAvailable": true,
+      "contentCharacters": 16659,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1180787-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100058"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1180787-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100058",
+        "https://www.1point3acres.com/interview/problems/company/openai/resumable-iterator"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyy27mp0d7nqcq9fjp0cj",
+      "company": "openai",
+      "slug": "design-slack",
+      "title": "Design Slack",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-slack",
+      "contentAvailable": true,
+      "contentCharacters": 2009,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "locked-title-preview-plus-independent-same-topic-reports-original-guide",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1164140-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/design-slack",
+        "https://www.1point3acres.com/bbs/thread-1164140-1-1.html",
+        "https://www.hack2hire.com/question-bank/companies/openai/system-design/69c9fe5dff3ebde766ced6f4"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krfsyxjq22t2n12qx291a9qs",
+      "company": "openai",
+      "slug": "gpu-credits",
+      "title": "GPU Credits",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/gpu-credits",
+      "contentAvailable": true,
+      "contentCharacters": 1103,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1181418-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1172810-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1181418-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1172810-1-1.html",
+        "https://www.hack2hire.com/question-bank/companies/openai/coding-questions/69117144869dd6a56c434053/practice",
+        "https://www.hack2hire.com/question-bank/companies/openai/coding-questions/6913b4290ac116974ccedd12/practice",
+        "https://www.1point3acres.com/interview/problems/company/openai/gpu-credits"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyxpkvrae8cyfwj72xm3k",
+      "company": "openai",
+      "slug": "social-network-follow-graph",
+      "title": "Social Network Follow Graph",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/social-network-follow-graph",
+      "contentAvailable": true,
+      "contentCharacters": 10654,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1172554-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181536-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100180"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1172554-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1181536-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100180",
+        "https://www.1point3acres.com/interview/problems/company/openai/social-network-follow-graph"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk69qw40qd3n81x87bryv",
+      "company": "openai",
+      "slug": "opensheet-spreadsheet",
+      "title": "Opensheet Spreadsheet",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/opensheet-spreadsheet",
+      "contentAvailable": true,
+      "contentCharacters": 17887,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100054"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100054",
+        "https://www.1point3acres.com/interview/problems/company/openai/opensheet-spreadsheet"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk63dpa32acx2deb2m6y0",
+      "company": "openai",
+      "slug": "crossword-puzzle-solver",
+      "title": "Crossword Puzzle Solver",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/crossword-puzzle-solver",
+      "contentAvailable": true,
+      "contentCharacters": 16730,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100131"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100131",
+        "https://www.1point3acres.com/interview/problems/company/openai/crossword-puzzle-solver"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6rnm5vxgz9hwyaxhy8w",
+      "company": "openai",
+      "slug": "points-of-interest-yelp",
+      "title": "Points Of Interest Yelp",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/points-of-interest-yelp",
+      "contentAvailable": true,
+      "contentCharacters": 1789,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "locked-public-preview-plus-same-family-catalog-original-geospatial-guide",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1174549-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/points-of-interest-yelp",
+        "https://www.hack2hire.com/question-bank/companies/openai/system-design/69f9729772a3d3fe39f8d21b"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krfsyy0zs2hrabp2mnd82383",
+      "company": "openai",
+      "slug": "streaming-entropy",
+      "title": "Streaming Entropy",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/streaming-entropy",
+      "contentAvailable": true,
+      "contentCharacters": 1409,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1173645-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://prachub.com/interview-questions/compute-entropy-and-implement-1-nn",
+        "https://www.1point3acres.com/interview/problems/company/openai",
+        "https://www.1point3acres.com/bbs/thread-1173645-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/streaming-entropy"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01kstgk6q4dgt1tbccmapdm2h6",
+      "company": "openai",
+      "slug": "time-based-kv-store",
+      "title": "Time Based KV Store",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/time-based-kv-store",
+      "contentAvailable": true,
+      "contentCharacters": 628,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1181536-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1181536-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/time-based-kv-store"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01kstgk6e1r739307996pgmzvm",
+      "company": "openai",
+      "slug": "durable-kv-store-serialization",
+      "title": "Durable KV Store Serialization",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/durable-kv-store-serialization",
+      "contentAvailable": true,
+      "contentCharacters": 16346,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100062"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100062",
+        "https://www.1point3acres.com/interview/problems/company/openai/durable-kv-store-serialization"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyxyfmbb9kkyvh82yh4kj",
+      "company": "openai",
+      "slug": "autograd-hillis-steele-scan",
+      "title": "Autograd Hillis Steele Scan",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/autograd-hillis-steele-scan",
+      "contentAvailable": true,
+      "contentCharacters": 1637,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171922-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171922-1-1.html",
+        "https://prachub.com/interview-questions/debug-minigpt-and-backpropagate-matmul",
+        "https://www.1point3acres.com/interview/problems/company/openai/autograd-hillis-steele-scan"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyxm7v025mn1ttc42p7w5",
+      "company": "openai",
+      "slug": "ip-address-cidr-iterator",
+      "title": "IP Address CIDR Iterator",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/ip-address-cidr-iterator",
+      "contentAvailable": true,
+      "contentCharacters": 10468,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1181839-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100049"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1181839-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100049",
+        "https://www.1point3acres.com/interview/problems/company/openai/ip-address-cidr-iterator"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyxnfae6mrzymzktzn1ep",
+      "company": "openai",
+      "slug": "shard-rebalance",
+      "title": "Shard Rebalance",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/shard-rebalance",
+      "contentAvailable": true,
+      "contentCharacters": 2087,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100238"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100238",
+        "https://www.1point3acres.com/interview/problems/company/openai/shard-rebalance"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01kstgk6jh2shdvphthgwts9j6",
+      "company": "openai",
+      "slug": "gpt-3-playground",
+      "title": "Gpt 3 Playground",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/gpt-3-playground",
+      "contentAvailable": true,
+      "contentCharacters": 582,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": false,
+      "viewerCompatibleUrls": [],
+      "allSourceUrls": [
+        "https://prachub.com/interview-questions/implement-a-mobile-chat-interface-in-an-existing-codebase",
+        "https://www.1point3acres.com/interview/problems/company/openai/gpt-3-playground"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyxwwq8kp2jx9fx14e4z3",
+      "company": "openai",
+      "slug": "classifier-noisy-annotators",
+      "title": "Classifier Noisy Annotators",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/classifier-noisy-annotators",
+      "contentAvailable": true,
+      "contentCharacters": 703,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1178049-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1178049-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/classifier-noisy-annotators"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01kstgk60ew3r9qe06fvb1msm6",
+      "company": "openai",
+      "slug": "design-cloud-ide",
+      "title": "Design Cloud Ide",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-cloud-ide",
+      "contentAvailable": true,
+      "contentCharacters": 11787,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171984-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100129"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1171984-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100129",
+        "https://www.1point3acres.com/interview/problems/company/openai/design-cloud-ide"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyy60vwz6p6naw8vj5w3p",
+      "company": "openai",
+      "slug": "chatgpt-enterprise-rag",
+      "title": "Chatgpt Enterprise Rag",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/chatgpt-enterprise-rag",
+      "contentAvailable": true,
+      "contentCharacters": 1912,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "exact-locked-summary-plus-public-related-rag-system-original-enterprise-guide",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1158070-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100051"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1158070-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/chatgpt-enterprise-rag",
+        "https://www.1point3acres.com/interview/problems/post/7100051",
+        "https://www.1point3acres.com/interview/problems/company/openai"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krfsyy4rkqem2r586exb4eww",
+      "company": "openai",
+      "slug": "design-sora-video-generation",
+      "title": "Design Sora Video Generation",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/design-sora-video-generation",
+      "contentAvailable": true,
+      "contentCharacters": 19097,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1180717-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1177818-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100240"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1180717-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1177818-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100240",
+        "https://www.1point3acres.com/interview/problems/company/openai/design-sora-video-generation"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-openai.md"
+      ]
+    },
+    {
+      "id": "01krfsyy9tarr5xg83sbs1qz3j",
+      "company": "openai",
+      "slug": "rag-search-ml-design",
+      "title": "Rag Search Ml Design",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/rag-search-ml-design",
+      "contentAvailable": true,
+      "contentCharacters": 1988,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "exact-locked-public-preview-plus-public-rag-reference-original-ml-search-guide",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1158070-1-1.html",
+        "https://www.1point3acres.com/interview/problems/post/7100051"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1158070-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/rag-search-ml-design",
+        "https://www.1point3acres.com/interview/problems/post/7100051",
+        "https://github.com/alirezadir/machine-learning-interviews/blob/main/src/MLSD/ml-system-design.md"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01kstgk6526e8s9s30grz47b34",
+      "company": "openai",
+      "slug": "implement-cd-command",
+      "title": "Implement CD Command",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/implement-cd-command",
+      "contentAvailable": true,
+      "contentCharacters": 673,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/7100341"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/7100341",
+        "https://www.teamblind.com/post/openai-interview-question-implement-a-cd-command-fuw1arri",
+        "https://www.1point3acres.com/interview/problems/company/openai/implement-cd-command"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krfsyyb30zsgwhmtwfb55a9f",
+      "company": "openai",
+      "slug": "code-reading-pytorch-refactor",
+      "title": "Code Reading PyTorch Refactor",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/openai/code-reading-pytorch-refactor",
+      "contentAvailable": true,
+      "contentCharacters": 1193,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-task-description-starter-code-missing",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1165833-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1165833-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/openai/code-reading-pytorch-refactor"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krj08532rywss8qpr6e7am3b",
+      "company": "anthropic",
+      "slug": "coding-q1-image-processing",
+      "title": "Coding Q1 Image Processing",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q1-image-processing",
+      "contentAvailable": true,
+      "contentCharacters": 13037,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100010",
+        "https://www.1point3acres.com/bbs/thread-1154439-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1157730-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1150952-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1171459-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1171733-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1172486-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1173701-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1174702-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1158568-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1161686-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1158153-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1155853-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1161097-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1171002-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100010",
+        "https://www.1point3acres.com/interview/problems/d5535584-0980-47fb-862d-6f9f7569791d",
+        "https://www.1point3acres.com/interview/problems/6d14e9e2-3f95-453c-aca6-3f04fcbb34f0",
+        "https://www.1point3acres.com/bbs/thread-1154439-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1157730-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1150952-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1171459-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1171733-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1172486-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1173701-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1174702-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1158568-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1161686-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1158153-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1155853-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1161097-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1171002-1-1.html",
+        "https://www.hellointerview.com/community/questions/image-transform-pipeline/cmj4jzavk00je08adwpqygvow",
+        "https://prachub.com/coding-questions/generate-outputs-for-images-and-pipelines",
+        "https://prachub.com/coding-questions/implement-parallel-image-processing",
+        "https://www.reddit.com/r/OfferEngineering/comments/1ub6od5/anthropic_frontend_phone_screen_not_leetcode_but/",
+        "https://www.hack2hire.com/forum/6a3e17c0ca5951c782e59ae3",
+        "https://www.reddit.com/r/DarkInterview/comments/1sqvv3s/anthropic_interview_questions_reviewed_and/",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q1-image-processing"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj08660f2seqwgj3cn6s6we",
+      "company": "anthropic",
+      "slug": "onsite-hm-behavioral",
+      "title": "Onsite HM Behavioral",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-hm-behavioral",
+      "contentAvailable": true,
+      "contentCharacters": 4797,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "question-set-and-advice",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100013"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100013",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-hm-behavioral"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj0859yfv7w1mzxhxqpm9pf",
+      "company": "anthropic",
+      "slug": "coding-q6-tokenizer",
+      "title": "Coding Q6 Tokenizer",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q6-tokenizer",
+      "contentAvailable": true,
+      "contentCharacters": 6930,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100003",
+        "https://www.1point3acres.com/interview/thread/1169657"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100003",
+        "https://www.1point3acres.com/interview/thread/1169657",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q6-tokenizer"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085m7rzk8egftdnrrjbp5",
+      "company": "anthropic",
+      "slug": "performance-engineer-modeling",
+      "title": "Performance Engineer Modeling",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/performance-engineer-modeling",
+      "contentAvailable": true,
+      "contentCharacters": 1349,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1137418",
+        "https://www.1point3acres.com/bbs/thread-1157758-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/1137418",
+        "https://www.1point3acres.com/bbs/thread-1157758-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/performance-engineer-modeling"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json",
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/01_company_notes/anthropic/questions_and_solutions.md"
+      ]
+    },
+    {
+      "id": "01krj0855nahct9mjzk92dwfh9",
+      "company": "anthropic",
+      "slug": "coding-q2-lru-cache-durability",
+      "title": "Coding Q2 LRU Cache Durability",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q2-lru-cache-durability",
+      "contentAvailable": true,
+      "contentCharacters": 4983,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100002",
+        "https://www.1point3acres.com/interview/thread/1152730"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100002",
+        "https://www.1point3acres.com/interview/thread/1152730",
+        "https://www.hack2hire.com/question-bank/companies/anthropic/coding-questions/6a2db6215117d1b543565e12",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q2-lru-cache-durability"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085ngv0p8dcs4dc28ebxk",
+      "company": "anthropic",
+      "slug": "ml-configuration-system",
+      "title": "Ml Configuration System",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/ml-configuration-system",
+      "contentAvailable": true,
+      "contentCharacters": 505,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1164302"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/1164302",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/ml-configuration-system"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj0854e8dc142sa1d8r9xb8",
+      "company": "anthropic",
+      "slug": "coding-q2-file-deduplication",
+      "title": "Coding Q2 File Deduplication",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q2-file-deduplication",
+      "contentAvailable": true,
+      "contentCharacters": 8138,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100000",
+        "https://www.1point3acres.com/bbs/thread-1144078-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100000",
+        "https://www.1point3acres.com/bbs/thread-1144078-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q2-file-deduplication"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085cfwdr5mvb4gx1779tk",
+      "company": "anthropic",
+      "slug": "ml-programming-screen",
+      "title": "Ml Programming Screen",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/ml-programming-screen",
+      "contentAvailable": true,
+      "contentCharacters": 1680,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-description-paraphrase",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1137418-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1137418-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/ml-programming-screen",
+        "https://reyzharkov.com/blog/posts/interviews-2025-ml-research-engineer-uk",
+        "https://www.finalroundai.com/blog/anthropic-interview-process"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krj0863g610y2fs27z0v6n1t",
+      "company": "anthropic",
+      "slug": "sd-q5-data-infrastructure",
+      "title": "SD Q5 Data Infrastructure",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q5-data-infrastructure",
+      "contentAvailable": true,
+      "contentCharacters": 415,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1167658-1-1.html",
+        "https://www.1point3acres.com/interview/thread/1167658"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q5-data-infrastructure",
+        "https://www.1point3acres.com/bbs/thread-1167658-1-1.html",
+        "https://www.1point3acres.com/interview/thread/1167658"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj085ds7zdrm125x2xmc42h",
+      "company": "anthropic",
+      "slug": "rl-fundamentals-grpo-debug",
+      "title": "Rl Fundamentals GRPO Debug",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/rl-fundamentals-grpo-debug",
+      "contentAvailable": true,
+      "contentCharacters": 1052,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1167043",
+        "https://www.1point3acres.com/interview/thread/1166898",
+        "https://www.1point3acres.com/bbs/thread-1167940-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/1167043",
+        "https://prachub.com/interview-questions/debug-a-grpo-training-loop-and-explain-ratios",
+        "https://www.1point3acres.com/interview/thread/1166898",
+        "https://www.1point3acres.com/bbs/thread-1167940-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/rl-fundamentals-grpo-debug"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj085s865dne0emv8wtjjjd",
+      "company": "anthropic",
+      "slug": "oa-recipe-manager",
+      "title": "OA Recipe Manager",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-recipe-manager",
+      "contentAvailable": true,
+      "contentCharacters": 12779,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100006"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100006",
+        "./practice/anthropic/recipe_manager.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-recipe-manager"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj0856yprpqe7hqvtsbknq0",
+      "company": "anthropic",
+      "slug": "coding-q3-stack-trace",
+      "title": "Coding Q3 Stack Trace",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q3-stack-trace",
+      "contentAvailable": true,
+      "contentCharacters": 5175,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "related-stack-trace-variant-not-canonical",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100016",
+        "https://www.1point3acres.com/bbs/thread-1138904-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100016",
+        "https://www.1point3acres.com/bbs/thread-1138904-1-1.html",
+        "https://www.hack2hire.com/question-bank/companies/anthropic/coding-questions/69308191cd79766b0b310224",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q3-stack-trace"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085x6n84cerq4k2axrg0y",
+      "company": "anthropic",
+      "slug": "oa-file-systems",
+      "title": "OA File Systems",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-file-systems",
+      "contentAvailable": true,
+      "contentCharacters": 7632,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "requirements-examples-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100005"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100005",
+        "./practice/anthropic/cloud_storage_full.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-file-systems"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085jvxay35n0bkz9sxh7k",
+      "company": "anthropic",
+      "slug": "performance-engineer-take-home",
+      "title": "Performance Engineer Take Home",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/performance-engineer-take-home",
+      "contentAvailable": true,
+      "contentCharacters": 1227,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1135727-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://github.com/anthropics/original_performance_takehome",
+        "https://trirpi.github.io/posts/anthropic-performance-takehome/",
+        "https://www.1point3acres.com/bbs/thread-1135727-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/performance-engineer-take-home"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj085b5sb2wrma25gg569y5",
+      "company": "anthropic",
+      "slug": "coding-design-data-batcher",
+      "title": "Coding Design Data Batcher",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-design-data-batcher",
+      "contentAvailable": true,
+      "contentCharacters": 1679,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1148586-2-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-design-data-batcher",
+        "https://www.1point3acres.com/interview/problems/afa9e386-7de2-4dd2-8747-3810328a9c39",
+        "https://www.1point3acres.com/bbs/thread-1148586-2-1.html",
+        "./practice/anthropic/weighted_data_batcher.py"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json",
+        "/Users/mingrui/Documents/codes/interview/1acre3points/practice/anthropic/weighted_data_batcher.py",
+        "/Users/mingrui/Documents/codes/interview/1acre3points/tests/test_weighted_data_batcher.py"
+      ]
+    },
+    {
+      "id": "01krj0867b5318p952f4p68kbf",
+      "company": "anthropic",
+      "slug": "onsite-project-deep-dive",
+      "title": "Onsite Project Deep Dive",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-project-deep-dive",
+      "contentAvailable": true,
+      "contentCharacters": 457,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1137418"
+      ],
+      "allSourceUrls": [
+        "https://www.reddit.com/r/OfferEngineering/comments/1umrpmp/anthropic_jun_2026_staff_swe_infra_interview/",
+        "https://www.1point3acres.com/interview/thread/1137418",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-project-deep-dive"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj085thg8bzrjhpp2m9a1rz",
+      "company": "anthropic",
+      "slug": "oa-worker-management",
+      "title": "OA Worker Management",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-worker-management",
+      "contentAvailable": true,
+      "contentCharacters": 3170,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "requirements-examples-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100008"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100008",
+        "./practice/anthropic/employee.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-worker-management"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085pv3tfzq1wh2gemn73f",
+      "company": "anthropic",
+      "slug": "prompting-engineering-with-llms",
+      "title": "Prompting Engineering With LLMs",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/prompting-engineering-with-llms",
+      "contentAvailable": true,
+      "contentCharacters": 474,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1147266"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/1147266",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/prompting-engineering-with-llms"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj08613rb804kn0vnqnhb6r",
+      "company": "anthropic",
+      "slug": "sd-q3-model-distribution",
+      "title": "SD Q3 Model Distribution",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q3-model-distribution",
+      "contentAvailable": true,
+      "contentCharacters": 11268,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100001"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100001",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q3-model-distribution"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj08588t378kf1a6sed5dx2",
+      "company": "anthropic",
+      "slug": "coding-q4-distributed-mode-median",
+      "title": "Coding Q4 Distributed Mode Median",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q4-distributed-mode-median",
+      "contentAvailable": true,
+      "contentCharacters": 15716,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100009"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100009",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-q4-distributed-mode-median"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085yfz64mr8hwr6xmtsn3",
+      "company": "anthropic",
+      "slug": "sd-q1-inference-api",
+      "title": "SD Q1 Inference API",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q1-inference-api",
+      "contentAvailable": true,
+      "contentCharacters": 30886,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100015",
+        "https://www.1point3acres.com/interview/problems/post/7100012"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100015",
+        "https://www.1point3acres.com/interview/problems/post/7100012",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q1-inference-api"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krwktdqnzgff3c7vy782nzqf",
+      "company": "anthropic",
+      "slug": "oa-fellows-dns-resolver",
+      "title": "OA Fellows DNS Resolver",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-fellows-dns-resolver",
+      "contentAvailable": true,
+      "contentCharacters": 630,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1177056"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/1177056",
+        "https://www.reddit.com/r/Anthropic/comments/1qovmbs/assessment_for_anthropic_fellows_program_for_ai/",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-fellows-dns-resolver"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj085f397as5nr133y20cq8",
+      "company": "anthropic",
+      "slug": "agents-coding-llm-tool-use",
+      "title": "Agents Coding LLM Tool Use",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/agents-coding-llm-tool-use",
+      "contentAvailable": true,
+      "contentCharacters": 752,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/thread/1178346"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/thread/1178346",
+        "https://www.reddit.com/r/OfferEngineering/comments/1upc38m/anthropic_jun_2026_forward_deployed_engineerfde/",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/agents-coding-llm-tool-use"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj085r0zdjd0jdss4br5psj",
+      "company": "anthropic",
+      "slug": "oa-in-memory-database",
+      "title": "OA In Memory Database",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-in-memory-database",
+      "contentAvailable": true,
+      "contentCharacters": 8849,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "requirements-examples-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100014"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100014",
+        "./practice/anthropic/in_memory_db.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-in-memory-database"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj086a5ywgbx182ec9snxq3",
+      "company": "anthropic",
+      "slug": "recruiter-screen-why-anthropic",
+      "title": "Recruiter Screen Why Anthropic",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/recruiter-screen-why-anthropic",
+      "contentAvailable": true,
+      "contentCharacters": 664,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1143118-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1144012-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1143118-1-1.html",
+        "https://www.1point3acres.com/bbs/thread-1144012-1-1.html",
+        "https://leonstaff.com/blogs/anthropic-interview-process/",
+        "https://www.reddit.com/r/Hack2Hire/comments/1t6ncgs/anthropic_interview_process_experience_megathread/",
+        "https://interviewing.io/anthropic-interview-questions",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/recruiter-screen-why-anthropic"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj0862c918r93mxwbafb6rn",
+      "company": "anthropic",
+      "slug": "sd-q4-1to1-chat-system",
+      "title": "SD Q4 1To1 Chat System",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q4-1to1-chat-system",
+      "contentAvailable": true,
+      "contentCharacters": 15396,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100098"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100098",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q4-1to1-chat-system"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085hkjh82qsc4d3sbyx25",
+      "company": "anthropic",
+      "slug": "mech-interp-take-home",
+      "title": "Mech Interp Take Home",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/mech-interp-take-home",
+      "contentAvailable": true,
+      "contentCharacters": 1208,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-description-paraphrase",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": false,
+      "viewerCompatibleUrls": [],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/company/anthropic/mech-interp-take-home",
+        "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    },
+    {
+      "id": "01krj0864nfxxkcwwy6e13hr0n",
+      "company": "anthropic",
+      "slug": "onsite-culture-ai-safety",
+      "title": "Onsite Culture AI Safety",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-culture-ai-safety",
+      "contentAvailable": true,
+      "contentCharacters": 7720,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "question-set-and-advice",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100007",
+        "https://www.1point3acres.com/bbs/thread-1141359-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100007",
+        "https://www.1point3acres.com/bbs/thread-1141359-1-1.html",
+        "https://ridhimakhurana.substack.com/p/inside-anthropics-culture-interview",
+        "https://www.tryexponent.com/experiences/anthropic-senior-software-engineer-interview-2ffa5f",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-culture-ai-safety"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085vvr7h82jwvyr05xa19",
+      "company": "anthropic",
+      "slug": "oa-bank-system",
+      "title": "OA Bank System",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-bank-system",
+      "contentAvailable": true,
+      "contentCharacters": 5986,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "requirements-examples-and-discussion",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100004"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100004",
+        "./practice/anthropic/banking_system_full.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-bank-system"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085zwxrddbmby9vzq65v0",
+      "company": "anthropic",
+      "slug": "sd-q2-prompt-playground",
+      "title": "SD Q2 Prompt Playground",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q2-prompt-playground",
+      "contentAvailable": true,
+      "contentCharacters": 11406,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "design-guide",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100017"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100017",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/sd-q2-prompt-playground"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01kv6me370b4v3z2v13938fb05",
+      "company": "anthropic",
+      "slug": "coding-bootloader",
+      "title": "Coding Bootloader",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/coding-bootloader",
+      "contentAvailable": true,
+      "contentCharacters": 3322,
+      "contentKind": "locally-saved-same-problem-prompt-and-hints",
+      "contentQuality": "problem-and-hints-no-reference-solution",
+      "contentMatch": "same-problem-external-not-canonical-body",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100492"
+      ],
+      "allSourceUrls": [
+        "https://www.hack2hire.com/question-bank/companies/anthropic/coding-questions/6a373b2b6849fecc81442861",
+        "https://www.1point3acres.com/interview/problems/post/7100492",
+        "./practice/anthropic/bootloader_repair.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/coding-bootloader"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/raw/h2h_questions_full.json"
+      ]
+    },
+    {
+      "id": "01krwktdpabdnmmpqb4xc49dsm",
+      "company": "anthropic",
+      "slug": "oa-task-management",
+      "title": "OA Task Management",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/oa-task-management",
+      "contentAvailable": true,
+      "contentCharacters": 18860,
+      "contentKind": "locally-saved-topic-editorial",
+      "contentQuality": "problem-and-solution",
+      "contentMatch": "exact-topic-editorial",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100097"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/interview/problems/post/7100097",
+        "./practice/anthropic/task_manager.py",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/oa-task-management"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/my_interview_prep/new/1p3a-anthropic.md"
+      ]
+    },
+    {
+      "id": "01krj085gaejwfq9jk9qspb5hs",
+      "company": "anthropic",
+      "slug": "ml-take-home-research",
+      "title": "Ml Take Home Research",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/ml-take-home-research",
+      "contentAvailable": true,
+      "contentCharacters": 1012,
+      "contentKind": "locally-saved-research-summary",
+      "contentQuality": "research-summary-and-solution-hints",
+      "contentMatch": "curated-topic-reconstruction-not-verbatim",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1103094-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.reddit.com/r/Anthropic/comments/1intqvv/i_failed_my_anthropic_interview_and_came_to_tell/",
+        "https://blog.faillearnrepeat.net/blog/i-failed-my-anthropic-interview-and-came-to-tell-you-all-about-it-so-you-dont-have-to",
+        "https://www.tryexponent.com/guides/anthropic-ai-safety-fellow-interview",
+        "https://www.1point3acres.com/bbs/thread-1103094-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/ml-take-home-research"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/supplemental.json"
+      ]
+    },
+    {
+      "id": "01krj0868q1kq18bb6dtnf0g1f",
+      "company": "anthropic",
+      "slug": "onsite-design-doc-review",
+      "title": "Onsite Design Doc Review",
+      "officialUrl": "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-design-doc-review",
+      "contentAvailable": true,
+      "contentCharacters": 941,
+      "contentKind": "original-structured-preparation-guide",
+      "contentQuality": "structured-chinese-problem-and-solution-guide",
+      "contentMatch": "public-description-document-missing",
+      "canonicalMemberBodyVerified": false,
+      "canonicalVerificationStatus": "waiting-for-authorized-source",
+      "viewerReady": true,
+      "viewerCompatibleUrls": [
+        "https://www.1point3acres.com/bbs/thread-1162478-1-1.html"
+      ],
+      "allSourceUrls": [
+        "https://www.1point3acres.com/bbs/thread-1162478-1-1.html",
+        "https://www.1point3acres.com/interview/problems/company/anthropic/onsite-design-doc-review",
+        "https://www.hack2hire.com/blog/anthropic-interview-process-rounds-format-timeline-2026"
+      ],
+      "localSourcePaths": [
+        "/Users/mingrui/Documents/codes/interview/1acre3points/data/oj_original_guides.md"
+      ]
+    }
+  ]
+}

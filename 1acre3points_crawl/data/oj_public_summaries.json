@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-10",
+  "notice": "Paraphrased preparation summaries from public pages; no member-only text is included.",
+  "records": [
+    {
+      "id": "1a1fb907-7914-40b7-aa33-f5825437aa91",
+      "company": "anthropic",
+      "title": "Implement a UI From a Figma Mock in React + TypeScript",
+      "sourceUrl": "https://www.1point3acres.com/interview/problems/1a1fb907-7914-40b7-aa33-f5825437aa91",
+      "match": "exact-public-oj-summary",
+      "confidence": "high",
+      "content": "## 公开题面摘要\n\n在限定时间内，根据面试官提供的 Figma 链接或截图，用 React 与 TypeScript 实现一个可运行界面。重点不是绝对像素级复刻，而是正确还原版式、间距和视觉层级，并把页面拆成合理、可复用的组件。\n\n需要为核心数据和组件 props 定义清晰类型，避免使用 `any`；根据 mock 实现主要交互，例如选择状态、tabs、搜索过滤、表单输入、按钮和 modal，并使用 React hooks 管理状态。还要覆盖空列表、无搜索结果和非法输入等基本边界。\n\n默认假设使用本地 mock data，除非面试官另行要求 API；默认不依赖大型 UI 库。验收时应检查初始布局、选择状态、搜索与清空、空状态，以及主要 modal/操作是否能正确开关。"
+    },
+    {
+      "id": "a5c37bda-f1a1-528d-b6aa-0968b57e250a",
+      "company": "openai",
+      "title": "Reproduce Double Descent in Linear Regression",
+      "sourceUrl": "https://nicwong.com/double-descent-in-financial-time-series/",
+      "match": "external-concept-guide-not-exact-oj",
+      "confidence": "medium",
+      "content": "## Double Descent 复现实验准备指南（非当前 OJ 逐字题面）\n\n构造可复现的合成回归数据，并让模型维度从欠参数化逐步跨过插值阈值进入过参数化区域。对每个维度使用相同训练/测试协议，记录训练误差和测试 MSE；在线性回归无唯一解时使用最小范数解或伪逆。\n\n预期现象是：测试误差先下降，在参数量接近样本量、模型刚好能插值训练集时上升形成峰值，随后在更宽的过参数化区域再次下降。实验必须固定随机种子、重复多个 seed，并分别改变噪声强度、样本数和正则化强度，以区分真正的 double-descent 曲线与随机波动。\n\n实现时应检查矩阵 shape、数值稳定性和奇异矩阵处理，并绘制模型复杂度对训练/测试误差的曲线。外部概念资料可帮助理解实验设计，但当前 UUID 的精确输入输出仍应以官方页面为准。"
+    }
+  ]
+}

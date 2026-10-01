@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-07-11T03:48:49+00:00",
+  "reportedOfficialCatalog": {
+    "openai": 184,
+    "anthropic": 99,
+    "total": 283
+  },
+  "individuallyIdentifiedFromPublicCatalog": {
+    "openai": {
+      "qbank": 45,
+      "oj": 139,
+      "total": 184
+    },
+    "anthropic": {
+      "qbank": 35,
+      "oj": 64,
+      "total": 99
+    },
+    "total": 283
+  },
+  "unidentifiedCatalogRecords": 0,
+  "publicOjMetadataSnapshot": {
+    "path": "/Users/mingrui/Documents/codes/interview/1acre3points/data/public_oj_catalog.json",
+    "endpoint": "https://trpc.1point3acres.com/trpc/interview.getOJProblemList",
+    "records": 203,
+    "tagsNote": "OJ endpoint has no official tags; any non-empty OJ tags are title-derived and labelled tagsSource=title-inference."
+  },
+  "notes": [
+    "All 283 primary company-page catalog rows have real official IDs/slugs, titles, and detail URLs.",
+    "The 207 supplemental research cards are not counted as official catalog rows.",
+    "A complete catalog index is not a complete member-content mirror.",
+    "No member test cases or paywalled bodies were retrieved by this import."
+  ]
+}

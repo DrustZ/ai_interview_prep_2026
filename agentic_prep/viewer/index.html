@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agentic 面试准备 · 阅读器</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="vendor/hljs-theme.css">
+<!-- KaTeX：本地 vendor 版（含 4 个常用 woff2 字体，其余字体缺失时回退系统字体） -->
+<link rel="stylesheet" href="vendor/katex.min.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-head">
+      <h1>Agentic 面试准备</h1>
+      <div class="progress">
+        <div class="bar"><div class="fill" id="progfill"></div></div>
+        <span id="progtext"></span>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+  </aside>
+  <main class="content" id="content">
+    <div class="empty">← 从左侧选择一篇文档开始阅读</div>
+  </main>
+</div>
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
+<script src="vendor/katex.min.js"></script>
+<script src="vendor/auto-render.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

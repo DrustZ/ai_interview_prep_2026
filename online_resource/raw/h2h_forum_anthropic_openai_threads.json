@@ -1,0 +1,1339 @@
+[
+ {
+  "id": "6a3e17c0ca5951c782e59ae3",
+  "type": "FORUM",
+  "title": "Anthropic full loop - Rejected - technical felt fine, culture did not",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 204,
+  "downvoteCount": 0,
+  "voteScore": 204,
+  "viewCount": 3219,
+  "createdDate": "2026-06-26T06:10:08.594Z",
+  "updatedDate": "2026-07-10T07:00:00.312Z",
+  "isAnonymous": false,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "kevlin92",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/14.webp"
+  },
+  "displayName": "kevlin92",
+  "replyCount": 8,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a17531c7b0582b352789272",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - ML Engineer",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - ML Engineer\n\n**Time at Company:** 18 months\n\n18 months is enough to have a real read.\n\nTechnical work is excellent. Mission is genuine. Equity is a bet that may not pay out for years. Culture is high-trust and low-bureaucracy, which cuts both ways when scope or expectations shift without warning.\n\nGood choice if you want to learn fast from sharp people. Wrong place if you want structure or stability.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 245,
+  "downvoteCount": 0,
+  "voteScore": 245,
+  "viewCount": 3724,
+  "createdDate": "2026-05-27T20:25:00.017Z",
+  "updatedDate": "2026-07-09T18:00:02.169Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-d1she",
+  "replyCount": 5,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a1785807b0582b352789482",
+  "type": "FORUM",
+  "title": "OpenAI rejection after full loop",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 157,
+  "downvoteCount": 0,
+  "voteScore": 157,
+  "viewCount": 2432,
+  "createdDate": "2026-05-28T00:00:00.098Z",
+  "updatedDate": "2026-07-10T10:00:00.316Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-74nap",
+  "replyCount": 1,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a0df6a0bd87a7041d74cf16",
+  "type": "FORUM",
+  "title": "OpenAI close call",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "OpenAI close call\n\n**Result:** Pending\n**Number of Rounds:** 5\n\nPhone screen was KV store serialization. Parts 1 through 3: basic serialization, file splitting with size limit, then append-only log variant. Got through all three.\n\nVO was 5 rounds. GPU Credits for coding round 1, went fine. Coding round 2 was the virus transmission simulation with immunity states. Part 1 basic, part 2 adds the X state with duration tracking and state transition logic. More edge cases than expected.\n\nSystem design was DevBox (IDE environment). Interviewer had built it. Went deep on scalability and storage, but there were domain-specific areas I couldn't match their depth on.\n\nDeep dive was fine. Behavioral included \"what if AI causes unemployment\" which I wasn't expecting.\n\nRecruiter said \"close call\" and flagged me for a sooner reinterview, possibly 6 months out. No rejection email. Still parsing what that means.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 132,
+  "downvoteCount": 0,
+  "voteScore": 132,
+  "viewCount": 1132,
+  "createdDate": "2026-05-20T18:00:00.031Z",
+  "updatedDate": "2026-07-10T03:00:01.954Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "close_call_cache",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/22.webp"
+  },
+  "displayName": "close_call_cache",
+  "replyCount": 7,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a3cc3e06849fecc81444f3a",
+  "type": "FORUM",
+  "title": "Anthropic onsite. Coding was fine, culture round cooked me (Rejected)",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 80,
+  "downvoteCount": 0,
+  "voteScore": 80,
+  "viewCount": 1238,
+  "createdDate": "2026-06-25T06:00:00.042Z",
+  "updatedDate": "2026-07-10T17:00:02.679Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-0l6dq",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a3432206849fecc81441353",
+  "type": "FORUM",
+  "title": "Anthropic OA, task manager design problem",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 116,
+  "downvoteCount": 0,
+  "voteScore": 116,
+  "viewCount": 1872,
+  "createdDate": "2026-06-18T18:00:00.065Z",
+  "updatedDate": "2026-07-10T06:00:02.864Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": [
+    {
+     "extractedQuestion": "$16",
+     "matches": [
+      {
+       "questionId": "69efc8ea96981f58ae1f6d74",
+       "postId": "69efc8e696981f58ae1f6d73",
+       "title": "Design a Task Assignment System",
+       "snippet": "Title: Design a Task Assignment System Description: Design a task tracking system that stores tasks by unique IDs, supports updating task metadata, and retrieves task details on demand. Implement the `TaskManager` class: - `TaskManager()` Initializes the task manager with an empty task store. - `String addTask(int timeâ¦",
+       "score": 0.8246338963508606,
+       "meta": {
+        "type": "MULTI_STEP",
+        "algorithmTags": [
+         "HASH_TABLE",
+         "DESIGN"
+        ],
+        "stages": [
+         "OA"
+        ],
+        "difficulty": 3,
+        "frequency": 7,
+        "postType": "ALGORITHM",
+        "companies": [
+         "COINBASE",
+         "ANTHROPIC",
+         "HUBSPOT",
+         "RAMP"
+        ],
+        "followUpCount": 3
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "yixuan.zhang97",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/8.webp"
+  },
+  "displayName": "yixuan.zhang97",
+  "replyCount": 5,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a3d42706849fecc8144508e",
+  "type": "FORUM",
+  "title": "did anthropic just poach the alphafold guy",
+  "forumCompany": "anthropic",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "did anthropic just poach the alphafold guy\n\ndeepmind's alphafold guy is joining anthropic now. anyone still surprised when big labs just vacuum up every top researcher?",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 195,
+  "downvoteCount": 0,
+  "voteScore": 195,
+  "viewCount": 3079,
+  "createdDate": "2026-06-25T15:00:00.038Z",
+  "updatedDate": "2026-07-10T06:00:02.692Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-wuy3l",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a156a707b0582b352788669",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - SDE",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - SDE\n\n**Time at Company:** 10 months\n\nThe people are sharp, the mission is real, and the technical problems are interesting. Those three things are genuinely true.\n\nThe rest: equity is a lottery ticket, scope definition is deliberately vague in a way that can either feel like freedom or feel like nobody knows what they want depending on the week, and the safety culture can resemble philosophical debate club more than engineering discipline depending on your team.\n\nGood place. Not a permanent home for everyone.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 60,
+  "downvoteCount": 0,
+  "voteScore": 60,
+  "viewCount": 781,
+  "createdDate": "2026-05-26T09:40:00.019Z",
+  "updatedDate": "2026-07-10T07:00:01.979Z",
+  "isAnonymous": false,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "ryanzhang98",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/3.webp"
+  },
+  "displayName": "ryanzhang98",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "69af4c29a4e93c007df3f824",
+  "type": "FORUM",
+  "title": "OpenAI - Interview Experience - Software Engineer",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {},
+  "upvoteCount": 6,
+  "downvoteCount": 0,
+  "voteScore": 6,
+  "viewCount": 293,
+  "createdDate": "2026-03-09T22:39:37.513Z",
+  "updatedDate": "2026-07-09T19:00:01.945Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": [
+    {
+     "extractedQuestion": "Coding: Design IP Range Iterator. Had to handle IP validation and range iteration. Got through it but took most of the 45 mins.",
+     "matches": [
+      {
+       "questionId": "69a607ac3d95612a1782be9b",
+       "postId": "69a5f7bb3d95612a1782be6a",
+       "title": "Design IP Range Iterator",
+       "snippet": "Title: Design IP Range Iterator Description: [CIDR (Classless Inter-Domain Routing)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation compresses a consecutive block of IPv4 addresses into one string in the format `\"<IP>/<prefix>\"` (e.g., `\"192.168.1.0/30\"`). The `prefix` is an integer `n` (0 - 32)â¦",
+       "score": 0.783138632774353,
+       "meta": {
+        "type": "MULTI_STEP",
+        "algorithmTags": [
+         "DESIGN"
+        ],
+        "stages": [
+         "SCREENING"
+        ],
+        "difficulty": 2,
+        "frequency": 8,
+        "companies": [
+         "OPENAI"
+        ],
+        "followUpCount": 2,
+        "postType": "ALGORITHM"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-4ywii",
+  "replyCount": 1,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a15cf387b0582b35278873a",
+  "type": "FORUM",
+  "title": "anthropic just locked down the sdk startup openai and google depended on",
+  "forumCompany": "anthropic",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "anthropic just locked down the sdk startup openai and google depended on\n\nFriend in devtools mentioned this. Apparently Anthropic acquired Stainless, which built the SDK generation tooling that OpenAI, Google, and Cloudflare all used. Those companies lose access going forward.\n\nNot sure what it means for devs at those labs practically, but it's a significant competitive move. Also makes me wonder what this signals about Anthropic's headcount growth on the infra side. Are they building or absorbing?",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 177,
+  "downvoteCount": 0,
+  "voteScore": 177,
+  "viewCount": 2562,
+  "createdDate": "2026-05-26T16:50:00.031Z",
+  "updatedDate": "2026-07-09T00:00:04.170Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-aff0p",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a467cf0077f066afe216511",
+  "type": "FORUM",
+  "title": "OpenAI phone screen Rejected, still processing",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "Got a phone screen with OpenAI last week. SD + coding format. System design was Sora video scheduling, which I had prepped for. But then the coding problem had this problem description that honestly felt like reading a novel. I got the core idea right but ran out of time on the follow-ups. Recruiter reached out the next day saying they'd move forward with other candidates.\n\n5 YOE and this one stung a little ngl. Back to grinding I guess.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 47,
+  "downvoteCount": 0,
+  "voteScore": 47,
+  "viewCount": 717,
+  "createdDate": "2026-07-02T15:00:00.044Z",
+  "updatedDate": "2026-07-10T08:00:01.965Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-pd3hv",
+  "replyCount": 8,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a0510803141bbc31efdd806",
+  "type": "FORUM",
+  "title": "7 months at Anthropic",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - Software Engineer\n\n**Time at Company:** 7 months\n\nTook the job for the mission. Seven months in, the mission is real. The work is meaningful and people genuinely believe in what they're building.\n\nWhat they don't advertise is the constant performance pressure dressed up as purpose. Everyone here is brilliant, and the implicit comparison never goes away. Meetings are intellectually exhausting in a way that doesn't always feel productive.\n\nPay is competitive. But don't join expecting to coast on competence. You won't.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 97,
+  "downvoteCount": 0,
+  "voteScore": 97,
+  "viewCount": 816,
+  "createdDate": "2026-05-14T00:00:00.070Z",
+  "updatedDate": "2026-07-08T23:00:01.978Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-355h2",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a2365c3990d33e1b222b9e7",
+  "type": "FORUM",
+  "title": "How long to hear back after OpenAI phone screen?",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "Haven't heard anything after a day and not sure if that's a bad sign. Was hoping to hear how long it took others to hear back (and whether it was a pass/fail) - thanks!",
+  "extra": {},
+  "upvoteCount": 183,
+  "downvoteCount": 0,
+  "voteScore": 183,
+  "viewCount": 2955,
+  "createdDate": "2026-06-06T00:11:47.156Z",
+  "updatedDate": "2026-07-10T06:00:02.402Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-7yhu2",
+  "replyCount": 4,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a095960c84b6e8a3be17d4d",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - Software Engineer",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - Software Engineer\n\n**Time at Company:** 1 year\n\nThe mission alignment is real. I was skeptical before joining but a year in and I genuinely believe the people here care about the safety work. Not performatively.\n\nThe hard part is every decision needs multiple layers of justification. Code reviews, design docs, team discussions. Felt like I was defending a thesis lol. If you thrive on rigorous debate it works great, if you just want to ship fast, you'll get frustrated.\n\nWLB has been reasonable. Not chill startup hours but not \"burn everything\" either.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 119,
+  "downvoteCount": 0,
+  "voteScore": 119,
+  "viewCount": 1010,
+  "createdDate": "2026-05-17T06:00:00.052Z",
+  "updatedDate": "2026-07-09T00:00:04.570Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-ehweq",
+  "replyCount": 7,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a1ae2d48b879849ebc0ec97",
+  "type": "FORUM",
+  "title": "OpenAI SWE onsite - got the offer, sharing notes",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 61,
+  "downvoteCount": 0,
+  "voteScore": 61,
+  "viewCount": 1056,
+  "createdDate": "2026-05-30T13:15:00.032Z",
+  "updatedDate": "2026-07-10T06:00:02.458Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-tmpxb",
+  "replyCount": 9,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a088670bd4165b6d480fc31",
+  "type": "FORUM",
+  "title": "OpenAI rejection",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "OpenAI rejection\n\n**Result:** Rejected\n**Number of Rounds:** 5\n\nGot the rejection after full loop. Phone screen and 5 onsites, recruiter gave no real feedback. Thought the SD went ok but clearly not. Oh well.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 53,
+  "downvoteCount": 0,
+  "voteScore": 53,
+  "viewCount": 497,
+  "createdDate": "2026-05-16T15:00:00.040Z",
+  "updatedDate": "2026-07-09T01:00:00.294Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "ramen_and_rust",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/3.webp"
+  },
+  "displayName": "ramen_and_rust",
+  "replyCount": 8,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a147db87b0582b352787b88",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - New Grad SWE",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - New Grad SWE\n\n**Time at Company:** 4 months\n\nStill early, but genuinely impressed so far. The caliber of the people is real, not recruiter talk. Ambiguity in scope is the main adjustment coming from a structured internship background, but it feels like the right kind of problem to have rather than a management gap.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 78,
+  "downvoteCount": 0,
+  "voteScore": 78,
+  "viewCount": 979,
+  "createdDate": "2026-05-25T16:50:00.044Z",
+  "updatedDate": "2026-07-10T02:00:01.784Z",
+  "isAnonymous": false,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "priyashah02",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/0.webp"
+  },
+  "displayName": "priyashah02",
+  "replyCount": 5,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "69b9b6e68a0eeb9897a8d9cd",
+  "type": "FORUM",
+  "title": "OpenAI - Interview Experience - Software Engineer - Remote",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {},
+  "upvoteCount": 2,
+  "downvoteCount": 0,
+  "voteScore": 2,
+  "viewCount": 260,
+  "createdDate": "2026-03-17T20:17:42.791Z",
+  "updatedDate": "2026-07-09T01:00:01.935Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": [
+    {
+     "extractedQuestion": "GPU Credits problem. Seems like literally everyone gets this lol. Resource allocation with constraints, multiple users requesting credits. Got the solution working, wasn't the most optimal at first but interviewer was patient while I optimized.",
+     "matches": [
+      {
+       "questionId": "6913b4310ac116974ccedd13",
+       "postId": "6913b4290ac116974ccedd12",
+       "title": "GPU Credits II",
+       "snippet": "Title: GPU Credits II Description: You are designing a system to manage GPU credits. Each credit grant has a unique ID and is valid during a specific time window. Credit grants may overlap in time. Because of network delays, events such as adding or consuming credits may **arrive and be processed out of order** with reâ¦",
+       "score": 0.7512950897216797,
+       "meta": {
+        "type": "MULTI_STEP",
+        "algorithmTags": [
+         "HEAP",
+         "HASH_TABLE"
+        ],
+        "stages": [
+         "SCREENING"
+        ],
+        "difficulty": 3,
+        "frequency": 10,
+        "companies": [
+         "OPENAI"
+        ],
+        "followUpCount": 0,
+        "postType": "ALGORITHM"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "mark.s",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/7.webp"
+  },
+  "displayName": "mark.s",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a3e69c0077f066afe213305",
+  "type": "FORUM",
+  "title": "OAI phone screen - GPU Credits - Rejected",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "Phone screen: SD + coding. SD was KV store, coding was GPU Credits.\n\nSolved both. Got the rejection 4 days later. No feedback.\n\n5 YOE, TC: 280k",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 255,
+  "downvoteCount": 0,
+  "voteScore": 255,
+  "viewCount": 4073,
+  "createdDate": "2026-06-26T12:00:00.039Z",
+  "updatedDate": "2026-07-10T03:00:01.727Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "haochen9",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/17.webp"
+  },
+  "displayName": "haochen9",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "69c44a9b21f6ab4226965aac",
+  "type": "FORUM",
+  "title": "Anthropic hiring bar",
+  "forumCompany": "anthropic",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "Do you really need to be a genius to get into Anthropic? Like top tier FANG engineers? \n\nRegular engineers don't stand a chance right?",
+  "extra": {},
+  "upvoteCount": 1,
+  "downvoteCount": 0,
+  "voteScore": 1,
+  "viewCount": 183,
+  "createdDate": "2026-03-25T20:50:35.020Z",
+  "updatedDate": "2026-07-09T00:00:04.934Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-2gpbt",
+  "replyCount": 2,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a183fd47b0582b352789956",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - Software Engineer",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - Software Engineer\n\n**Time at Company:** 1.5 years\n\nJoined thinking it would be the most meaningful work of my career. Working on AI safety, surrounded by sharp people with a real mission. And some of that is actually true.\n\nThe problems are genuinely hard and the mission doesn't feel hollow. That part landed.\n\nBut there's a real \"are you one of us\" thing here that doesn't go away after you're hired. Got passed over for a project I'd been building toward for months. Reason given was vague. Talked to others who've been here longer with the same experience.\n\nWLB is fine on paper. In practice the expectations are high and unstated. Nobody tells you to work weekends. You just feel it.\n\nThe culture round filters for a very specific type, and that filter applies internally too. If you care about the mission, it's worth it. If you need to know where you stand and why, this isn't the place.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 186,
+  "downvoteCount": 0,
+  "voteScore": 186,
+  "viewCount": 2939,
+  "createdDate": "2026-05-28T13:15:00.021Z",
+  "updatedDate": "2026-07-10T06:00:03.036Z",
+  "isAnonymous": false,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "noahdavis",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/5.webp"
+  },
+  "displayName": "noahdavis",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a48a1613588ba8acc693633",
+  "type": "FORUM",
+  "title": "Anthropic makes you code without AI assist, but they build the AI coding tool",
+  "forumCompany": "anthropic",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "Something that stood out after my Anthropic phone screen and onsite: no autocomplete, no AI assistance anywhere in the loop. You're on CodeSignal in a bare notebook, timed, just you and the libraries. Meanwhile the company's flagship product is Claude Code. Nobody explains it, and none of the interviewers seemed bothered either. The bar isn't algorithms, it's knowing stuff like PIL or concurrency primitives cold, which honestly feels kinda weird to gate hiring on in 2026. Would've avoided this format if I had the choice, but there wasn't one.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 213,
+  "downvoteCount": 0,
+  "voteScore": 213,
+  "viewCount": 3363,
+  "createdDate": "2026-07-04T06:00:00.164Z",
+  "updatedDate": "2026-07-10T16:00:02.226Z",
+  "isAnonymous": false,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "chloechen92",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/38.webp"
+  },
+  "displayName": "chloechen92",
+  "replyCount": 7,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "69fce838574d87bc49005e9c",
+  "type": "FORUM",
+  "title": "OpenAI - Interview Experience - Software Engineer",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 44,
+  "downvoteCount": 0,
+  "voteScore": 44,
+  "viewCount": 481,
+  "createdDate": "2026-05-07T19:30:00.013Z",
+  "updatedDate": "2026-07-09T23:00:02.861Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "arjunpatel",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/38.webp"
+  },
+  "displayName": "arjunpatel",
+  "replyCount": 1,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "69fd7be0574d87bc49006404",
+  "type": "FORUM",
+  "title": "Anthropic - Interview Experience - Software Engineer",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 42,
+  "downvoteCount": 0,
+  "voteScore": 42,
+  "viewCount": 463,
+  "createdDate": "2026-05-08T06:00:00.021Z",
+  "updatedDate": "2026-07-10T07:00:02.104Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-1fava",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a1d74408b879849ebc10292",
+  "type": "FORUM",
+  "title": "anyone else watch the Code with Claude event and feel underwhelmed",
+  "forumCompany": "anthropic",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "anyone else watch the Code with Claude event and feel underwhelmed\n\nlondon event, two days, lots of demos. the vision is \"AI writes code, you supervise and guide.\" which sounds fine until you try to use it on a real codebase that isn't a toy app.\n\nthe indexing and retrieval demos were interesting. the \"just prompt and deploy\" stuff looked good on stage.\n\nnot saying it won't be the future. saying the gap between the demo and my actual work is still pretty wide.\n\n<!-- persona: terse-en | rare_injected: false | generated_at: 2026-05-26 -->",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 83,
+  "downvoteCount": 0,
+  "voteScore": 83,
+  "viewCount": 1283,
+  "createdDate": "2026-06-01T12:00:00.039Z",
+  "updatedDate": "2026-07-10T06:00:02.979Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-yve5o",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a40f7a8077f066afe21428e",
+  "type": "FORUM",
+  "title": "Anthropic culture round got me (Rejected)",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "Cleared coding and SD no problem, then bombed the culture round. Gave what I thought was a genuine answer about AI safety and it wasn't specific enough apparently. Back to grinding I guess.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 121,
+  "downvoteCount": 0,
+  "voteScore": 121,
+  "viewCount": 1934,
+  "createdDate": "2026-06-28T10:30:00.037Z",
+  "updatedDate": "2026-07-10T17:00:02.615Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-ppnon",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a3dc1006849fecc814453aa",
+  "type": "FORUM",
+  "title": "OpenAI phone screen done, currently dying inside",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "Just finished my phone screen for OpenAI SDE. Had SD + coding. The SD was Design Sora, which honestly wasn't as scary as I thought once I realized it's just a job scheduler with extra steps. Coding problem instructions were like reading a novel, but the actual logic turned out to be pretty simple once I stripped away the fluff.\n\nFelt decent about it, but honestly hard to tell with OpenAI. Recruiter said 3-5 business days. Currently on day 2 and refreshing my email every 20 minutes like an idiot.\n\n5 YOE. Fingers crossed, will update.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 52,
+  "downvoteCount": 0,
+  "voteScore": 52,
+  "viewCount": 860,
+  "createdDate": "2026-06-26T00:00:00.119Z",
+  "updatedDate": "2026-07-10T03:00:01.783Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-dfawf",
+  "replyCount": 9,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a11a85427f705cecd608b70",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - Research Engineer",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - Research Engineer\n\n**Time at Company:** 14 months\n\nWLB: team-dependent. Research teams push harder around model releases. Not 24/7 but crunch is real.\n\nManagement: strong at the IC level. Above that it gets less clear.\n\nMission: genuinely real. Internal safety focus isn't branding, people actually argue about it.\n\nComp: strong base. Equity is a private company bet. One refresh in my tenure.\n\nCulture: high individual bar. Smart people. Low tolerance for coasting.\n\nWatch out for: ambiguity. Scope isn't handed to you. If you need clear ownership defined from day one, this isn't the fit.\n\nGood for: frontier problems, high autonomy, you're comfortable figuring out what matters.\n\nNot good for: people who need predictable structure or a defined playbook.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 131,
+  "downvoteCount": 0,
+  "voteScore": 131,
+  "viewCount": 1466,
+  "createdDate": "2026-05-23T13:15:00.026Z",
+  "updatedDate": "2026-07-09T00:00:04.446Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-rpjza",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a27032097d3b4b32966ab95",
+  "type": "FORUM",
+  "title": "anthropic released another model, anyone building with it yet",
+  "forumCompany": "anthropic",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "anthropic released another model, anyone building with it yet\n\nOpus 4.8 dropped with some new \"dynamic workflow\" tool for agentic stuff. seems like a direct response to whatever OpenAI shipped last month. anyone actually using Anthropic in production or is this still a research/demo situation for most teams?",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 64,
+  "downvoteCount": 0,
+  "voteScore": 64,
+  "viewCount": 1035,
+  "createdDate": "2026-06-08T18:00:00.051Z",
+  "updatedDate": "2026-07-10T06:00:02.804Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-wp420",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a195ef0c81f779dc6a234b6",
+  "type": "FORUM",
+  "title": "anyone actually think the openai IPO happens by September",
+  "forumCompany": "openai",
+  "forumTopic": "OTHERS",
+  "code": null,
+  "content": "anyone actually think the openai IPO happens by September\n\nsaw something about goldman sachs and morgan stanley involved and paperwork being filed soon. been hearing \"it's imminent\" for over a year at this point.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 148,
+  "downvoteCount": 0,
+  "voteScore": 148,
+  "viewCount": 2398,
+  "createdDate": "2026-05-29T09:40:00.031Z",
+  "updatedDate": "2026-07-09T00:00:02.472Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-2tb3h",
+  "replyCount": 1,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a2d9aa05117d1b543565d02",
+  "type": "FORUM",
+  "title": "OpenAI onsite - 5 rounds done, Sora SD was the key round I think",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 103,
+  "downvoteCount": 0,
+  "voteScore": 103,
+  "viewCount": 1689,
+  "createdDate": "2026-06-13T18:00:00.039Z",
+  "updatedDate": "2026-07-10T06:00:02.347Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-zvea2",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a1d9e708b879849ebc102f9",
+  "type": "FORUM",
+  "title": "OpenAI phone screen - failed, pretty sure it wasn't the coding",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "OpenAI phone screen - failed, pretty sure it wasn't the coding\n\nGot the virus transmission problem. All 4 parts done, edge cases handled. System design was Sora scheduling -- described the core as a job scheduler wrapper, covered worker failure modes and checkpointing.\n\nRejected 3 days later. No feedback. \"Not moving forward at this time.\"\n\nThe coding environment thing cost me time. \"Run Test Case\" not \"Run Main\" is the default. Took 7-8 minutes to figure out why nothing was running. That's on me but it's also a known issue and nobody warns you.\n\nDon't know if it was the SD or the behavioral. Both felt okay.\n\n<!-- persona: terse-en | rare_injected: false | generated_at: 2026-05-26 -->",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 56,
+  "downvoteCount": 0,
+  "voteScore": 56,
+  "viewCount": 888,
+  "createdDate": "2026-06-01T15:00:00.024Z",
+  "updatedDate": "2026-07-09T03:00:02.289Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-7m1ey",
+  "replyCount": 5,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a49f2e13363604ec3fc821e",
+  "type": "FORUM",
+  "title": "OpenAI offer, still waiting on team match",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "Phone screen was GPU Credits, the resource allocation one, cleared it in about 30 min.\n\nVO: two coding rounds (GPU Credits again, plus a graph problem), Sora video scheduling SD, a deep dive on my past infra work, BQ was pretty standard LP stuff.\n\nSD went deep on worker preemption and retry logic, felt like the interviewer really wanted the failure handling nailed.\n\nOffer showed up about a week later. Team match still hasn't happened though, ngl kind of in limbo right now.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 45,
+  "downvoteCount": 0,
+  "voteScore": 45,
+  "viewCount": 732,
+  "createdDate": "2026-07-05T06:00:00.286Z",
+  "updatedDate": "2026-07-10T06:00:01.916Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "ethanliu",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/27.webp"
+  },
+  "displayName": "ethanliu",
+  "replyCount": 7,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a23b76075c15363a21d1e2a",
+  "type": "FORUM",
+  "title": "Anthropic 5 rounds done - culture is the wild card",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "$15",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 72,
+  "downvoteCount": 0,
+  "voteScore": 72,
+  "viewCount": 1175,
+  "createdDate": "2026-06-06T06:00:00.025Z",
+  "updatedDate": "2026-07-10T07:00:01.914Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "vikramshah",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/28.webp"
+  },
+  "displayName": "vikramshah",
+  "replyCount": 9,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a036aa02608e589a944abb1",
+  "type": "FORUM",
+  "title": "Got OpenAI offer",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "OpenAI - Interview Experience - Software Engineer\n\n**Result:** Offer\n**Number of Rounds:** 5\n\nNot bragging or anything, but wasn't expecting to make it through all 5 rounds.\n\nPhone screen was SD + coding. Problem description was long but the core wasn't that bad once you stripped it down. Passed first try.\n\nOnsite had GPU Credits as the first coding round, a payment system SD, BQ, and a deep dive. Deep dive was the most personal one. Went through my last two projects in detail. Interviewer clearly read my resume before the call, which was a nice change from some other onsites I've had.\n\nFifth round was a values conversation. They care a lot about the mission stuff and you can tell pretty quickly if your answers are genuine or canned. I came in with a real perspective.\n\nGot the offer about a week later. Process was surprisingly smooth.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 90,
+  "downvoteCount": 0,
+  "voteScore": 90,
+  "viewCount": 834,
+  "createdDate": "2026-05-12T18:00:00.040Z",
+  "updatedDate": "2026-07-10T17:00:01.990Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-zm1ss",
+  "replyCount": 8,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a303da05117d1b54356722e",
+  "type": "FORUM",
+  "title": "OpenAI phone screen - infected plants, rejected after 3 parts",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "OpenAI phone screen - infected plants, rejected after 3 parts\n\n**Result:** Rejected\n**Number of Rounds:** 1\n\nPhone screen: infected plants simulation, 5 parts. Got parts 1-3 (basic spread, immunity state, death state). Ran out of time on part 4.\n\nRejection 2 days later.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 249,
+  "downvoteCount": 0,
+  "voteScore": 249,
+  "viewCount": 3969,
+  "createdDate": "2026-06-15T18:00:00.043Z",
+  "updatedDate": "2026-07-10T03:00:01.840Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-tfzmi",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a474fe1a3e9f34f5558adef",
+  "type": "FORUM",
+  "title": "Anthropic phone screen, web crawler with a concurrency twist",
+  "forumCompany": "anthropic",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "**Result:** Pending\n**Number of Rounds:** 1\n\nJust finished my Anthropic phone screen. It runs through CodeSignal but opens as a notebook, no autocomplete, so it throws you off a bit tbh if you're used to a real IDE.\n\nGot the [Concurrent Web Crawler](https://www.hack2hire.com/companies/anthropic/coding-questions/692f5158cd79766b0b310122/practice?questionId=692f515ecd79766b0b310123&src=eg1) problem, single threaded first then had to make it concurrent to actually hit the time limit. Recruiter mentioned beforehand to be comfortable with parallelism primitives so that tracked. Ended up burning a chunk of the 45 min on the fragment stripping and hostname matching edge cases before I even got to the threading part.\n\nNo word back yet, hoping the onsite invite comes through.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 106,
+  "downvoteCount": 0,
+  "voteScore": 106,
+  "viewCount": 1728,
+  "createdDate": "2026-07-03T06:00:00.122Z",
+  "updatedDate": "2026-07-10T05:00:02.028Z",
+  "isAnonymous": true,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-1n4ss",
+  "replyCount": 8,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a1265c5653f4ff494e2cbbb",
+  "type": "FORUM",
+  "title": "Open AI - Phone Screen Interview Experience - Staff",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "- **Result:** Pass\n- **Number of Rounds:** 2\n\n## Interview Questions &amp; Experience\nSD: Design Sora\n\nCoding: Plant infection, 5 parts\n\n## Tips &amp; Takeaways\nDesign Sora is essentially just \"design a task scheduler\". Great emphasis on contrained resources and preemption of workers, so need to be able to re-schedule tasks after preemption and notify customer when task is done.",
+  "extra": {},
+  "upvoteCount": 27,
+  "downvoteCount": 0,
+  "voteScore": 27,
+  "viewCount": 395,
+  "createdDate": "2026-05-24T02:43:17.537Z",
+  "updatedDate": "2026-07-09T03:00:02.703Z",
+  "isAnonymous": false,
+  "matchedQuestions": {
+   "questions": [
+    {
+     "extractedQuestion": "- **Result:** Pass\n- **Number of Rounds:** 2\n\n## Interview Questions &amp; Experience\nSD: Design Sora\n\nCoding: Plant infection, 5 parts\n\n## Tips &amp; Takeaways\nDesign Sora is essentially just \"design a task scheduler\". Great emphasis on contrained resources and preemption of workers, so need to be able to re-schedule tasks after preemption and notify customer when task is done.",
+     "matches": [
+      {
+       "questionId": "69efc94196981f58ae1f6d76",
+       "postId": "69efc8e696981f58ae1f6d73",
+       "title": "Design a Task Assignment System",
+       "snippet": "Title: Design a Task Assignment System Description: The system should also support assigning tasks to users, where each user has a quota limiting how many assignments can be active at the same time. Implement the three additional methods on `TaskManager`: - `boolean addUser(int timestamp, String userId, int quota)` Regâ¦",
+       "score": 0.7501131296157837,
+       "meta": {
+        "type": "MULTI_STEP",
+        "algorithmTags": [
+         "HASH_TABLE",
+         "DESIGN"
+        ],
+        "stages": [
+         "OA"
+        ],
+        "difficulty": 3,
+        "frequency": 7,
+        "companies": [
+         "COINBASE",
+         "ANTHROPIC",
+         "HUBSPOT",
+         "RAMP"
+        ],
+        "followUpCount": 3,
+        "postType": "ALGORITHM"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "SuperGotenks",
+   "avatar": "https://assets.hack2hire.com/avatars/6a00cf20f1b0b7030ba323e8.webp?v=1778858593775"
+  },
+  "displayName": "SuperGotenks",
+  "replyCount": 0,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a221180981072682a6f1d0b",
+  "type": "FORUM",
+  "title": "OpenAI phone screen - rejected same day",
+  "forumCompany": "openai",
+  "forumTopic": "INTERVIEW_EXPERIENCES",
+  "code": null,
+  "content": "OpenAI phone screen - rejected same day\n\nSystem design plus coding. SD was fine. Coding problem had an unusually long problem statement - the actual implementation was simple once you parsed it.\n\nGot through both.\n\nRejection came same day. No feedback.\n\nYOE: 6\n\n<!-- persona: terse-en | rare_injected: false | generated_at: 2026-05-26 -->",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 165,
+  "downvoteCount": 0,
+  "voteScore": 165,
+  "viewCount": 2707,
+  "createdDate": "2026-06-05T00:00:00.092Z",
+  "updatedDate": "2026-07-10T03:00:01.898Z",
+  "isAnonymous": true,
+  "matchedQuestions": {
+   "questions": []
+  },
+  "codingQuestionId": null,
+  "postId": null,
+  "displayName": "User-qpuyn",
+  "replyCount": 5,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ },
+ {
+  "id": "6a0ed2f0bd87a7041d74d817",
+  "type": "FORUM",
+  "title": "Anthropic - Company Culture - Software Engineer",
+  "forumCompany": "anthropic",
+  "forumTopic": "COMPANY_CULTURE",
+  "code": null,
+  "content": "Anthropic - Company Culture - Software Engineer\n\n**Time at Company:** 8 months\n\nEight months in and still feel like I got lucky landing here. The mission stuff isn't just marketing, you actually feel it in what gets prioritized day to day.\n\nWork is intense but teammates are sharp and genuinely collaborative. Haven't seen the credit-hoarding politics I dealt with at my last company.\n\nThe ambiguity is real though. Priorities shift and you have to self-direct a lot. If you need clear structure this probably isn't the fit, but if you're okay figuring things out it's great.",
+  "extra": {
+   "language": "en"
+  },
+  "upvoteCount": 61,
+  "downvoteCount": 0,
+  "voteScore": 61,
+  "viewCount": 521,
+  "createdDate": "2026-05-21T09:40:00.031Z",
+  "updatedDate": "2026-07-10T07:00:02.044Z",
+  "isAnonymous": false,
+  "matchedQuestions": null,
+  "codingQuestionId": null,
+  "postId": null,
+  "user": {
+   "alias": "mayachen",
+   "avatar": "https://assets.hack2hire.com/bot-avatars/v1/13.webp"
+  },
+  "displayName": "mayachen",
+  "replyCount": 6,
+  "hasUserUpvoted": false,
+  "hasUserDownvoted": false,
+  "isAuthor": false,
+  "_comments": []
+ }
+]

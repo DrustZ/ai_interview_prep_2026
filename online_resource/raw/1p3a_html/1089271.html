@@ -1,0 +1,84 @@
+﻿
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Extracted Content</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 20px;
+                }
+                .thread_subject {
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                .article_body {
+                    margin-top: 20px;
+                }
+                .attachments {
+                    margin-top: 20px;
+                    background: #f9f9f9;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                }
+                .attachments a {
+                    display: block;
+                    margin: 5px 0;
+                    text-decoration: none;
+                    color: blue;
+                }
+                .date_published {
+                    font-size: 0.9em;
+                    color: gray;
+                    margin-bottom: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="thread_subject"><span id="thread_subject">Anthropic Tech Screen Phone Interview</span></div>
+            <div class="article_body"><td class="t_f" id="postmessage_19859404" itemprop="articleBody">
+Could not understand the interviewer for 30 min. then spent 10 min understanding the problem. Got barely 10-15 min to figure out and solve the problem.<br>
+<br>
+<ignore_js_op>
+<div class="mbn">
+<a href="https://oss.1p3a.com/forum/202410/01/133037a0kq82ji73q831q0.png" target="_blank">https://oss.1p3a.com/forum/202410/01/133037a0kq82ji73q831q0.png</a>
+</div>
+<div class="tip tip_4 aimg_tip" id="aimg_568985_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>image.png</strong> <em class="xg1">(400.98 KB, 下载次数: 0)</em></p>
+<p>
+<a href="plugin.php?id=attachcenter:goto&amp;aid=NTY4OTg1fDQ3OWU5ZTg2fDE3Mjk0NjU1NzZ8ODExMTQxfDEwODkyNzE%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+&nbsp;<a href="javascript:;" onclick="showWindow(this.id, this.getAttribute('url'), 'get', 0);" id="savephoto_568985" url="home.php?mod=spacecp&amp;ac=album&amp;op=saveforumphoto&amp;aid=568985&amp;handlekey=savephoto_568985">保存到相册</a>
+</p>
+<p class="xg1 y">2024-10-1 16:30 上传</p>
+</div>
+<div class="tip_horn"></div>
+</div>
+</ignore_js_op>
+<br>
+<br>
+<br>
+# Problem: Converting stack samples to a trace<br>
+<br>
+Sampling profilers are a performance analysis tool for finding the slow parts of your code by periodically sampling the entire call stack.<div id="1p3a-ad-thread-paragraph"><ins class="adsbygoogle" data-ad-client="ca-pub-4132348358369185" data-ad-slot="8224937622" style="display: block; margin: auto; width: 100%; height: 200px;"></ins></div><br>
+In our problem the samples will be a list of `Sample`s of a float timestamp and a list of function names, **in order by timestamp**, like this.<br>
+<br>
+* Sample stacks contain every function that is currently executing<br>
+* The stacks are in order from outermost function (like "main") to the innermost currently executing function<br>
+* An unlimited amount of execution/change can happen between samples. We don't have all the function calls that happened, just some samples we want to visualize.<br>
+<br>
+example:<br>
+s2 = [<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Sample(0.0, ['a','b','a','c']),# a -&gt; b -&gt; a -&gt; c<br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Sample(1.0, ['a','a','b','c']),<br>
+&nbsp; &nbsp; ]<br>
+&nbsp; &nbsp; # (s, a) (s, b) (s, a), (s, c)<br>
+&nbsp; &nbsp; # (e, c) (e, a), (e, b), (s, a), (s, b), (s, c)<br>
+.. where "s" is start and "e" is end.</td></div>
+            <div class="attachments"></div>
+        </body>
+        </html>
+        
